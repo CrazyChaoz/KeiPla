@@ -29,6 +29,7 @@ public class Main extends Application {
 
         root.getChildren().add(box);
 
+
         Scene scene=new Scene(root);
         scene.setFill(Color.TRANSPARENT);
 
