@@ -3,21 +3,14 @@ package GUI_source;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -25,22 +18,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        /*
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Hello Tester");
-
-        Group root=new Group();
-
-        HBox box =new HBox();
-        //box.getChildren().add(img);
-        //root.getChildren().add(box);
-
-
-        Scene scene=new Scene(root);
-
-
-        stage.setScene(scene);
-        stage.show();*/
         start_LoginForm();
     }
 
@@ -68,11 +45,11 @@ public class Main extends Application {
         grid.add(pwBox, 1, 2);
 
         Button btn = new Button("Anmelden");
-        HBox hbBtn = new HBox(10);
+        HBox hbBtn = new HBox();
 
         hbBtn.getChildren().add(btn);
-
-        grid.add(hbBtn, 1, 4);
+        hbBtn.setAlignment(Pos.TOP_RIGHT);
+        grid.add(hbBtn, 1, 3);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {            @Override
             public void handle(ActionEvent e) {
