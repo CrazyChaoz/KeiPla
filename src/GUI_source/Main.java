@@ -24,6 +24,7 @@ public class Main extends Application {
 
         ImageView img=new ImageView();
         img.setImage(new Image("file:test_java.png"));
+
         HBox box =new HBox();
         box.getChildren().add(img);
 
