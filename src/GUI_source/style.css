@@ -1,0 +1,7 @@
+#bg1{
+    -fx-background-color: rgba(0, 100, 100, 0);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-background-image: url("test_java.png");
+}

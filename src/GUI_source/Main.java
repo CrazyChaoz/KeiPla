@@ -15,9 +15,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -46,22 +44,18 @@ public class Main extends Application {
         start_LoginForm();
     }
 
-    public void start_LoginForm() {
+    public void start_LoginForm()  {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Login");
 
-        ImageView img=new ImageView(new Image(""));
 
-        Group root=new Group();
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
-        String image =  Main.class.getResource("test_java.png").toExternalForm();
-        grid.setStyle(  "-fx-background-color: rgba(0, 100, 100, 0);\n" +
-                "    -fx-background-radius: 10;    \n" +
-                "    -fx-background-image: url('"+image+"');");
+        grid.setId("bg1");
+
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         TextField userTextField = new TextField();
@@ -76,21 +70,11 @@ public class Main extends Application {
         Button btn = new Button("Anmelden");
         HBox hbBtn = new HBox(10);
 
-        HBox box =new HBox();
-        box.getChildren().add(img);
-
-        //hbBtn.getChildren().add(img);
-        //hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
+
         grid.add(hbBtn, 1, 4);
 
-        final Text actiontarget = new Text();
-
-        grid.add(actiontarget, 1, 6);
-
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
+        btn.setOnAction(new EventHandler<ActionEvent>() {            @Override
             public void handle(ActionEvent e) {
                 System.out.println("Button pressed");
             }
@@ -98,6 +82,9 @@ public class Main extends Application {
 
         Scene scene = new Scene(grid, 300, 275);
         scene.setFill(Color.TRANSPARENT);
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+
         stage.setScene(scene);
         stage.show();
     }
