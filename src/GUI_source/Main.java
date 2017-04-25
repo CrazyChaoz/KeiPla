@@ -38,7 +38,7 @@ public class Main extends Application {
         ///n
     }
 /*
-Some stuff PENIS
+Some stuff
  */
 
     public static void main(String[] args) {
