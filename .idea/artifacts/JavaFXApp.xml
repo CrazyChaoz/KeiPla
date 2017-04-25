@@ -8,7 +8,7 @@
     </properties>
     <root id="root">
       <element id="archive" name="JavaFXApp.jar">
-        <element id="module-output" name="KeiPla" />
+        <element id="module-output" name="KeiPla-NotWorking" />
       </element>
     </root>
   </artifact>
