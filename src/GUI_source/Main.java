@@ -22,8 +22,7 @@ public class Main extends Application {
 
         Group root=new Group();
 
-        ImageView img=new ImageView();
-        img.setImage(new Image("file:test_java.png"));
+        ImageView img=new ImageView(new Image("file:test_java.png"));
 
         HBox box =new HBox();
         box.getChildren().add(img);
