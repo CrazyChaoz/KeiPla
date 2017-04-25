@@ -26,69 +26,80 @@ import javafx.stage.StageStyle;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage stage) throws Exception{
         /*
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.setTitle("Hello Tester");
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setTitle("Hello Tester");
 
         Group root=new Group();
 
-        ImageView img=new ImageView(new Image("file:test_java.png"));
-
         HBox box =new HBox();
-        box.getChildren().add(img);
-
-        root.getChildren().add(box);
+        //box.getChildren().add(img);
+        //root.getChildren().add(box);
 
 
         Scene scene=new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();*/
+
+        stage.setScene(scene);
+        stage.show();*/
+        start_LoginForm();
     }
 
     public void start_LoginForm() {
-        Stage primaryStage=new Stage();
-        primaryStage.setTitle("JavaFX Welcome");
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setTitle("Login");
+
+        ImageView img=new ImageView(new Image(""));
+
+        Group root=new Group();
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
+        String image =  Main.class.getResource("test_java.png").toExternalForm();
+        grid.setStyle(  "-fx-background-color: rgba(0, 100, 100, 0);\n" +
+                "    -fx-background-radius: 10;    \n" +
+                "    -fx-background-image: url('"+image+"');");
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Label userName = new Label("User Name:");
-        grid.add(userName, 0, 1);
-
         TextField userTextField = new TextField();
+        userTextField.setPromptText("Username");
         grid.add(userTextField, 1, 1);
 
-        Label pw = new Label("Password:");
-        grid.add(pw, 0, 2);
 
         PasswordField pwBox = new PasswordField();
+        pwBox.setPromptText("Password");
         grid.add(pwBox, 1, 2);
 
-        Button btn = new Button("Sign in");
+        Button btn = new Button("Anmelden");
         HBox hbBtn = new HBox(10);
-        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+
+        HBox box =new HBox();
+        box.getChildren().add(img);
+
+        //hbBtn.getChildren().add(img);
+        //hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
         final Text actiontarget = new Text();
+
         grid.add(actiontarget, 1, 6);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent e) {
-                Main.launch();
+                System.out.println("Button pressed");
             }
         });
 
         Scene scene = new Scene(grid, 300, 275);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        scene.setFill(Color.TRANSPARENT);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
