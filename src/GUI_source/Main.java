@@ -65,7 +65,7 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image("file:test_java.png"));
+        stage.getIcons().add(new Image("file:KeiPla-Icon.png"));
         stage.setScene(scene);
         stage.show();
     }
