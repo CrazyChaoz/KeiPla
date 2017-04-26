@@ -10,12 +10,18 @@
 }
 #close{
     -fx-background-image: url("GUI_closeButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 32 32;
 }
 #back{
     -fx-background-image: url("GUI_backButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 32 32;
 }
 #minimize{
     -fx-background-image: url("GUI_miniButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 32 32;
 }
 .text-field {
     -fx-background-color:

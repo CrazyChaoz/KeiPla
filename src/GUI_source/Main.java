@@ -138,9 +138,9 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    //##########################################
-    //##########################################
-    //##########################################
+    //#####***##################################
+    //#######*##################################
+    //#######***################################
     public void start_chooseMode(){
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -175,9 +175,11 @@ public class Main extends Application {
         //right upper buttons
         GridPane grdPn=new GridPane();
         Button close=new Button();
+        close.setMinSize(32,32);
         close.setId("close");
         grdPn.add(close,2,1);
         Button minimize=new Button();
+        minimize.setMinSize(32,32);
         minimize.setId("minimize");
         grdPn.add(minimize,1,1);
         grdPn.setAlignment(Pos.TOP_RIGHT);
