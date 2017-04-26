@@ -24,8 +24,6 @@ public class Logic {
                 retournage=getXMLInhalt(new File("res\\questions\\hard\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\hard\\")))+1+".xml"));
                 break;
         }
-
-
         return retournage;
     }
 
