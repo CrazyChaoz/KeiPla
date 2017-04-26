@@ -1,4 +1,4 @@
-<system>
+<root>
     <question>
     Is JavaFX Easy?
     </question>
@@ -14,4 +14,4 @@
     <answer>
         YEAH
     </answer>
-</system>
+</root>
