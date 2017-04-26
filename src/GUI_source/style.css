@@ -5,6 +5,9 @@
     -fx-background-position: center center;
     -fx-background-image: url("GUI_login.png");
 }
+#background{
+    -fx-background-color: #FBB03B;
+}
 
 .text-field {
     -fx-background-color:

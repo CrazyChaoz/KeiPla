@@ -76,7 +76,9 @@ public class Main extends Application {
     }
 
     public void startWebView(Stage webStage) {
+
         StackPane root = new StackPane();
+        root.setId("background");
         WebView myWebView = new WebView();
         WebEngine engine = myWebView.getEngine();
         engine.loadContent("www.google.at");
