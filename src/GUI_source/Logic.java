@@ -5,6 +5,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.Random;
+import org.w3c.dom.Document;
 
 public class Logic {
     public static String[] randomFilePicker(int hardness){
@@ -35,7 +36,7 @@ public class Logic {
         while(wh==1){
             wh=0;
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            org.w3c.dom.Document document;
+            Document document;
             try {
                 DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 document = documentBuilder.parse(file);
