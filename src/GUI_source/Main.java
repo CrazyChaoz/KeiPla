@@ -178,7 +178,6 @@ public class Main extends Application {
         });
 
         Scene scene = new Scene(grid, 800, 450);
-
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
