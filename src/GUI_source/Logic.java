@@ -30,7 +30,7 @@ public class Logic {
 
     public static String[] getXMLInhalt(File file){
         int wh=1;
-        String[]retournage=new String[5];
+        String[]retournage=new String[6];
 
         while(wh==1){
             wh=0;
@@ -40,12 +40,11 @@ public class Logic {
                 DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
                 document = documentBuilder.parse(file);
                 retournage[0] = document.getElementsByTagName("question").item(0).getTextContent();
-
-                for(int i=1;i<5;i++)
                 retournage[1] = document.getElementsByTagName("answer").item(0).getTextContent();
                 retournage[2] = document.getElementsByTagName("answer").item(1).getTextContent();
                 retournage[3] = document.getElementsByTagName("answer").item(2).getTextContent();
-                retournage[4] = document.getElementsByTagName("right").item(0).getTextContent();
+                retournage[4] = document.getElementsByTagName("answer").item(3).getTextContent();
+                retournage[5] = document.getElementsByTagName("right").item(0).getTextContent();
             }catch (Exception e){
                 e.printStackTrace();
                 wh=1;
