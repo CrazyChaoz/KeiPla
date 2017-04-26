@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -66,6 +68,22 @@ public class Main extends Application {
         stage.getIcons().add(new Image("file:test_java.png"));
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void startWebView(Stage webStage) {
+        StackPane root = new StackPane();
+        WebView myWebView = new WebView();
+        WebEngine engine = myWebView.getEngine();
+        engine.loadContent("www.google.at");
+
+        root.getChildren().add(myWebView);
+
+        Scene scene = new Scene(root, 1280, 720);
+
+        webStage.setTitle("KeiPla");
+        webStage.getIcons().add(new Image("file:\\D:\\Peter"));
+        webStage.setScene(scene);
+        webStage.show();
     }
 
     public static void main(String[] args) {
