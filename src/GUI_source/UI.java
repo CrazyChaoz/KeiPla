@@ -207,7 +207,6 @@ public class UI {
         HBox box1=new HBox();
         box1.setAlignment(Pos.TOP_RIGHT);
         box1.setSpacing(10);
-        box1.
         //####################################
 
         Button minimize=new Button();
