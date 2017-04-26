@@ -34,6 +34,7 @@ public class Logic {
                         retournage[3] = document.getElementsByTagName("answer").item(2).getTextContent();
                         retournage[4] = document.getElementsByTagName("answer").item(3).getTextContent();
                     }catch (Exception e){
+                        e.printStackTrace();
                         wh=1;
                     }
 
@@ -51,7 +52,6 @@ public class Logic {
     public static int getFileNumber(File folder){
         return folder.list().length;
     }
-
     public static void main(String[] args) {
 
         for (String s:Logic.getQuestion(1)) {

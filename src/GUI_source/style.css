@@ -3,35 +3,35 @@
     -fx-background-repeat: stretch;
     -fx-background-size: 800 450;
     -fx-background-position: center center;
-    -fx-background-image: url("../../res/GUI_login.png");
+    -fx-background-image: url("res/GUI_login.png");
 }
 #background{
     -fx-background-color: #FBB03B;
     -fx-content-display: center;
 }
 #close{
-    -fx-background-image: url("../../res/GUI_closeButton.png");
+    -fx-background-image: url("res/GUI_closeButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #back{
-    -fx-background-image: url("../../res/GUI_backButton.png");
+    -fx-background-image: url("res/GUI_backButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #minimize{
-    -fx-background-image: url("../../res/GUI_miniButton.png");
+    -fx-background-image: url("res/GUI_miniButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #btn_login{
-    -fx-background-image: url("../../res/GUI_anmeldenButton.png");
+    -fx-background-image: url("res/GUI_anmeldenButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 159 39;
 }
@@ -41,32 +41,32 @@
     -fx-text-fill: white;
 }
 #leicht{
-    -fx-background-image: url("../../res/GUI_easyButton.png");
+    -fx-background-image: url("res/GUI_easyButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #mittel{
-    -fx-background-image: url("../../res/GUI_mediumButton.png");
+    -fx-background-image: url("res/GUI_mediumButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #schwer{
-    -fx-background-image: url("../../res/GUI_hardButton.png");
+    -fx-background-image: url("res/GUI_hardButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #singlep{
-    -fx-background-image: url("../../res/GUI_singlelButton.png");
+    -fx-background-image: url("res/GUI_singlelButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
 }
 #multip{
-    -fx-background-image: url("../../res/GUI_multiButton.png");
+    -fx-background-image: url("res/GUI_multiButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
 }
 #options{
-    -fx-background-image: url("../../res/GUI_optionenButton.png");
+    -fx-background-image: url("res/GUI_optionenButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
 }
