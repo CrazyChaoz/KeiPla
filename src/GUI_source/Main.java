@@ -158,9 +158,9 @@ public class Main extends Application {
         Button btn1 = new Button("");
         Label lbl1=new Label("Leicht");
         Button btn2 = new Button("");
-        Label lbl2=new Label("Leicht");
+        Label lbl2=new Label("Mittel");
         Button btn3 = new Button("");
-        Label lbl3=new Label("Leicht");
+        Label lbl3=new Label("Schwer");
 
 
         grid.add(lbl1, 1, 1);
@@ -174,7 +174,6 @@ public class Main extends Application {
         close.setId("close");
         close.setLayoutX(340);
         close.setLayoutY(220);
-
 
 
         btn1.setOnAction(e -> {
