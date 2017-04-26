@@ -32,8 +32,8 @@ public class Main extends Application {
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
+        grid.setHgap(60);
+        grid.setVgap(5);
         grid.setId("bg1");
 
         grid.setPadding(new Insets(25, 25, 25, 25));
@@ -42,10 +42,10 @@ public class Main extends Application {
         userTextField.setPromptText("Username");
         grid.add(userTextField, 1, 1);
 
-
+        /*
         PasswordField pwBox = new PasswordField();
         pwBox.setPromptText("Password");
-        grid.add(pwBox, 1, 2);
+        grid.add(pwBox, 1, 2);*/
 
         Button btn = new Button("Anmelden");
         HBox hbBtn = new HBox();
