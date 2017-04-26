@@ -12,16 +12,22 @@
     -fx-background-image: url("res/GUI_closeButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
 }
 #back{
     -fx-background-image: url("res/GUI_backButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
 }
 #minimize{
     -fx-background-image: url("res/GUI_miniButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
 }
 .text-field {
     -fx-background-color:

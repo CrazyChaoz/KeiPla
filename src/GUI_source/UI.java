@@ -208,7 +208,6 @@ public class UI {
         //####################################
 
         Button minimize=new Button();
-        minimize.setMinSize(32,32);
         minimize.setId("minimize");
         box1.getChildren().add(minimize);
         minimize.setOnAction(e -> stage.setIconified(true));
@@ -216,15 +215,13 @@ public class UI {
         //####################################
 
         Button close=new Button();
-        close.setMinSize(32,32);
         close.setId("close");
+        close.setPadding(34);
         box1.getChildren().add(close);
         box1.setId("buttonarea");
         close.setOnAction(e -> Platform.exit());
 
         //####################################
-
-
         return box1;
     }
 }
