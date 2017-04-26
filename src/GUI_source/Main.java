@@ -81,7 +81,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 1280, 720);
 
         webStage.setTitle("KeiPla");
-        webStage.getIcons().add(new Image("file:\\D:\\Peter"));
+        webStage.getIcons().add(new Image("file:KeiPla-Icon.png"));
         webStage.setScene(scene);
         webStage.show();
     }
