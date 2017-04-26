@@ -106,11 +106,9 @@ public class UI {
 
 
         GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
         grid.setHgap(60);
         grid.setVgap(5);
-        grid.setId("background");
-
+        grid.setAlignment(Pos.CENTER);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Button btn1 = new Button("Singleplayer");
@@ -120,6 +118,12 @@ public class UI {
         grid.add(btn1, 1, 1);
         grid.add(btn2, 1, 2);
         grid.add(btn3, 1, 3);
+
+        HBox box=new HBox();
+        box.setAlignment(Pos.CENTER);
+        box.setId("background");
+        box.getChildren().add(grid);
+        box.getChildren().add(getUpperRight(stage));
 
 
         btn1.setOnAction(e -> {
@@ -133,7 +137,7 @@ public class UI {
 
         });
 
-        Scene scene = new Scene(grid, 800, 450);
+        Scene scene = new Scene(box, 800, 450);
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
