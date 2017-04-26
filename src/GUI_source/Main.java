@@ -84,7 +84,7 @@ public class Main extends Application {
         root.setId("background");
         WebView myWebView = new WebView();
         WebEngine engine = myWebView.getEngine();
-        engine.loadContent("www.google.at");
+        engine.loadContent("<h1>This is just a test!</h1>");
 
         root.getChildren().add(myWebView);
 
@@ -108,7 +108,7 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(60);
         grid.setVgap(5);
-        grid.setId("bg1");
+        grid.setId("background");
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
