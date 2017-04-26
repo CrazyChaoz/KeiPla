@@ -31,7 +31,8 @@ public class UI {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Login");
-
+        stage.setWidth(720);
+        stage.setHeight(448);
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -50,7 +51,9 @@ public class UI {
         pwBox.setPromptText("Password");
         grid.add(pwBox, 1, 2);*/
 
-        Button btn = new Button("Anmelden");
+        Button btn = new Button();
+        btn.setId("btn_login");
+        btn.setMinSize(160,40);
         HBox hbBtn = new HBox();
 
         hbBtn.getChildren().add(btn);
@@ -103,7 +106,8 @@ public class UI {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
-
+        stage.setWidth(720);
+        stage.setHeight(448);
 
         GridPane grid = new GridPane();
         grid.setHgap(60);
@@ -111,9 +115,15 @@ public class UI {
         grid.setAlignment(Pos.CENTER);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btn1 = new Button("Singleplayer");
-        Button btn2 = new Button("Multiplayer");
-        Button btn3 = new Button("Options");
+        Button btn1 = new Button();
+        btn1.setMinSize(200,50);
+        btn1.setId("singlep");
+        Button btn2 = new Button();
+        btn2.setMinSize(200,50);
+        btn2.setId("multip");
+        Button btn3 = new Button();
+        btn3.setMinSize(200,50);
+        btn3.setId("options");
 
         grid.add(btn1, 1, 1);
         grid.add(btn2, 1, 2);
@@ -163,13 +173,22 @@ public class UI {
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btn1 = new Button("");
+        Button btn1 = new Button();
+        btn1.setMinSize(48,48);
+        btn1.setId("leicht");
         Label lbl1=new Label("Leicht");
-        Button btn2 = new Button("");
+        Button btn2 = new Button();
+        btn2.setMinSize(48,48);
+        btn2.setId("mittel");
         Label lbl2=new Label("Mittel");
-        Button btn3 = new Button("");
+        Button btn3 = new Button();
+        btn3.setMinSize(48,48);
+        btn3.setId("schwer");
         Label lbl3=new Label("Schwer");
 
+        lbl1.setId("difficulty");
+        lbl2.setId("difficulty");
+        lbl3.setId("difficulty");
 
         grid.add(lbl1, 1, 1);
         grid.add(lbl2, 2, 1);

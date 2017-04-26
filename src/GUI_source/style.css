@@ -30,6 +30,46 @@
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
+#btn_login{
+    -fx-background-image: url("res/GUI_anmeldenButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 159 39;
+}
+#difficulty{
+    -fx-font-size: 26pt;
+    -fx-font-family: monospace;
+    -fx-text-fill: white;
+}
+#leicht{
+    -fx-background-image: url("res/GUI_easyButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#mittel{
+    -fx-background-image: url("res/GUI_mediumButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#schwer{
+    -fx-background-image: url("res/GUI_hardButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#singlep{
+    -fx-background-image: url("res/GUI_singlelButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 200 50;
+}
+#multip{
+    -fx-background-image: url("res/GUI_multiButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 200 50;
+}
+#options{
+    -fx-background-image: url("res/GUI_optionenButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 200 50;
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,
