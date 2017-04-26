@@ -19,6 +19,8 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.lang.model.element.Element;
+
 public class Main extends Application {
 
     @Override
@@ -113,10 +115,10 @@ public class Main extends Application {
         Button btn2 = new Button("Multiplayer");
         Button btn3 = new Button("Options");
 
-
         grid.add(btn1, 1, 1);
         grid.add(btn2, 1, 2);
         grid.add(btn3, 1, 3);
+
 
         btn1.setOnAction(e -> {
 
@@ -157,9 +159,9 @@ public class Main extends Application {
         Button btn1 = new Button("");
         Label lbl1=new Label("Leicht");
         Button btn2 = new Button("");
-        Label lbl2=new Label("Leicht");
+        Label lbl2=new Label("Mittel");
         Button btn3 = new Button("");
-        Label lbl3=new Label("Leicht");
+        Label lbl3=new Label("Schwer");
 
 
         grid.add(lbl1, 1, 1);
@@ -185,7 +187,6 @@ public class Main extends Application {
         box.setId("background");
         box.getChildren().add(grid);
         box.getChildren().add(grdPn);
-
 
         btn1.setOnAction(e -> {
 
