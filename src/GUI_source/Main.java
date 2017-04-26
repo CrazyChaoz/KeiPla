@@ -63,7 +63,7 @@ public class Main extends Application {
         btn.setOnAction(e -> {
             System.out.println("Button pressed");
             stage.close();
-            start_chooseMode();
+            start_MainMenu();
         });
 
         Scene scene = new Scene(grid, 800, 450);
@@ -121,7 +121,8 @@ public class Main extends Application {
 
 
         btn1.setOnAction(e -> {
-
+            start_chooseMode();
+            stage.close();
         });
         btn2.setOnAction(e -> {
 
@@ -183,6 +184,8 @@ public class Main extends Application {
         minimize.setId("minimize");
         grdPn.add(minimize,1,1);
         grdPn.setAlignment(Pos.TOP_RIGHT);
+        //
+
 
         HBox box=new HBox();
         box.setAlignment(Pos.CENTER);
@@ -200,7 +203,7 @@ public class Main extends Application {
 
         });
 
-        Scene scene = new Scene(box, 800, 450);
+        Scene scene = new Scene(box, 500, 450);
 
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
