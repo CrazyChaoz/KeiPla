@@ -70,7 +70,21 @@ public class Main extends Application {
         stage.show();
     }
 
+    public void startWebView(Stage webStage) {
+        StackPane root = new StackPane();
+        WebView myWebView = new WebView();
+        WebEngine engine = myWebView.getEngine();
+        engine.loadContent("www.google.at");
 
+        root.getChildren().add(myWebView);
+
+        Scene scene = new Scene(root, 1280, 720);
+
+        webStage.setTitle("KeiPla");
+        webStage.getIcons().add(new Image("file:\\D:\\Peter"));
+        webStage.setScene(scene);
+        webStage.show();
+    }
 
     public static void main(String[] args) {
         launch(args);
