@@ -1,6 +1,7 @@
 package GUI_source;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -22,6 +23,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         start_LoginForm();
+
     }
 
     public void start_LoginForm()  {
@@ -57,7 +59,10 @@ public class Main extends Application {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+
                 System.out.println("Button pressed");
+                stage.close();
+                startWebView(new Stage());
             }
         });
 
@@ -85,6 +90,8 @@ public class Main extends Application {
         webStage.setScene(scene);
         webStage.show();
     }
+
+
 
     public static void main(String[] args) {
         launch(args);
