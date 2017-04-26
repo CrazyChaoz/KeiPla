@@ -127,7 +127,7 @@ public class Main extends Application {
         btn2.setOnAction(e -> {
 
         });
-        btn1.setOnAction(e -> {
+        btn3.setOnAction(e -> {
 
         });
 
