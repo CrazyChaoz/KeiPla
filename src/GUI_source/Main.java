@@ -172,9 +172,6 @@ public class Main extends Application {
         grid.add(btn2, 2, 2);
         grid.add(btn3, 3, 2);
 
-
-
-
         HBox box=new HBox();
         box.setAlignment(Pos.CENTER);
         box.setId("background");
@@ -210,12 +207,20 @@ public class Main extends Application {
         minimize.setId("minimize");
         box1.getChildren().add(minimize);
 
+        minimize.setOnAction(e -> {
+
+        });
 
         Button close=new Button();
         close.setMinSize(32,32);
         close.setId("close");
         box1.getChildren().add(close);
         box1.setId("buttonarea");
+
+
+        close.setOnAction(e -> {
+            Platform.exit();
+        });
         //####################################
         return box1;
     }
