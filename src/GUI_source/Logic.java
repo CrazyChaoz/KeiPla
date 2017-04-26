@@ -5,26 +5,22 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.Random;
-import java.util.Scanner;
 
-/**
- * Created by testuser on 26.04.2017.
- */
 public class Logic {
-    public static String[] getQuestion(int hardness){
+    public static String[] randomFilePicker(int hardness){
 
         String[] retournage=null;
         Random rndm=new Random();
 
         switch(hardness){
             case 1:
-                getXMLInhalt(new File("res\\questions\\ez\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\ez\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res\\questions\\ez\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\ez\\")))+1+".xml"));
                 break;
             case 2:
-                getXMLInhalt(new File("res\\questions\\mid\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\mid\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res\\questions\\mid\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\mid\\")))+1+".xml"));
                 break;
             case 3:
-                getXMLInhalt(new File("res\\questions\\hard\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\hard\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res\\questions\\hard\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\hard\\")))+1+".xml"));
                 break;
         }
 
@@ -37,6 +33,7 @@ public class Logic {
         String[]retournage=new String[5];
 
         while(wh==1){
+            wh=0;
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             org.w3c.dom.Document document;
             try {
@@ -60,7 +57,7 @@ public class Logic {
     }
     public static void main(String[] args) {
 
-        for (String s:Logic.getQuestion(1)) {
+        for (String s:Logic.randomFilePicker(1)) {
             System.out.println(s);
         }
 
