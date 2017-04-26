@@ -57,14 +57,10 @@ public class Main extends Application {
         hbBtn.setAlignment(Pos.TOP_RIGHT);
         grid.add(hbBtn, 1, 3);
 
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-
-                System.out.println("Button pressed");
-                stage.close();
-                start_MainMenu();
-            }
+        btn.setOnAction(e -> {
+            System.out.println("Button pressed");
+            stage.close();
+            start_MainMenu();
         });
 
         Scene scene = new Scene(grid, 800, 450);
@@ -121,23 +117,14 @@ public class Main extends Application {
         grid.add(btn2, 1, 2);
         grid.add(btn3, 1, 3);
 
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e){
+        btn1.setOnAction(e -> {
 
-            }
         });
-        btn2.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e){
+        btn2.setOnAction(e -> {
 
-            }
         });
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e){
+        btn1.setOnAction(e -> {
 
-            }
         });
 
         Scene scene = new Scene(grid, 800, 450);
@@ -151,6 +138,47 @@ public class Main extends Application {
     //##########################################
     //##########################################
     //##########################################
+    public void start_chooseMode(){
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setTitle("Menu");
+
+
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(60);
+        grid.setVgap(5);
+        grid.setId("bg1");
+
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        Button btn1 = new Button("Singleplayer");
+        Button btn2 = new Button("Multiplayer");
+        Button btn3 = new Button("Options");
+
+
+        grid.add(btn1, 1, 1);
+        grid.add(btn2, 1, 2);
+        grid.add(btn3, 1, 3);
+
+        btn1.setOnAction(e -> {
+
+        });
+        btn2.setOnAction(e -> {
+
+        });
+        btn1.setOnAction(e -> {
+
+        });
+
+        Scene scene = new Scene(grid, 800, 450);
+        scene.setFill(Color.TRANSPARENT);
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+        stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     public static void main(String[] args) {
