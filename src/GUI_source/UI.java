@@ -205,6 +205,9 @@ public class UI {
 
         //####################################
         HBox box1=new HBox();
+        box1.setAlignment(Pos.TOP_RIGHT);
+        box1.setSpacing(10);
+        box1.
         //####################################
 
         Button minimize=new Button();
@@ -216,7 +219,6 @@ public class UI {
 
         Button close=new Button();
         close.setId("close");
-        close.setPadding(34);
         box1.getChildren().add(close);
         box1.setId("buttonarea");
         close.setOnAction(e -> Platform.exit());
