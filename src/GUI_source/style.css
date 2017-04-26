@@ -3,23 +3,23 @@
     -fx-background-repeat: stretch;
     -fx-background-size: 800 450;
     -fx-background-position: center center;
-    -fx-background-image: url("GUI_login.png");
+    -fx-background-image: url("res/GUI_login.png");
 }
 #background{
     -fx-background-color: #FBB03B;
 }
 #close{
-    -fx-background-image: url("GUI_closeButton.png");
+    -fx-background-image: url("res/GUI_closeButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
 }
 #back{
-    -fx-background-image: url("GUI_backButton.png");
+    -fx-background-image: url("res/GUI_backButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
 }
 #minimize{
-    -fx-background-image: url("GUI_miniButton.png");
+    -fx-background-image: url("res/GUI_miniButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
 }
