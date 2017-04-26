@@ -70,7 +70,7 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image("file:KeiPla-Icon-32.png"));
+        //stage.getIcons().add(new Image("file:KeiPla-Icon-32.png"));
         stage.setScene(scene);
         stage.show();
     }
@@ -176,7 +176,7 @@ public class Main extends Application {
         box.setAlignment(Pos.CENTER);
         box.setId("background");
         box.getChildren().add(grid);
-        box.getChildren().add(getUpperRight());
+        box.getChildren().add(getUpperRight(stage));
 
         btn1.setOnAction(e -> {
 
@@ -188,7 +188,7 @@ public class Main extends Application {
 
         });
 
-        Scene scene = new Scene(box, 500, 450);
+        Scene scene = new Scene(box, 700, 450);
 
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
@@ -198,7 +198,8 @@ public class Main extends Application {
 
         stage.show();
     }
-    public HBox getUpperRight(){
+
+    public HBox getUpperRight(Stage stage){
         //####################################
         HBox box1=new HBox();
 
@@ -208,7 +209,7 @@ public class Main extends Application {
         box1.getChildren().add(minimize);
 
         minimize.setOnAction(e -> {
-
+            stage.setIconified(true);
         });
 
         Button close=new Button();
