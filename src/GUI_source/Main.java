@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -63,9 +65,25 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image("file:test_java.png"));
+        stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void startWebView(Stage webStage) {
+        StackPane root = new StackPane();
+        WebView myWebView = new WebView();
+        WebEngine engine = myWebView.getEngine();
+        engine.loadContent("www.google.at");
+
+        root.getChildren().add(myWebView);
+
+        Scene scene = new Scene(root, 1280, 720);
+
+        webStage.setTitle("KeiPla");
+        webStage.getIcons().add(new Image("file:KeiPla-Icon.png"));
+        webStage.setScene(scene);
+        webStage.show();
     }
 
     public static void main(String[] args) {
