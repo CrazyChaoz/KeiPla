@@ -60,7 +60,7 @@ public class UI {
         grid.add(hbBtn, 1, 3);
 
         btn.setOnAction(e -> {
-            System.err.println("Value:"+userTextField.getText()+";");
+
             NAME=userTextField.getText();
             if(NAME!=null&&!NAME.equals("")){
                 stage.close();
@@ -244,6 +244,26 @@ public class UI {
         box1.getChildren().add(close);
         box1.setId("buttonarea");
         close.setOnAction(e -> Platform.exit());
+
+        //####################################
+        return box1;
+    }
+
+    public HBox getReturnButton(Stage stage){
+
+        //####################################
+        HBox box1=new HBox();
+        box1.setAlignment(Pos.TOP_RIGHT);
+        box1.setSpacing(10);
+        //####################################
+
+        Button ret=new Button();
+        ret.setId("back");
+        box1.getChildren().add(ret);
+        ret.setOnAction(e -> {
+            stage.close();
+            start_MainMenu();
+        });
 
         //####################################
         return box1;
