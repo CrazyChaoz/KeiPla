@@ -151,6 +151,7 @@ public class Main extends Application {
         grid.setVgap(5);
         grid.setId("background");
 
+
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Button btn1 = new Button("");
@@ -168,11 +169,22 @@ public class Main extends Application {
         grid.add(btn2, 2, 2);
         grid.add(btn3, 3, 2);
 
+        //##########
+        //right upper buttons
+        GridPane grdPn=new GridPane();
         Button close=new Button();
         close.setId("close");
-        close.setLayoutX(340);
-        close.setLayoutY(220);
+        grdPn.add(close,2,1);
+        Button minimize=new Button();
+        minimize.setId("minimize");
+        grdPn.add(minimize,1,1);
+        grdPn.setAlignment(Pos.TOP_RIGHT);
 
+        HBox box=new HBox();
+        box.setAlignment(Pos.CENTER);
+        box.setId("background");
+        box.getChildren().add(grid);
+        box.getChildren().add(grdPn);
 
 
         btn1.setOnAction(e -> {
@@ -185,7 +197,7 @@ public class Main extends Application {
 
         });
 
-        Scene scene = new Scene(grid, 800, 450);
+        Scene scene = new Scene(box, 800, 450);
 
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
