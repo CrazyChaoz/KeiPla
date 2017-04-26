@@ -148,7 +148,7 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(60);
         grid.setVgap(5);
-        grid.setId("bg1");
+        grid.setId("background");
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
@@ -156,10 +156,16 @@ public class Main extends Application {
         Button btn2 = new Button("Multiplayer");
         Button btn3 = new Button("Options");
 
+        Button close=new Button();
+        close.setId("close");
+        close.setLayoutX(250);
+        close.setLayoutY(220);
+
 
         grid.add(btn1, 1, 1);
-        grid.add(btn2, 1, 2);
-        grid.add(btn3, 1, 3);
+        grid.add(btn2, 2, 1);
+        grid.add(btn3, 3, 1);
+
 
         btn1.setOnAction(e -> {
 
@@ -172,11 +178,13 @@ public class Main extends Application {
         });
 
         Scene scene = new Scene(grid, 800, 450);
+
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
         stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
         stage.setScene(scene);
+
         stage.show();
     }
 
