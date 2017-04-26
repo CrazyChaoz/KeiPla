@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -60,7 +61,7 @@ public class Main extends Application {
         btn.setOnAction(e -> {
             System.out.println("Button pressed");
             stage.close();
-            start_MainMenu();
+            start_chooseMode();
         });
 
         Scene scene = new Scene(grid, 800, 450);
@@ -152,19 +153,26 @@ public class Main extends Application {
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btn1 = new Button("Singleplayer");
-        Button btn2 = new Button("Multiplayer");
-        Button btn3 = new Button("Options");
+        Button btn1 = new Button("");
+        Label lbl1=new Label("Leicht");
+        Button btn2 = new Button("");
+        Label lbl2=new Label("Leicht");
+        Button btn3 = new Button("");
+        Label lbl3=new Label("Leicht");
+
+
+        grid.add(lbl1, 1, 1);
+        grid.add(lbl2, 2, 1);
+        grid.add(lbl3, 3, 1);
+        grid.add(btn1, 1, 2);
+        grid.add(btn2, 2, 2);
+        grid.add(btn3, 3, 2);
 
         Button close=new Button();
         close.setId("close");
-        close.setLayoutX(250);
+        close.setLayoutX(340);
         close.setLayoutY(220);
 
-
-        grid.add(btn1, 1, 1);
-        grid.add(btn2, 2, 1);
-        grid.add(btn3, 3, 1);
 
 
         btn1.setOnAction(e -> {
@@ -178,6 +186,7 @@ public class Main extends Application {
         });
 
         Scene scene = new Scene(grid, 800, 450);
+
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
