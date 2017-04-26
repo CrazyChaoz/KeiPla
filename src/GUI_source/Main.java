@@ -127,7 +127,7 @@ public class Main extends Application {
         btn2.setOnAction(e -> {
 
         });
-        btn1.setOnAction(e -> {
+        btn3.setOnAction(e -> {
 
         });
 
@@ -172,26 +172,14 @@ public class Main extends Application {
         grid.add(btn2, 2, 2);
         grid.add(btn3, 3, 2);
 
-        //##########
-        //right upper buttons
-        GridPane grdPn=new GridPane();
-        Button close=new Button();
-        close.setMinSize(32,32);
-        close.setId("close");
-        grdPn.add(close,2,1);
-        Button minimize=new Button();
-        minimize.setMinSize(32,32);
-        minimize.setId("minimize");
-        grdPn.add(minimize,1,1);
-        grdPn.setAlignment(Pos.TOP_RIGHT);
-        //
+
 
 
         HBox box=new HBox();
         box.setAlignment(Pos.CENTER);
         box.setId("background");
         box.getChildren().add(grid);
-        box.getChildren().add(grdPn);
+        box.getChildren().add(getUpperRight());
 
         btn1.setOnAction(e -> {
 
@@ -213,7 +201,24 @@ public class Main extends Application {
 
         stage.show();
     }
+    public HBox getUpperRight(){
+        //####################################
+        HBox box1=new HBox();
 
+        Button minimize=new Button();
+        minimize.setMinSize(32,32);
+        minimize.setId("minimize");
+        box1.getChildren().add(minimize);
+
+
+        Button close=new Button();
+        close.setMinSize(32,32);
+        close.setId("close");
+        box1.getChildren().add(close);
+        box1.setId("buttonarea");
+        //####################################
+        return box1;
+    }
 
     public static void main(String[] args) {
         launch(args);
