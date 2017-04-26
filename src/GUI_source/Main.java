@@ -23,9 +23,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         start_LoginForm();
-
     }
-
+    //##########################################
+    //##########################################
+    //##########################################
     public void start_LoginForm()  {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -36,7 +37,7 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(60);
         grid.setVgap(5);
-        grid.setId("bg1");
+        grid.setId("bg_Login");
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
@@ -74,7 +75,9 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    //##########################################
+    //##########################################
+    //##########################################
     public void startWebView(Stage webStage) {
         StackPane root = new StackPane();
         WebView myWebView = new WebView();
@@ -90,7 +93,9 @@ public class Main extends Application {
         webStage.setScene(scene);
         webStage.show();
     }
-
+    //##########################################
+    //##########################################
+    //##########################################
     public void start_MainMenu()  {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -117,16 +122,19 @@ public class Main extends Application {
         btn1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e){
+
             }
         });
         btn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e){
+
             }
         });
         btn1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e){
+
             }
         });
 
@@ -138,6 +146,9 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    //##########################################
+    //##########################################
+    //##########################################
 
 
     public static void main(String[] args) {
