@@ -8,7 +8,9 @@
 #background{
     -fx-background-color: #FBB03B;
 }
-
+#close{
+    -fx-background-image: url("GUI_closeButton.png");
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,
