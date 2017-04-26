@@ -11,7 +11,7 @@
             #FFFFFF,
             #FFFFFF;
     -fx-background-insets: 0, 2;
-    -fx-background-radius: 10%;
+    -fx-background-radius: 20%;
 }
 
 .text-field:focused {

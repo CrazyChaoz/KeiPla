@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -51,7 +52,8 @@ public class Main extends Application {
         hbBtn.setAlignment(Pos.TOP_RIGHT);
         grid.add(hbBtn, 1, 3);
 
-        btn.setOnAction(new EventHandler<ActionEvent>() {            @Override
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
             public void handle(ActionEvent e) {
                 System.out.println("Button pressed");
             }
@@ -61,7 +63,7 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-
+        stage.getIcons().add(new Image("file:test_java.png"));
         stage.setScene(scene);
         stage.show();
     }
