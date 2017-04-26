@@ -23,9 +23,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         start_LoginForm();
-
     }
-
+    //##########################################
+    //##########################################
+    //##########################################
     public void start_LoginForm()  {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -36,7 +37,7 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(60);
         grid.setVgap(5);
-        grid.setId("bg1");
+        grid.setId("bg_Login");
 
         grid.setPadding(new Insets(25, 25, 25, 25));
 
@@ -62,7 +63,7 @@ public class Main extends Application {
 
                 System.out.println("Button pressed");
                 stage.close();
-                startWebView(new Stage());
+                start_MainMenu();
             }
         });
 
@@ -74,7 +75,9 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    //##########################################
+    //##########################################
+    //##########################################
     public void startWebView(Stage webStage) {
 
         StackPane root = new StackPane();
@@ -92,7 +95,62 @@ public class Main extends Application {
         webStage.setScene(scene);
         webStage.show();
     }
+    //##########################################
+    //##########################################
+    //##########################################
+    public void start_MainMenu()  {
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setTitle("Menu");
 
+
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(60);
+        grid.setVgap(5);
+        grid.setId("bg1");
+
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        Button btn1 = new Button("Singleplayer");
+        Button btn2 = new Button("Multiplayer");
+        Button btn3 = new Button("Options");
+
+
+        grid.add(btn1, 1, 1);
+        grid.add(btn2, 1, 2);
+        grid.add(btn3, 1, 3);
+
+        btn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e){
+
+            }
+        });
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e){
+
+            }
+        });
+        btn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e){
+
+            }
+        });
+
+        Scene scene = new Scene(grid, 800, 450);
+        scene.setFill(Color.TRANSPARENT);
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+        stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
+        stage.setScene(scene);
+        stage.show();
+    }
+    //##########################################
+    //##########################################
+    //##########################################
 
 
     public static void main(String[] args) {
