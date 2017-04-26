@@ -11,6 +11,12 @@
 #close{
     -fx-background-image: url("GUI_closeButton.png");
 }
+#back{
+    -fx-background-image: url("GUI_backButton.png");
+}
+#minimize{
+    -fx-background-image: url("GUI_miniButton.png");
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,
