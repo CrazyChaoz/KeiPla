@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.image.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -17,13 +17,16 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+
 /**
  * Created by testuser on 26.04.2017.
  */
 public class UI {
+    public String NAME=null;
     //##########################################
     //##########################################
     //##########################################
+
     public void start_LoginForm()  {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -55,16 +58,20 @@ public class UI {
         grid.add(hbBtn, 1, 3);
 
         btn.setOnAction(e -> {
-            System.out.println("Button pressed");
-            stage.close();
-            start_MainMenu();
+            System.err.println("Value:"+userTextField.getText()+";");
+            NAME=userTextField.getText();
+            if(NAME!=null&&!NAME.equals("")){
+                stage.close();
+                start_MainMenu();
+            }
         });
 
         Scene scene = new Scene(grid, 800, 450);
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        //stage.getIcons().add(new Image("file:KeiPla-Icon-32.png"));
+
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
     }
@@ -85,6 +92,7 @@ public class UI {
 
         webStage.setTitle("KeiPla");
         webStage.getIcons().add(new Image("file:KeiPla-Icon.png"));
+        webStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
         webStage.setScene(scene);
         webStage.show();
     }
@@ -129,7 +137,7 @@ public class UI {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
     }
@@ -187,36 +195,36 @@ public class UI {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        //stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
         stage.setScene(scene);
 
         stage.show();
     }
 
     public HBox getUpperRight(Stage stage){
+
         //####################################
         HBox box1=new HBox();
+        //####################################
 
         Button minimize=new Button();
         minimize.setMinSize(32,32);
         minimize.setId("minimize");
         box1.getChildren().add(minimize);
+        minimize.setOnAction(e -> stage.setIconified(true));
 
-        minimize.setOnAction(e -> {
-            stage.setIconified(true);
-        });
+        //####################################
 
         Button close=new Button();
         close.setMinSize(32,32);
         close.setId("close");
         box1.getChildren().add(close);
         box1.setId("buttonarea");
+        close.setOnAction(e -> Platform.exit());
 
-
-        close.setOnAction(e -> {
-            Platform.exit();
-        });
         //####################################
+
+
         return box1;
     }
 }
