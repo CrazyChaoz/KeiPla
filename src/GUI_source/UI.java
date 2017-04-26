@@ -31,8 +31,7 @@ public class UI {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Login");
-        stage.setWidth(720);
-        stage.setHeight(448);
+
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -162,7 +161,8 @@ public class UI {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
-
+        stage.setWidth(720);
+        stage.setHeight(448);
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
