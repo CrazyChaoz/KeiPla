@@ -70,7 +70,7 @@ public class Main extends Application {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image("file:KeiPla-Icon-128.png"));
+        stage.getIcons().add(new Image("file:KeiPla-Icon-32.png"));
         stage.setScene(scene);
         stage.show();
     }
