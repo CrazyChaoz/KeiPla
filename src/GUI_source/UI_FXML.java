@@ -27,12 +27,15 @@ import java.io.File;
  */
 public class UI_FXML {
     public String NAME=null;
+    public Stage currStage=null;
     //##########################################
     //##########################################
     //##########################################
 
+
     public void start_LoginForm() throws Exception {
         Stage stage=new Stage();
+        currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Login");
 
@@ -63,6 +66,7 @@ public class UI_FXML {
             NAME=userTextField.getText();
             if(NAME!=null&&!NAME.equals("")){
                 stage.close();
+                currStage=null;
                 try {
                     start_MainMenu();
                 } catch (Exception e1) {
@@ -85,6 +89,7 @@ public class UI_FXML {
     //##########################################
     public void start_MainMenu() throws Exception {
         Stage stage=new Stage();
+        currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
 
