@@ -27,13 +27,13 @@ public class Logic {
 
         switch(hardness){
             case 1:
-                retournage=getXMLInhalt(new File("res\\questions\\ez\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\ez\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator)))+1+".xml"));
                 break;
             case 2:
-                retournage=getXMLInhalt(new File("res\\questions\\mid\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\mid\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator)))+1+".xml"));
                 break;
             case 3:
-                retournage=getXMLInhalt(new File("res\\questions\\hard\\"+rndm.nextInt(getFileNumber(new File("res\\questions\\hard\\")))+1+".xml"));
+                retournage=getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator)))+1+".xml"));
                 break;
         }
         return retournage;
