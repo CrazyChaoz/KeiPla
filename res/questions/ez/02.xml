@@ -1,8 +1,8 @@
 <root>
-    <question>Is JavaFX Easy?</question>
-    <answer>No</answer>
+    <question>ist dies eine weitere antwort ?</question>
+    <answer>Definitiv</answer>
     <answer>Maybe</answer>
     <answer>Possibly</answer>
     <answer>YEAH</answer>
-    <right>4</right>
+    <right>1</right>
 </root>
