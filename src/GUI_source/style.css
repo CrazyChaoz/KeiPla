@@ -74,6 +74,14 @@
     -fx-font-family: "Hyde BRK";
     -fx-text-fill: white;
 }
+#std-button{
+    -fx-background-image: url("res/GUI_button.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 420 100;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,
