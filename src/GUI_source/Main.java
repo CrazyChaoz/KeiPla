@@ -7,7 +7,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        UI ui=new UI();
+        UI_FXML ui=new UI_FXML();
         ui.start_LoginForm();
     }
 
