@@ -28,8 +28,7 @@ public class Controller_Menu implements Initializable {
 
         this.singleplayer.setOnAction(event -> {
             try {
-                Logic.randomFilePicker(1);
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseMode.fxml"))));
             } catch (IOException e) {
                 e.printStackTrace();
             }
