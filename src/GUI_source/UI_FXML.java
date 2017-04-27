@@ -10,10 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -29,14 +26,13 @@ public class UI_FXML {
     public static String NAME=null;
     public static Stage currStage=null;
     public static int score=0;
-    public static UI_FXML instance=null;
+    public static String[] currQuestion=null;
     //##########################################
     //##########################################
     //##########################################
 
 
     public void start_LoginForm() throws Exception {
-        instance=this;
         Stage stage=new Stage();
         currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -96,42 +92,8 @@ public class UI_FXML {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
 
-        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
 
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-        stage.setScene(scene);
-        stage.show();
-    }
-    //#####***##################################
-    //#######*##################################
-    //#######***################################
-    public void start_chooseMode() throws Exception{
-        Stage stage=new Stage();
-        currStage=stage;
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Modus wählen");
-
-        Parent root = FXMLLoader.load(getClass().getResource("ChooseMode.fxml"));
-
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void start_Ingame() throws Exception {
-        Stage stage=new Stage();
-        currStage=stage;
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Los gehts!");
-
-        Parent root = FXMLLoader.load(getClass().getResource("Ingame.fxml"));
 
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
