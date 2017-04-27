@@ -87,12 +87,10 @@ public class UI_FXML {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
-        stage.setWidth(720);
-        stage.setHeight(448);
 
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
 
-        Scene scene = new Scene(root, 411, 312);
+        Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
