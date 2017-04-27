@@ -55,20 +55,13 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
-#singlep{
-    -fx-background-image: url("res/GUI_singlelButton.png");
+#std-button{
+    -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
-}
-#multip{
-    -fx-background-image: url("res/GUI_multiButton.png");
-    -fx-background-color: #FBB03B;
-    -fx-background-size: 200 50;
-}
-#options{
-    -fx-background-image: url("res/GUI_optionenButton.png");
-    -fx-background-color: #FBB03B;
-    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: monospace;
+    -fx-text-fill: white;
 }
 .text-field {
     -fx-background-color:

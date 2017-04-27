@@ -17,10 +17,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
-/**
- * Created by testuser on 26.04.2017.
- */
 public class UI {
     public String NAME=null;
     //##########################################
@@ -114,15 +110,15 @@ public class UI {
         grid.setAlignment(Pos.CENTER);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Button btn1 = new Button();
+        Button btn1 = new Button("Singleplayer");
         btn1.setMinSize(200,50);
-        btn1.setId("singlep");
-        Button btn2 = new Button();
+        btn1.setId("std-button");
+        Button btn2 = new Button("Multiplayer");
         btn2.setMinSize(200,50);
-        btn2.setId("multip");
-        Button btn3 = new Button();
+        btn2.setId("std-button");
+        Button btn3 = new Button("Optionen");
         btn3.setMinSize(200,50);
-        btn3.setId("options");
+        btn3.setId("std-button");
 
         grid.add(btn1, 1, 1);
         grid.add(btn2, 1, 2);
