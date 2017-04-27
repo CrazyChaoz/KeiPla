@@ -24,8 +24,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="std-button" minHeight="50" minWidth="200" mnemonicParsing="false" text="Singleplayer" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
-            <Button id="std-button" minHeight="50" minWidth="200" mnemonicParsing="false" text="Multiplayer" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button id="std-button" fx:id="singleplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Singleplayer" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+            <Button id="std-button" fx:id="multiplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Multiplayer" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Button id="std-button" minHeight="50" minWidth="200" mnemonicParsing="false" text="Optionen" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
          </children>
       </GridPane>
