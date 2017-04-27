@@ -92,10 +92,9 @@ public class UI_FXML {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
 
-        Pane root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
 
 
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml")));
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 

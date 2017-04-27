@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller_Menu implements Initializable {
     private static String selected=null;
     private static int hardness;
 
@@ -55,25 +55,32 @@ public class Controller implements Initializable {
         });
         this.close.setOnAction(event -> {
             UI_FXML.currStage.close();
-        });
+        });/*
         this.startgame.setOnAction(event -> {
-
+            this.newQuestion();
         });
+
         this.answer1.setOnAction(event -> {
             selected=UI_FXML.currQuestion[1];
+
         });
+
         this.answer2.setOnAction(event -> {
             selected=UI_FXML.currQuestion[2];
         });
+
         this.answer3.setOnAction(event -> {
             selected=UI_FXML.currQuestion[3];
         });
+
         this.answer4.setOnAction(event -> {
             selected=UI_FXML.currQuestion[4];
         });
+
         this.submit.setOnAction(event -> {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
+                newQuestion();
             }else{
                 try {
                     UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
@@ -81,17 +88,20 @@ public class Controller implements Initializable {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
     }
 
     public void newQuestion(){
-        UI_FXML.currQuestion=Logic.randomFilePicker(hardness);
+        try {
+            UI_FXML.currQuestion=Logic.randomFilePicker(hardness);
+        }catch (Exception e){
 
         this.question.setText(UI_FXML.currQuestion[0]);
         this.answer1.setText(UI_FXML.currQuestion[1]);
         this.answer2.setText(UI_FXML.currQuestion[2]);
         this.answer3.setText(UI_FXML.currQuestion[3]);
         this.answer4.setText(UI_FXML.currQuestion[4]);
+        }
 
     }
 }
