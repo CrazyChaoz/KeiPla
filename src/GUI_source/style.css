@@ -96,7 +96,7 @@
     -fx-background-size: 420 100;
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #drop{
     -fx-background-image: url("res/GUI_drop.png");
@@ -104,7 +104,7 @@
     -fx-background-size: 300 38;
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 .text-field {
     -fx-background-color:
