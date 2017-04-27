@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -9,14 +10,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane fx:controller="GUI_source.Controller_ChooseMode" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Menu">
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
   <center>
-    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="289.0" prefWidth="200" BorderPane.alignment="CENTER">
+    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="205.0" prefWidth="251.0" BorderPane.alignment="CENTER">
       <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -24,20 +28,28 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-        <Button id="std-button" fx:id="singleplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Singleplayer" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
-        <Button id="std-button" fx:id="multiplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Multiplayer" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <Button id="std-button" fx:id="options" minHeight="50" minWidth="200" mnemonicParsing="false" text="Optionen" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+        <Button id="schwer" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Button id="mittel" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Button id="leicht" fx:id="options" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
       </children>
     </GridPane>
   </center>
   <top>
     <HBox prefHeight="42.0" prefWidth="177.0" spacing="10.0" BorderPane.alignment="CENTER">
       <children>
+            <TextField prefHeight="66.0" prefWidth="143.0" text="Schwierigkeitsgrad">
+               <HBox.margin>
+                  <Insets right="35.0" />
+               </HBox.margin>
+            </TextField>
         <Button fx:id="minimize" mnemonicParsing="false" />
         <Button fx:id="close" mnemonicParsing="false" />
       </children>
       <BorderPane.margin>
-        <Insets bottom="-27.0" left="308.0" top="7.0" />
-      </BorderPane.margin></HBox>
+        <Insets bottom="-27.0" left="114.0" top="7.0" />
+      </BorderPane.margin>
+         <padding>
+            <Insets left="7.0" right="7.0" />
+         </padding></HBox>
   </top>
 </BorderPane>
