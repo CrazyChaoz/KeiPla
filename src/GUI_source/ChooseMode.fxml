@@ -19,10 +19,10 @@
     <HBox layoutX="248.0" layoutY="0.0" prefHeight="44.0" prefWidth="147.0" />
     <GridPane layoutX="46.0" layoutY="74.0" prefHeight="166.0">
       <children>
-        <RadioButton id="leicht" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <RadioButton id="mittel" alignment="CENTER" mnemonicParsing="false" prefWidth="102.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <RadioButton id="schwer" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <SplitMenuButton id="splitmenue" mnemonicParsing="false" prefHeight="38.0" prefWidth="300.0" text="Thema" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+        <RadioButton id="leicht" fx:id="schwer" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <RadioButton id="mittel" fx:id="mittel" alignment="CENTER" mnemonicParsing="false" prefWidth="102.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <RadioButton id="schwer" fx:id="schwer" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <SplitMenuButton id="splitmenue" fx:id="drop" mnemonicParsing="false" prefHeight="38.0" prefWidth="300.0" text="Thema" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="2">
           <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
