@@ -1,7 +1,11 @@
 
 @font-face {
-    font-family: 'YourFontName';
+    font-family: 'Comix';
     src: url('res/Comix-Regular.ttf');
+}
+@font-face {
+    font-family: 'Hyde';
+    src: url('res/Hyde.ttf');
 }
 
 #bg_Login{
@@ -41,12 +45,12 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 159 38;
     -fx-font-size: 14pt;
-    -fx-font-family: Comix-Regular;
+    -fx-font-family: Hyde;
     -fx-text-fill: white;
 }
 #difficulty{
     -fx-font-size: 26pt;
-    -fx-font-family: monospace;
+    -fx-font-family: Hyde;
     -fx-text-fill: white;
 }
 #leicht{
@@ -69,7 +73,7 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
-    -fx-font-family: Comix-Regular;
+    -fx-font-family: Hyde;
     -fx-text-fill: white;
 }
 .text-field {
