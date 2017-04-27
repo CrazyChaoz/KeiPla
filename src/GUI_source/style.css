@@ -3,7 +3,7 @@
     src: url('res/Comix-Regular.ttf');
 }
 @font-face {
-    src: url('./res/Hyde.ttf');
+    src: url('res/Hyde.ttf');
 }
 
 #bg_Login{

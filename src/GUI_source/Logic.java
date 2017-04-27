@@ -1,6 +1,18 @@
 package GUI_source;
 
-
+/*
+    Directory-Structure
+    /
+    |-Thema_1
+    |   |-1 -> leicht (ez)
+    |   |-2 -> mittel (mid)
+    |   |-3 -> schwer (hard)
+    |-Thema_2
+    |   |-1 -> leicht (ez)
+    |   |-2 -> mittel (mid)
+    |   |-3 -> schwer (hard)
+    |-...
+ */
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
