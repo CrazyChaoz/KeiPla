@@ -26,7 +26,7 @@
          <children>
             <Button id="std-button" fx:id="singleplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Singleplayer" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
             <Button id="std-button" fx:id="multiplayer" minHeight="50" minWidth="200" mnemonicParsing="false" text="Multiplayer" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button id="std-button" minHeight="50" minWidth="200" mnemonicParsing="false" text="Optionen" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <Button id="std-button" fx:id="options" minHeight="50" minWidth="200" mnemonicParsing="false" text="Optionen" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
          </children>
       </GridPane>
    </center>
