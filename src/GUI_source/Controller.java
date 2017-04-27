@@ -21,6 +21,8 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
         this.singleplayer.setOnAction(event -> {
 
+            UI_FXML.currStage.close();
+            UI_FXML.instance.start_MainMenu();
         });
         this.minimize.setOnAction(event -> {
 
