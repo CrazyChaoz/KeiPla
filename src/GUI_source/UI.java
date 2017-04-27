@@ -1,10 +1,13 @@
 package GUI_source;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
@@ -18,6 +21,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class UI {
     public String NAME=null;
@@ -188,6 +193,13 @@ public class UI {
         lbl2.setId("difficulty");
         lbl3.setId("difficulty");
 
+        File dir = new File("./res");
+        ObservableList<String> options = FXCollections.observableArrayList(dir.list());
+        ComboBox topix = new ComboBox(options);
+        topix.setMinSize(200,50);
+        topix.setPromptText("Thema auswählen...");
+        grid.add(topix,1,3);
+
         grid.add(lbl1, 1, 1);
         grid.add(lbl2, 2, 1);
         grid.add(lbl3, 3, 1);
@@ -211,7 +223,6 @@ public class UI {
 
         });
 
-        //
         Scene scene = new Scene(box, 700, 450);
 
         scene.setFill(Color.TRANSPARENT);
