@@ -50,7 +50,7 @@
     -fx-background-image: url("res/GUI_slim.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 159 38;
-    -fx-font-size: 14pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Comix";
     -fx-text-fill: white;
 }
