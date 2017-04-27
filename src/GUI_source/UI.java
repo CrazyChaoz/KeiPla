@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -126,7 +124,7 @@ public class UI {
         grid.add(btn2, 1, 2);
         grid.add(btn3, 1, 3);
 
-        HBox box=new HBox();
+        VBox box=new VBox();
         box.setAlignment(Pos.CENTER);
         box.setId("background");
         box.getChildren().add(grid);
@@ -195,7 +193,7 @@ public class UI {
         grid.add(btn2, 2, 2);
         grid.add(btn3, 3, 2);
 
-        HBox box=new HBox();
+        VBox box=new VBox();
         box.setAlignment(Pos.CENTER);
         box.setId("background");
         box.getChildren().add(grid);
