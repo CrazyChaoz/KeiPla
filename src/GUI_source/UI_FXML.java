@@ -26,14 +26,17 @@ import java.io.File;
  * Created by testuser on 27.04.2017.
  */
 public class UI_FXML {
-    public String NAME=null;
-    public Stage currStage=null;
+    public static String NAME=null;
+    public static Stage currStage=null;
+    public static int score=0;
+    public static UI_FXML instance=null;
     //##########################################
     //##########################################
     //##########################################
 
 
     public void start_LoginForm() throws Exception {
+        instance=this;
         Stage stage=new Stage();
         currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
@@ -106,121 +109,21 @@ public class UI_FXML {
     //#####***##################################
     //#######*##################################
     //#######***################################
-    public void start_chooseMode(){
+    public void start_chooseMode() throws Exception{
         Stage stage=new Stage();
+        currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Menu");
-        stage.setWidth(720);
-        stage.setHeight(448);
+        stage.setTitle("Modus wählen");
 
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(60);
-        grid.setVgap(5);
-        grid.setId("background");
+        Parent root = FXMLLoader.load(getClass().getResource("ChooseMode.fxml"));
 
-
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        Button btn1 = new Button();
-        btn1.setMinSize(48,48);
-        btn1.setId("leicht");
-        Label lbl1=new Label("Leicht");
-        Button btn2 = new Button();
-        btn2.setMinSize(48,48);
-        btn2.setId("mittel");
-        Label lbl2=new Label("Mittel");
-        Button btn3 = new Button();
-        btn3.setMinSize(48,48);
-        btn3.setId("schwer");
-        Label lbl3=new Label("Schwer");
-
-        lbl1.setId("difficulty");
-        lbl2.setId("difficulty");
-        lbl3.setId("difficulty");
-
-        grid.add(lbl1, 1, 1);
-        grid.add(lbl2, 2, 1);
-        grid.add(lbl3, 3, 1);
-        grid.add(btn1, 1, 2);
-        grid.add(btn2, 2, 2);
-        grid.add(btn3, 3, 2);
-
-        VBox box=new VBox();
-        box.setAlignment(Pos.CENTER);
-        box.setId("background");
-        box.getChildren().add(grid);
-        box.getChildren().add(getUpperRight(stage));
-
-        btn1.setOnAction(e -> {
-
-        });
-        btn2.setOnAction(e -> {
-
-        });
-        btn1.setOnAction(e -> {
-
-        });
-
-        //
-        Scene scene = new Scene(box, 700, 450);
-
+        Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
-
         stage.show();
-    }
-
-    public HBox getUpperRight(Stage stage){
-
-        //####################################
-        HBox box1=new HBox();
-        box1.setAlignment(Pos.TOP_RIGHT);
-        box1.setSpacing(10);
-        //####################################
-
-        Button minimize=new Button();
-        minimize.setId("minimize");
-        box1.getChildren().add(minimize);
-        minimize.setOnAction(e -> stage.setIconified(true));
-
-        //####################################
-
-        Button close=new Button();
-        close.setId("close");
-        box1.getChildren().add(close);
-        box1.setId("buttonarea");
-        close.setOnAction(e -> Platform.exit());
-
-        //####################################
-        return box1;
-    }
-
-    public HBox getReturnButton(Stage stage){
-
-        //####################################
-        HBox box1=new HBox();
-        box1.setAlignment(Pos.TOP_RIGHT);
-        box1.setSpacing(10);
-        //####################################
-
-        Button ret=new Button();
-        ret.setId("back");
-        box1.getChildren().add(ret);
-        ret.setOnAction(e -> {
-            stage.close();
-            try {
-                start_MainMenu();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        });
-
-        //####################################
-        return box1;
     }
 
     public static void main(String[] args) throws Exception {
