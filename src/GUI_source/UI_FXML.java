@@ -125,6 +125,22 @@ public class UI_FXML {
         stage.setScene(scene);
         stage.show();
     }
+    public void start_Ingame() throws Exception {
+        Stage stage=new Stage();
+        currStage=stage;
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setTitle("Los gehts!");
+
+        Parent root = FXMLLoader.load(getClass().getResource("Ingame.fxml"));
+
+        Scene scene = new Scene(root);
+        scene.setFill(Color.TRANSPARENT);
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) throws Exception {
         UI_FXML ui=new UI_FXML();
