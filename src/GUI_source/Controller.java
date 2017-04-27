@@ -22,6 +22,14 @@ public class Controller implements Initializable {
     private Button singleplayer;
     @FXML
     private Button startgame;
+    @FXML
+    private Button question;
+    @FXML
+    private Button answer1;
+    @FXML
+    private Button singleplayer;
+    @FXML
+    private Button startgame;
 
 
 
