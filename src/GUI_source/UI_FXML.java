@@ -96,7 +96,6 @@ public class UI_FXML {
 
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml")));
         scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
