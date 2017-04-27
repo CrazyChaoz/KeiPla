@@ -49,7 +49,7 @@
 #slim{
     -fx-background-image: url("res/GUI_slim.png");
     -fx-background-color: #FBB03B;
-    -fx-background-size: 159 38;
+    -fx-background-size: 200 30;
     -fx-font-size: 12pt;
     -fx-font-family: "Comix";
     -fx-text-fill: #FBB03B;
@@ -82,7 +82,7 @@
     -fx-font-family: "Hyde BRK";
     -fx-text-fill: white;
 }
-#answer1,#answer2,#answer3,#answer4{
+#answer{
     -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
@@ -96,7 +96,7 @@
     -fx-background-size: 420 100;
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: black;
+    -fx-text-fill: white;
 }
 #drop{
     -fx-background-image: url("res/GUI_drop.png");
