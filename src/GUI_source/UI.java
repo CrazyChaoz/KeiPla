@@ -17,6 +17,8 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+
 public class UI {
     public String NAME=null;
     //##########################################
@@ -69,7 +71,7 @@ public class UI {
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
 
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
     }
@@ -90,7 +92,7 @@ public class UI {
 
         webStage.setTitle("KeiPla");
         webStage.getIcons().add(new Image("file:KeiPla-Icon.png"));
-        webStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
+        webStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         webStage.setScene(scene);
         webStage.show();
     }
@@ -146,7 +148,7 @@ public class UI {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
     }
@@ -214,7 +216,7 @@ public class UI {
         scene.setFill(Color.TRANSPARENT);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res\\KeiPla-Icon-128.png")));
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
 
         stage.show();
