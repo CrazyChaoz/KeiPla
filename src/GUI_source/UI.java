@@ -46,8 +46,8 @@ public class UI {
         pwBox.setPromptText("Password");
         grid.add(pwBox, 1, 2);*/
 
-        Button btn = new Button();
-        btn.setId("btn_login");
+        Button btn = new Button("Anmelden");
+        btn.setId("small-button");
         btn.setMinSize(160,40);
         HBox hbBtn = new HBox();
 
