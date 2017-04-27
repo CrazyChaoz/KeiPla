@@ -211,6 +211,7 @@ public class UI {
 
         });
 
+        //
         Scene scene = new Scene(box, 700, 450);
 
         scene.setFill(Color.TRANSPARENT);
