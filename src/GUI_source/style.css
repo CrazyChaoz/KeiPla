@@ -46,6 +46,14 @@
     -fx-font-family: "Hyde BRK";
     -fx-text-fill: white;
 }
+#slim{
+    -fx-background-image: url("res/GUI_slim.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 159 38;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: white;
+}
 #difficulty{
     -fx-font-size: 16pt;
     -fx-font-family: "Hyde BRK";
@@ -74,7 +82,15 @@
     -fx-font-family: "Hyde BRK";
     -fx-text-fill: white;
 }
-#std-button{
+#answer1,#answer2,#answer3,#answer4{
+    -fx-background-image: url("res/GUI_button.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: white;
+}
+#question{
     -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 420 100;
