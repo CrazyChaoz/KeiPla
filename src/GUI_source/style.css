@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: 'YourFontName';
+    src: url('res/Comix-Regular.ttf');
+}
+
 #bg_Login{
     -fx-background-color: rgba(0, 100, 100, 0);
     -fx-background-repeat: stretch;
