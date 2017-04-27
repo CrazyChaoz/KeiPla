@@ -56,8 +56,8 @@ public class Controller_Game implements Initializable {
         this.submit.setOnAction(event -> {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
-                UI_FXML.currQuestion=Logic.randomFilePicker(1);
                 try {
+                    Logic.randomFilePicker(1);
                     UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
                 } catch(IOException e){}
             }else{

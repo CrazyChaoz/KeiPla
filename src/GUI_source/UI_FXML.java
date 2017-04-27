@@ -26,7 +26,7 @@ public class UI_FXML {
     public static String NAME=null;
     public static Stage currStage=null;
     public static int score=0;
-    public static String[] currQuestion=null;
+    public static String[] currQuestion=new String[6];
     //##########################################
     //##########################################
     //##########################################
