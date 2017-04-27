@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_ChooseMode">
+<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_ChooseMode">
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
@@ -37,7 +37,7 @@
   <top>
     <HBox prefHeight="42.0" prefWidth="177.0" spacing="10.0" BorderPane.alignment="CENTER">
       <children>
-            <TextField prefHeight="66.0" prefWidth="143.0" text="Schwierigkeitsgrad">
+            <TextField fx:id="title" prefHeight="66.0" prefWidth="143.0" text="Schwierigkeitsgrad">
                <HBox.margin>
                   <Insets right="35.0" />
                </HBox.margin>

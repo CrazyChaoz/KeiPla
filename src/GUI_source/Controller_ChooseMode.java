@@ -34,7 +34,7 @@ public class Controller_ChooseMode implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        /*
         this.startgame.setOnAction(event -> {
             try {
                 Logic.randomFilePicker(1);
@@ -44,7 +44,7 @@ public class Controller_ChooseMode implements Initializable {
                 UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
             } catch(IOException e){}
 
-        });
+        });*/
 
         title.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
