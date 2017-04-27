@@ -13,8 +13,8 @@
    <right>
       <HBox prefHeight="100.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button">
+            <Button mnemonicParsing="false" id="minimize" />
+            <Button mnemonicParsing="false" id="close">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -39,9 +39,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="Button" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
-            <Button mnemonicParsing="false" text="Button" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Button mnemonicParsing="false" text="Button" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <Button mnemonicParsing="false" minWidth="200" minHeight="50" id="std-button" text="Singleplayer" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM" />
+            <Button mnemonicParsing="false" minWidth="200" minHeight="50" id="std-button" text="Multiplayer" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" minWidth="200" minHeight="50" id="std-button" text="Optionen" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
          </children>
       </GridPane>
    </center>

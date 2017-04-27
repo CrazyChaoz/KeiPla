@@ -86,9 +86,9 @@ public class UI_FXML {
     public void start_MainMenu() throws Exception {
         Stage stage=new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Menu");/*
+        stage.setTitle("Menu");
         stage.setWidth(720);
-        stage.setHeight(448);*/
+        stage.setHeight(448);
 
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
 
