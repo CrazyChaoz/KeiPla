@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     private static String selected=null;
+    private static int hardness;
+
     @FXML
     private Button close;
     @FXML
@@ -32,6 +34,8 @@ public class Controller implements Initializable {
     private Button answer3;
     @FXML
     private Button answer4;
+    @FXML
+    private Button submit;
 
 
     @Override
@@ -53,12 +57,7 @@ public class Controller implements Initializable {
             UI_FXML.currStage.close();
         });
         this.startgame.setOnAction(event -> {
-            Logic.randomFilePicker();
-            this.question.setText(UI_FXML.currQuestion[0]);
-            this.answer1.setText(UI_FXML.currQuestion[1]);
-            this.answer2.setText(UI_FXML.currQuestion[2]);
-            this.answer3.setText(UI_FXML.currQuestion[3]);
-            this.answer4.setText(UI_FXML.currQuestion[4]);
+
         });
         this.answer1.setOnAction(event -> {
             selected=UI_FXML.currQuestion[1];
@@ -72,5 +71,27 @@ public class Controller implements Initializable {
         this.answer4.setOnAction(event -> {
             selected=UI_FXML.currQuestion[4];
         });
+        this.submit.setOnAction(event -> {
+            if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
+                UI_FXML.score++;
+            }else{
+                try {
+                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void newQuestion(){
+        UI_FXML.currQuestion=Logic.randomFilePicker(hardness);
+
+        this.question.setText(UI_FXML.currQuestion[0]);
+        this.answer1.setText(UI_FXML.currQuestion[1]);
+        this.answer2.setText(UI_FXML.currQuestion[2]);
+        this.answer3.setText(UI_FXML.currQuestion[3]);
+        this.answer4.setText(UI_FXML.currQuestion[4]);
+
     }
 }
