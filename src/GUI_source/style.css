@@ -47,7 +47,7 @@
     -fx-text-fill: white;
 }
 #difficulty{
-    -fx-font-size: 26pt;
+    -fx-font-size: 16pt;
     -fx-font-family: "Hyde BRK";
     -fx-text-fill: white;
 }
@@ -78,6 +78,14 @@
     -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 420 100;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
+#drop{
+    -fx-background-image: url("res/GUI_drop.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 300 38;
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
