@@ -1,8 +1,8 @@
 <root>
-    <question>Was kam zuerst?</question>
-    <answer>Huhn</answer>
-    <answer>Ei</answer>
-    <answer>John Cena</answer>
-    <answer>Elvirs Bizeps</answer>
-    <right>1</right>
+    <question>Der wie vielte US-Präsident ist Donald Trump?</question>
+    <answer>42</answer>
+    <answer>44</answer>
+    <answer>45</answer>
+    <answer>46</answer>
+    <right>3</right>
 </root>
