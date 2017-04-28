@@ -29,7 +29,10 @@ public class Logic {
             wh=0;
             switch(hardness){
                 case 1:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator)))+1+".xml"));
+                    String path="res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez")))+1+".xml";
+                    System.out.println(path);
+                    File file=new File(path);
+                    getXMLInhalt(file);
                     break;
                 case 2:
                     getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator)))+1+".xml"));
