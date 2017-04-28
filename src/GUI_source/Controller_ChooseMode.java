@@ -42,7 +42,7 @@ public class Controller_ChooseMode implements Initializable {
         /*
         this.startgame.setOnAction(event -> {
             try {
-                Logic.randomFilePicker(1);
+                Logic.randomFilePicker(selected);
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.UNIFIED);
                 UI_FXML.currStage.setTitle("DAS SPIEL");
@@ -50,6 +50,11 @@ public class Controller_ChooseMode implements Initializable {
             } catch(IOException e){}
 
         });*/
+
+        this.ez.setOnAction(event -> selected=1);
+        this.mid.setOnAction(event -> selected=2);
+        this.hard.setOnAction(event -> selected=3);
+
 
         title.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
             @Override
