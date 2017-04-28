@@ -22,7 +22,7 @@ import org.w3c.dom.Document;
 public class Logic {
     private static int wh=1;
 
-    public static void randomFilePicker(int hardness){
+    public Logic(int hardness){
         Random rndm=new Random();
 
         while(wh==1){
@@ -47,12 +47,13 @@ public class Logic {
         }
     }
 
-    public static void getXMLInhalt(File file){
+    private void getXMLInhalt(File file){
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         Document document;
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(file);
+            UI_FXML.currQuestion=new String[6];
             UI_FXML.currQuestion[0] = document.getElementsByTagName("question").item(0).getTextContent();
             UI_FXML.currQuestion[1] = document.getElementsByTagName("answer").item(0).getTextContent();
             UI_FXML.currQuestion[2] = document.getElementsByTagName("answer").item(1).getTextContent();
@@ -64,7 +65,7 @@ public class Logic {
         }
     }
 
-    public static int getFileNumber(File folder){
+    public int getFileNumber(File folder){
         return folder.list().length;
     }/*
     public static void main(String[] args) {

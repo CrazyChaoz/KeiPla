@@ -44,7 +44,7 @@ public class Controller_ChooseMode implements Initializable {
 
         this.startgame.setOnAction(event -> {
             try {
-                Logic.randomFilePicker(selected);
+                new Logic(selected);
                 UI_FXML.hardness=selected;
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);

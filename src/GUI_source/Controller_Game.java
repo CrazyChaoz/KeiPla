@@ -59,8 +59,9 @@ public class Controller_Game implements Initializable {
         this.submit.setOnAction(event -> {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
+                setText_();
                 try {
-                    Logic.randomFilePicker(UI_FXML.hardness);
+                    new Logic(UI_FXML.hardness);
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("DAS SPIEL");
@@ -87,5 +88,12 @@ public class Controller_Game implements Initializable {
         this.answer2.setText(UI_FXML.currQuestion[2]);
         this.answer3.setText(UI_FXML.currQuestion[3]);
         this.answer4.setText(UI_FXML.currQuestion[4]);
+    }
+    public void setText_(){
+        this.question.setText("_--");
+        this.answer1.setText("_--");
+        this.answer2.setText("_--");
+        this.answer3.setText("_--");
+        this.answer4.setText("_--");
     }
 }
