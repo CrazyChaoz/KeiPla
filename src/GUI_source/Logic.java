@@ -40,6 +40,9 @@ public class Logic {
                 case 3:
                     getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator)))+1+".xml"));
                     break;
+
+                default:
+                    throw new RuntimeException("Wrong or no Hardness entered");
             }
         }
     }

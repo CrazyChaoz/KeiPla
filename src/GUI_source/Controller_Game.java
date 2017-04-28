@@ -17,7 +17,6 @@ import java.util.ResourceBundle;
 
 public class Controller_Game implements Initializable {
     private static String selected=null;
-    private static int hardness=UI_FXML.hardness;
 
     @FXML
     private Button question;
@@ -61,7 +60,7 @@ public class Controller_Game implements Initializable {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
                 try {
-                    Logic.randomFilePicker(hardness);
+                    Logic.randomFilePicker(UI_FXML.hardness);
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("DAS SPIEL");
@@ -83,13 +82,10 @@ public class Controller_Game implements Initializable {
 
 
     public void setText(){
-
         this.question.setText(UI_FXML.currQuestion[0]);
         this.answer1.setText(UI_FXML.currQuestion[1]);
         this.answer2.setText(UI_FXML.currQuestion[2]);
         this.answer3.setText(UI_FXML.currQuestion[3]);
         this.answer4.setText(UI_FXML.currQuestion[4]);
-
-
     }
 }
