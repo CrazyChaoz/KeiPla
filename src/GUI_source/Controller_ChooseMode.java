@@ -39,17 +39,18 @@ public class Controller_ChooseMode implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*
+
         this.startgame.setOnAction(event -> {
             try {
                 Logic.randomFilePicker(selected);
                 UI_FXML.currStage.close();
-                UI_FXML.currStage=new Stage(StageStyle.UNIFIED);
+                UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                 UI_FXML.currStage.setTitle("DAS SPIEL");
                 UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                UI_FXML.currStage.show();
             } catch(IOException e){}
 
-        });*/
+        });
 
         this.ez.setOnAction(event -> selected=1);
         this.mid.setOnAction(event -> selected=2);
