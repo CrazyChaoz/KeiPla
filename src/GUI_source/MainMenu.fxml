@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.Label?>
 <BorderPane fx:controller="GUI_source.Controller_Menu" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@style.css" />
@@ -30,14 +31,25 @@
          </children>
       </GridPane>
    </center>
-   <top>
-      <HBox prefHeight="42.0" prefWidth="177.0" spacing="10.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="minimize" mnemonicParsing="false" />
-            <Button fx:id="close" mnemonicParsing="false" />
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="-27.0" left="308.0" top="7.0" />
-         </BorderPane.margin></HBox>
-   </top>
+    <top>
+        <HBox prefHeight="42.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Hauptmenü">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                    <padding>
+                        <Insets right="1.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="minimize" mnemonicParsing="false" />
+                <Button fx:id="close" mnemonicParsing="false" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="-43.0" left="95.0" right="2.0" top="7.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="7.0" right="7.0" />
+            </padding></HBox>
+    </top>
 </BorderPane>
