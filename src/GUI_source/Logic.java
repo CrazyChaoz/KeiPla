@@ -20,7 +20,7 @@ import java.util.Random;
 import org.w3c.dom.Document;
 
 public class Logic {
-    private static int wh=1;
+    private int wh=1;
 
     public Logic(int hardness){
         Random rndm=new Random();
