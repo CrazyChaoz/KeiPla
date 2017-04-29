@@ -84,45 +84,6 @@ public class Controller_Highscore implements Initializable {
     public void setText(){
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         Document document;
-        List list=new ArrayList<String[]>();
-        String[] s=new String[2];
-
-        try {
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            document = documentBuilder.parse("res"+ File.separator+"Highscore.xml");
-            for(int i=0;;i++) {
-                s[0]=document.getElementsByTagName("name").item(i).getTextContent();
-                s[1]=document.getElementsByTagName("score").item(i).getTextContent();
-                list.add(s);
-            }
-        }catch(SAXException e){
-
-        }catch(IOException e){
-
-        }catch(Exception e){
-            System.err.println("Exception"+e.getMessage());
-        }
-        Collections.sort(list, new Comparator<String[]>() {
-
-            @Override
-            public int compare(String[] o1, String[] o2){
-                if(!o1[1].equals(o2[1])){
-                    return Integer.parseInt(o1[1])-Integer.parseInt(o2[1]);
-                }
-                return o1[0].compareTo(o2[0]);
-            }
-        });
-
-        this.score1.setText(((String[])list.get(0))[1]);
-        this.score2.setText(((String[])list.get(1))[1]);
-        this.score3.setText(((String[])list.get(2))[1]);
-        this.score4.setText(((String[])list.get(3))[1]);
-        this.score5.setText(((String[])list.get(4))[1]);
-    }
-
-    public static void Test_setText(){
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        Document document;
         List<String[]> list=new ArrayList<String[]>();
         String[] s=new String[2];
 
@@ -134,8 +95,7 @@ public class Controller_Highscore implements Initializable {
                 s[0]=document.getElementsByTagName("name").item(i).getTextContent();
                 s[1]=document.getElementsByTagName("score").item(i).getTextContent();
                 System.out.println(s[0]+s[1]);
-                System.out.println("##--##--##");
-                list.add(s);
+                list.add(new String[]{s[0], s[1]});
                 i++;
             }
         }catch(SAXException e){
@@ -150,18 +110,25 @@ public class Controller_Highscore implements Initializable {
             @Override
             public int compare(String[] o1, String[] o2){
                 if(!o1[1].equals(o2[1])){
-                    return Integer.parseInt(o1[1])-Integer.parseInt(o2[1]);
+                    return Integer.parseInt(o2[1])-Integer.parseInt(o1[1]);
                 }
                 return o1[0].compareTo(o2[0]);
             }
         });
 
-        for(String[] st:list)
-            System.out.println(st[0]+st[1]);
+        this.score1.setText("--");
+        this.score2.setText("--");
+        this.score3.setText("--");
+        this.score4.setText("--");
+        this.score5.setText("--");
 
+        try{
+        this.score1.setText((list.get(0))[1]);
+        this.score2.setText((list.get(1))[1]);
+        this.score3.setText((list.get(2))[1]);
+        this.score4.setText((list.get(3))[1]);
+        this.score5.setText((list.get(4))[1]);
+        }catch(Exception e){}
     }
 
-    public static void main(String[] args) {
-        Controller_Highscore.Test_setText();
-    }
 }
