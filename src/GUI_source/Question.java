@@ -24,21 +24,28 @@ public class Question {
 
     public Question(int hardness){
         Random rndm=new Random();
-
+        File file;
+        String path;
         while(wh==1){
             wh=0;
             switch(hardness){
                 case 1:
-                    String path="res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez")))+1)+".xml";
+                    path="res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez")))+1)+".xml";
                     System.out.println(path);
-                    File file=new File(path);
+                    file=new File(path);
                     getXMLInhalt(file);
                     break;
                 case 2:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator)))+1+".xml"));
+                    path="res"+ File.separator+"questions"+ File.separator+"mid"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid")))+1)+".xml";
+                    System.out.println(path);
+                    file=new File(path);
+                    getXMLInhalt(file);
                     break;
                 case 3:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator)))+1+".xml"));
+                    path="res"+ File.separator+"questions"+ File.separator+"hard"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard")))+1)+".xml";
+                    System.out.println(path);
+                    file=new File(path);
+                    getXMLInhalt(file);
                     break;
 
                 default:
