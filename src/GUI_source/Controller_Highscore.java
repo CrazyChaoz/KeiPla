@@ -123,14 +123,12 @@ public class Controller_Highscore implements Initializable {
     public static void Test_setText(){
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         Document document;
-        List list=new ArrayList<String[]>();
+        List<String[]> list=new ArrayList<String[]>();
         String[] s=new String[2];
 
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            System.out.println("##--##--##");
             document = documentBuilder.parse("res"+ File.separator+"Highscore.xml");
-            System.out.println("##--##--##");
             int i=0;
             while(true){
                 s[0]=document.getElementsByTagName("name").item(i).getTextContent();
@@ -145,7 +143,7 @@ public class Controller_Highscore implements Initializable {
         }catch(IOException e){
             System.err.println("IOEX");
         }catch(Exception e){
-            System.err.println("Exception"+e.getMessage());
+            System.err.println("Exception: "+e.getMessage());
         }
         Collections.sort(list, new Comparator<String[]>() {
 
@@ -158,11 +156,9 @@ public class Controller_Highscore implements Initializable {
             }
         });
 
-        System.out.println(((String[])list.get(0))[1]);
-        System.out.println(((String[])list.get(1))[1]);
-        System.out.println(((String[])list.get(2))[1]);
-        System.out.println(((String[])list.get(3))[1]);
-        System.out.println(((String[])list.get(4))[1]);
+        for(String[] st:list)
+            System.out.println(st[0]+st[1]);
+
     }
 
     public static void main(String[] args) {
