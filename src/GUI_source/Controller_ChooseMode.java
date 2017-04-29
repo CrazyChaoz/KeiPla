@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -44,7 +42,7 @@ public class Controller_ChooseMode implements Initializable {
 
         this.startgame.setOnAction(event -> {
             try {
-                new Logic(selected);
+                new Question(selected);
                 UI_FXML.hardness=selected;
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);

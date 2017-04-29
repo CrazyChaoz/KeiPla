@@ -19,10 +19,10 @@ import java.io.File;
 import java.util.Random;
 import org.w3c.dom.Document;
 
-public class Logic {
+public class Question {
     private int wh=1;
 
-    public Logic(int hardness){
+    public Question(int hardness){
         Random rndm=new Random();
 
         while(wh==1){
@@ -70,7 +70,7 @@ public class Logic {
     }/*
     public static void main(String[] args) {
 
-        for (String s:Logic.randomFilePicker(1)) {
+        for (String s:Question.randomFilePicker(1)) {
             System.out.println(s);
         }
 

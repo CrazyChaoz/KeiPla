@@ -61,7 +61,7 @@ public class Controller_Game implements Initializable {
                 UI_FXML.score++;
                 setText_();
                 try {
-                    new Logic(UI_FXML.hardness);
+                    new Question(UI_FXML.hardness);
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("DAS SPIEL");
