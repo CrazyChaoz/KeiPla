@@ -36,27 +36,35 @@
          </padding>
     </GridPane>
   </center>
-  <top>
-    <HBox prefHeight="42.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
-      <children>
-            <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Schwierigkeitsgrad">
-               <HBox.margin>
-                  <Insets right="15.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets right="1.0" />
-               </padding>
-            </Button>
-        <Button fx:id="minimize" mnemonicParsing="false" />
-        <Button fx:id="close" mnemonicParsing="false" />
-      </children>
-      <BorderPane.margin>
-        <Insets bottom="-4.0" left="95.0" right="2.0" top="7.0" />
-      </BorderPane.margin>
-         <padding>
-            <Insets left="7.0" right="7.0" />
-         </padding></HBox>
-  </top>
+    <top>
+        <HBox prefHeight="42.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="back" maxHeight="32.0" maxWidth="32.0" mnemonicParsing="false">
+                    <HBox.margin>
+                        <Insets left="-25.0" right="49.0" />
+                    </HBox.margin>
+                    <padding>
+                        <Insets left="8.0" right="87.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Modusauswahl">
+                    <HBox.margin>
+                        <Insets right="15.0" />
+                    </HBox.margin>
+                    <padding>
+                        <Insets right="1.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="minimize" mnemonicParsing="false" />
+                <Button fx:id="close" mnemonicParsing="false" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="-4.0" left="28.0" right="2.0" top="7.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="7.0" right="7.0" />
+            </padding></HBox>
+    </top>
    <bottom>
       <Button fx:id="startgame" mnemonicParsing="false" text="Start" BorderPane.alignment="TOP_RIGHT">
          <BorderPane.margin>
