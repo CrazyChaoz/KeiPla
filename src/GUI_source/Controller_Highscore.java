@@ -9,11 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -73,7 +75,6 @@ public class Controller_Highscore implements Initializable {
                 UI_FXML.currStage.setTitle("Hauptmenü");
                 UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
                 UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                setText();
                 UI_FXML.currStage.show();
             } catch(IOException e){}
         });

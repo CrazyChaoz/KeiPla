@@ -36,6 +36,8 @@ public class Controller_ChooseMode implements Initializable {
     private Button close;
     @FXML
     private Button title;
+    @FXML
+    private Button back;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -81,6 +83,16 @@ public class Controller_ChooseMode implements Initializable {
         });
         this.close.setOnAction(event -> {
             UI_FXML.currStage.close();
+        });
+        this.back.setOnAction(event -> {
+            try {
+                UI_FXML.currStage.close();
+                UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                UI_FXML.currStage.setTitle("Hauptmenü");
+                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                UI_FXML.currStage.show();
+            } catch(IOException e){}
         });
     }
 }

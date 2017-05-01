@@ -71,7 +71,12 @@ public class Controller_Game implements Initializable {
                 } catch(IOException e){}
             }else{
                 try {
-                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                    UI_FXML.currStage.close();
+                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                    UI_FXML.currStage.setTitle("Highscore");
+                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Highscore.fxml"))));
+                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                    UI_FXML.currStage.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
