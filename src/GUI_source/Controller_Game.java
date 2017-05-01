@@ -8,7 +8,15 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -71,6 +79,7 @@ public class Controller_Game implements Initializable {
                 } catch(IOException e){}
             }else{
                 try {
+                    addHighscore();
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("Highscore");
@@ -85,6 +94,33 @@ public class Controller_Game implements Initializable {
 
     }
 
+    private void addHighscore() {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        Document document;
+        try {
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            document = documentBuilder.parse("res" + File.separator + "Highscore.xml");
+
+            Element root=document.getDocumentElement();
+            Element name=document.createElement("name");
+            Element score=document.createElement("score");
+
+            name.appendChild(document.createTextNode(UI_FXML.NAME));
+            score.appendChild(document.createTextNode(UI_FXML.score+""));
+            root.appendChild(name);
+            root.appendChild(score);
+
+            DOMSource source = new DOMSource(document);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            StreamResult result = new StreamResult("res" + File.separator + "Highscore.xml");
+            transformer.transform(source, result);
+
+        }catch (Exception e){}
+
+
+    }
 
     public void setText(){
         this.question.setText(UI_FXML.currQuestion[0]);
