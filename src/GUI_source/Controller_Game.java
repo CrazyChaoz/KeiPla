@@ -5,7 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,7 +25,6 @@ import java.util.ResourceBundle;
 
 public class Controller_Game implements Initializable {
     private static String selected=null;
-    private static int hardness;
 
     @FXML
     private Button question;
@@ -57,12 +68,24 @@ public class Controller_Game implements Initializable {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
                 try {
-                    Logic.randomFilePicker(1);
+                    new Question(UI_FXML.hardness);
+                    UI_FXML.currStage.close();
+                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                    UI_FXML.currStage.setTitle("DAS SPIEL");
                     UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                    setText();
+                    UI_FXML.currStage.show();
                 } catch(IOException e){}
             }else{
                 try {
-                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                    addHighscore();
+                    UI_FXML.currStage.close();
+                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                    UI_FXML.currStage.setTitle("Highscore");
+                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Highscore.fxml"))));
+                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                    UI_FXML.currStage.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -71,15 +94,39 @@ public class Controller_Game implements Initializable {
 
     }
 
+    private void addHighscore() {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        Document document;
+        try {
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            document = documentBuilder.parse("res" + File.separator + "Highscore.xml");
+
+            Element root=document.getDocumentElement();
+            Element name=document.createElement("name");
+            Element score=document.createElement("score");
+
+            name.appendChild(document.createTextNode(UI_FXML.NAME));
+            score.appendChild(document.createTextNode(UI_FXML.score+""));
+            root.appendChild(name);
+            root.appendChild(score);
+
+            DOMSource source = new DOMSource(document);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            StreamResult result = new StreamResult("res" + File.separator + "Highscore.xml");
+            transformer.transform(source, result);
+
+        }catch (Exception e){}
+
+
+    }
 
     public void setText(){
-
         this.question.setText(UI_FXML.currQuestion[0]);
         this.answer1.setText(UI_FXML.currQuestion[1]);
         this.answer2.setText(UI_FXML.currQuestion[2]);
         this.answer3.setText(UI_FXML.currQuestion[3]);
         this.answer4.setText(UI_FXML.currQuestion[4]);
-
-
     }
 }

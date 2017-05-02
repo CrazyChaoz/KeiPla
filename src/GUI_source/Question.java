@@ -19,34 +19,48 @@ import java.io.File;
 import java.util.Random;
 import org.w3c.dom.Document;
 
-public class Logic {
-    private static int wh=1;
+public class Question {
+    private int wh=1;
 
-    public static void randomFilePicker(int hardness){
+    public Question(int hardness){
         Random rndm=new Random();
-
+        File file;
+        String path;
         while(wh==1){
             wh=0;
             switch(hardness){
                 case 1:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez"+File.separator)))+1+".xml"));
+                    path="res"+ File.separator+"questions"+ File.separator+"ez"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"ez")))+1)+".xml";
+                    System.out.println(path);
+                    file=new File(path);
+                    getXMLInhalt(file);
                     break;
                 case 2:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid"+ File.separator)))+1+".xml"));
+                    path="res"+ File.separator+"questions"+ File.separator+"mid"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"mid")))+1)+".xml";
+                    System.out.println(path);
+                    file=new File(path);
+                    getXMLInhalt(file);
                     break;
                 case 3:
-                    getXMLInhalt(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator+rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard"+ File.separator)))+1+".xml"));
+                    path="res"+ File.separator+"questions"+ File.separator+"hard"+File.separator+(rndm.nextInt(getFileNumber(new File("res"+ File.separator+"questions"+ File.separator+"hard")))+1)+".xml";
+                    System.out.println(path);
+                    file=new File(path);
+                    getXMLInhalt(file);
                     break;
+
+                default:
+                    throw new RuntimeException("Wrong or no Hardness entered");
             }
         }
     }
 
-    public static void getXMLInhalt(File file){
+    private void getXMLInhalt(File file){
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         Document document;
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             document = documentBuilder.parse(file);
+            UI_FXML.currQuestion=new String[6];
             UI_FXML.currQuestion[0] = document.getElementsByTagName("question").item(0).getTextContent();
             UI_FXML.currQuestion[1] = document.getElementsByTagName("answer").item(0).getTextContent();
             UI_FXML.currQuestion[2] = document.getElementsByTagName("answer").item(1).getTextContent();
@@ -58,12 +72,12 @@ public class Logic {
         }
     }
 
-    public static int getFileNumber(File folder){
+    public int getFileNumber(File folder){
         return folder.list().length;
     }/*
     public static void main(String[] args) {
 
-        for (String s:Logic.randomFilePicker(1)) {
+        for (String s:Question.randomFilePicker(1)) {
             System.out.println(s);
         }
 
