@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
-y
+
 /**
  * Created by testuser on 27.04.2017.
  */
