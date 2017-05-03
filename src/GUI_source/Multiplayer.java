@@ -7,7 +7,7 @@ import java.net.*;
  * Created by testuser on 26.04.2017.
  */
 public class Multiplayer{
-    public void startServerAction(int port){
+    public static void startServerAction(int port){
         try(
                 ServerSocket serverSocket = new ServerSocket(port);
                 Socket clientSocket = serverSocket.accept();
@@ -15,15 +15,18 @@ public class Multiplayer{
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         ){
 
-            String inputLine, outputLine;
+            String inputLine, outputLine=null;
 
             while ((inputLine = in.readLine()) != null) {
-                if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])]))
+                if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                    System.out.println("YOU WON");
+                    break;
+                }
 
                 outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
-                        UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+UI_FXML.currQuestion[6];
+                        UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+"1337"+"\n";
                 out.println(outputLine);
-                if (outputLine.equals("stop_communication"))
+                if (inputLine.equals("stop_communication"))
                     break;
             }
         } catch (IOException e) {
@@ -31,21 +34,25 @@ public class Multiplayer{
             System.out.println(e.getMessage());
         }
     }
-    public void startClientAction(InetAddress ip,int port){
+    public static void startClientAction(InetAddress ip,int port){
+
         try (
                 Socket socket = new Socket(ip, port);
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(socket.getInputStream()));
         ) {
+            UI_FXML.multiplayer=1;
             String fromServer;
-            String fromClient;
+            String fromClient=null;
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
                 if (fromServer.equals("stop_communication"))
                     break;
-                UI_FXML.currQuestion=fromServer.split(";");
+                String[] s;
+                s=fromServer.split("\\n");
+                UI_FXML.currQuestion=s[0].split(";");
 
                 if (fromClient != null) {
                     System.out.println("Client: " + fromClient);
