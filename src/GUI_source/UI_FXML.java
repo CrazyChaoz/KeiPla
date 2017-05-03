@@ -27,6 +27,7 @@ public class UI_FXML {
     public static Stage currStage=null;
     public static int score=0;
     public static int hardness=0;
+    public static int running=0;
     public static String[] currQuestion=new String[6];
     //##########################################
     //##########################################
