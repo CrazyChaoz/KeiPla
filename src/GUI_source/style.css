@@ -109,8 +109,8 @@
 #title{
     -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
-    -fx-background-size: 187 66;
-    -fx-font-size: 18pt;
+    -fx-background-size: 187 45;
+    -fx-font-size: 12pt;
     -fx-font-family: "Comix";
     -fx-text-fill: white;
 }
