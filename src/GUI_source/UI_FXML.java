@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
-
+y
 /**
  * Created by testuser on 27.04.2017.
  */
@@ -28,6 +28,7 @@ public class UI_FXML {
     public static int score=0;
     public static int hardness=0;
     public static int running=0;
+    public static int multiplayer=0;
     public static String[] currQuestion=new String[6];
     //##########################################
     //##########################################
