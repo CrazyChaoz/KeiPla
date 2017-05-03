@@ -47,7 +47,7 @@
                         <Insets left="8.0" right="87.0" />
                     </padding>
                 </Button>
-                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Modusauswahl">
+                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="MODUSAUSWAHL">
                     <HBox.margin>
                         <Insets right="15.0" />
                     </HBox.margin>

@@ -3,7 +3,7 @@
     src: url('res/Comix-Regular.ttf');
 }
 @font-face {
-    src: url('res/Hyde.ttf');
+    src: url('res/Hyde-Edit.ttf');
 }
 
 #bg_Login{
@@ -107,12 +107,13 @@
     -fx-text-fill: black;
 }
 #title{
-    -fx-background-image: url("res/GUI_button.png");
+    -fx-background-image: url("res/GUI_dragbg.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 187 45;
-    -fx-font-size: 12pt;
-    -fx-font-family: "Comix";
-    -fx-text-fill: white;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+    -fx-font-style: oblique;
 }
 .text-field {
     -fx-background-color:
