@@ -153,6 +153,21 @@
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
 }
+#radio{
+    -fx-background-image: url("res/GUI_radioButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#radioCh{
+    -fx-background-image: url("res/GUI_radioButtonChosen.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#myip{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,
