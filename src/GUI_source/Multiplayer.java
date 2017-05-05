@@ -7,6 +7,7 @@ import java.net.*;
  * Created by testuser on 26.04.2017.
  */
 public class Multiplayer{
+
     public static void startServerAction(int port){
         try(
                 ServerSocket serverSocket = new ServerSocket(port);
@@ -16,6 +17,8 @@ public class Multiplayer{
         ){
 
             String inputLine, outputLine=null;
+            System.out.println(InetAddress.getLocalHost());
+
 
             while ((inputLine = in.readLine()) != null) {
                 if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
@@ -68,4 +71,3 @@ public class Multiplayer{
 
 }
 
-//InetAddress.getLocalHost();

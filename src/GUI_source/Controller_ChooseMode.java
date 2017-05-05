@@ -44,6 +44,7 @@ public class Controller_ChooseMode implements Initializable {
 
         this.startgame.setOnAction(event -> {
             try {
+                System.out.println("Clicked on \"startgame\"");
                 new Question(selected);
                 UI_FXML.hardness=selected;
                 UI_FXML.currStage.close();
@@ -56,9 +57,27 @@ public class Controller_ChooseMode implements Initializable {
 
         });
 
-        this.ez.setOnAction(event -> selected=1);
-        this.mid.setOnAction(event -> selected=2);
-        this.hard.setOnAction(event -> selected=3);
+        this.ez.setOnAction(event -> {
+            selected=1;
+            mid.setId("mittel");
+            hard.setId("schwer");
+            ez.setId("leichtCh");
+            System.out.println("Clicked on \"ez\"");
+        });
+        this.mid.setOnAction(event -> {
+            selected=2;
+            ez.setId("leicht");
+            hard.setId("schwer");
+            mid.setId("mittelCh");
+            System.out.println("Clicked on \"mid\"");
+        });
+        this.hard.setOnAction(event -> {
+            selected=3;
+            ez.setId("leicht");
+            mid.setId("mittel");
+            hard.setId("schwerCh");
+            System.out.println("Clicked on \"hard\"");
+        });
 
 
         title.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {

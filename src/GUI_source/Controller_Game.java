@@ -37,6 +37,8 @@ public class Controller_Game implements Initializable {
     @FXML
     private Button answer4;
     @FXML
+    private Button surrender;
+    @FXML
     private Button submit;
 
     @Override
@@ -45,55 +47,83 @@ public class Controller_Game implements Initializable {
         setText();
 
         this.answer1.setOnAction(event -> {
+            answer1.setId("answerCh");
+            answer2.setId("answer");
+            answer3.setId("answer");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[1];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer1\" -> "+selected);
         });
 
         this.answer2.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answerCh");
+            answer3.setId("answer");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[2];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer2\" -> "+selected);
         });
 
         this.answer3.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answer");
+            answer3.setId("answerCh");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[3];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer3\" -> "+selected);
         });
 
         this.answer4.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answer");
+            answer3.setId("answer");
+            answer4.setId("answerCh");
             selected=UI_FXML.currQuestion[4];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer4\" -> "+selected);
         });
 
         this.submit.setOnAction(event -> {
-            if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
-                UI_FXML.score++;
-                try {
-                    new Question(UI_FXML.hardness);
-                    UI_FXML.currStage.close();
-                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                    UI_FXML.currStage.setTitle("DAS SPIEL");
-                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                    setText();
-                    UI_FXML.currStage.show();
-                } catch(IOException e){}
-            }else{
-                try {
-                    addHighscore();
-                    UI_FXML.currStage.close();
-                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                    UI_FXML.currStage.setTitle("Highscore");
-                    UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Highscore.fxml"))));
-                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                    UI_FXML.currStage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            if(UI_FXML.multiplayer==0)
+                if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
+                    UI_FXML.score++;
+                    try {
+                        System.out.println("Clicked on \"submit\"");
+                        new Question(UI_FXML.hardness);
+                        UI_FXML.currStage.close();
+                        UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                        UI_FXML.currStage.setTitle("DAS SPIEL");
+                        UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                        UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                        setText();
+                        UI_FXML.currStage.show();
+                    } catch(IOException e){}
+                }else{
+                    rip();
                 }
-            }
+            else{}
+
+            });
+
+        this.surrender.setOnAction(event -> {
+            System.out.println("Clicked on \"surrender\"");
+                rip();
         });
 
     }
 
+    public void rip(){
+        try {
+            addHighscore();
+            UI_FXML.currStage.close();
+            UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+            UI_FXML.currStage.setTitle("Highscore");
+            UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Highscore.fxml"))));
+            UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+            UI_FXML.currStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     private void addHighscore() {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         Document document;

@@ -64,13 +64,28 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
+#leichtCh{
+    -fx-background-image: url("res/GUI_easyButtonChosen.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
 #mittel{
     -fx-background-image: url("res/GUI_mediumButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
+#mittelCh{
+    -fx-background-image: url("res/GUI_mediumButtonChosen.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
 #schwer{
     -fx-background-image: url("res/GUI_hardButton.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 48 48;
+}
+#schwerCh{
+    -fx-background-image: url("res/GUI_hardButtonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
@@ -89,6 +104,14 @@
     -fx-font-size: 18pt;
     -fx-font-family: "Comix";
     -fx-text-fill: white;
+}
+#answerCh{
+    -fx-background-image: url("res/GUI_buttonChosen.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: #FBB03B;
 }
 #question{
     -fx-background-image: url("res/GUI_button.png");
@@ -114,6 +137,21 @@
     -fx-font-family: "Hyde (BRK)";
     -fx-text-fill: #FBB03B;
     -fx-font-style: oblique;
+}
+#startgame{
+    -fx-background-image: url("res/GUI_button.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 85 36;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: white;
+    -fx-font-style: oblique;
+}
+#plane{
+    -fx-background-color: #FBB03B;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
 }
 .text-field {
     -fx-background-color:
