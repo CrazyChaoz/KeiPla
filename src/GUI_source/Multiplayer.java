@@ -8,7 +8,7 @@ import java.net.*;
  */
 public class Multiplayer{
 
-    public static void startServerAction(int port){
+    public void startServerAction(int port){
         try(
                 ServerSocket serverSocket = new ServerSocket(port);
                 Socket clientSocket = serverSocket.accept();
@@ -37,7 +37,7 @@ public class Multiplayer{
             System.out.println(e.getMessage());
         }
     }
-    public static void startClientAction(InetAddress ip,int port){
+    public void startClientAction(InetAddress ip,int port){
 
         try (
                 Socket socket = new Socket(ip, port);
@@ -56,6 +56,12 @@ public class Multiplayer{
                 String[] s;
                 s=fromServer.split("\\n");
                 UI_FXML.currQuestion=s[0].split(";");
+
+                while(!UI_FXML.lock) {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {}
+                }
 
                 if (fromClient != null) {
                     System.out.println("Client: " + fromClient);
