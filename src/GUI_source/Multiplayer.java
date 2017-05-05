@@ -3,10 +3,9 @@ package GUI_source;
 import java.io.*;
 import java.net.*;
 
-/**
- * Created by testuser on 26.04.2017.
- */
 public class Multiplayer{
+
+    public String selected;
 
     public void startServerAction(int port){
         try(
@@ -20,15 +19,25 @@ public class Multiplayer{
             System.out.println(InetAddress.getLocalHost());
 
 
-            while ((inputLine = in.readLine()) != null) {
-                if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
-                    System.out.println("YOU WON");
-                    break;
+            while ((inputLine = in.readLine()) != null){
+
+                if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                    System.out.println("Both Right");
+                    outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
+                            UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+"1337"+"\n";
+                }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                    System.out.println("You Won");
+                    outputLine="You Lost\n";
+                }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&!selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                    System.out.println("You Lost");
+                    outputLine="You Won\n";
+                }else{
+                    System.out.println("Both Wrong");
+                    outputLine="Both Wrong\n";
                 }
 
-                outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
-                        UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+"1337"+"\n";
                 out.println(outputLine);
+
                 if (inputLine.equals("stop_communication"))
                     break;
             }
@@ -47,7 +56,6 @@ public class Multiplayer{
         ) {
             UI_FXML.multiplayer=1;
             String fromServer;
-            String fromClient=null;
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
@@ -63,9 +71,9 @@ public class Multiplayer{
                     } catch (InterruptedException e) {}
                 }
 
-                if (fromClient != null) {
-                    System.out.println("Client: " + fromClient);
-                    out.println(fromClient);
+                if (selected != null) {
+                    System.out.println("Client: " + selected);
+                    out.println(selected+"\n");
                 }
             }
         } catch (UnknownHostException e) {

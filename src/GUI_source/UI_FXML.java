@@ -29,6 +29,7 @@ public class UI_FXML {
     public static int hardness=0;
     public static int running=0;
     public static int multiplayer=0;
+    public static Multiplayer session;
     public static boolean lock = false;
     public static String[] currQuestion=new String[6];
     //##########################################

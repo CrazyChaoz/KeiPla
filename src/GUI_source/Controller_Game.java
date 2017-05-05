@@ -100,7 +100,9 @@ public class Controller_Game implements Initializable {
                 }else{
                     rip();
                 }
-            else{}
+            else{
+                    msgLocked();
+            }
 
             });
 
@@ -150,6 +152,11 @@ public class Controller_Game implements Initializable {
         }catch (Exception e){}
 
 
+    }
+
+    public synchronized void msgLocked() {
+        UI_FXML.lock = true;
+        notifyAll();
     }
 
     public void setText(){
