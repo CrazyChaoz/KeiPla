@@ -3,7 +3,7 @@
     src: url('res/Comix-Regular.ttf');
 }
 @font-face {
-    src: url('res/Hyde.ttf');
+    src: url('res/Hyde-Edit.ttf');
 }
 
 #bg_Login{
@@ -43,7 +43,7 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 159 38;
     -fx-font-size: 14pt;
-    -fx-font-family: "Hyde BRK";
+    -fx-font-family: "Hyde (BRK)";
     -fx-text-fill: white;
 }
 #slim{
@@ -56,7 +56,7 @@
 }
 #difficulty{
     -fx-font-size: 16pt;
-    -fx-font-family: "Hyde BRK";
+    -fx-font-family: "Hyde (BRK)";
     -fx-text-fill: white;
 }
 #leicht{
@@ -79,7 +79,7 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
-    -fx-font-family: "Hyde BRK";
+    -fx-font-family: "Hyde (BRK)";
     -fx-text-fill: white;
 }
 #answer{
@@ -105,6 +105,15 @@
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: black;
+}
+#title{
+    -fx-background-image: url("res/GUI_dragbg.png");
+    -fx-background-color: #FBB03B;
+    -fx-background-size: 187 45;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+    -fx-font-style: oblique;
 }
 .text-field {
     -fx-background-color:
