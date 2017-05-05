@@ -104,6 +104,11 @@ public class Controller_Game implements Initializable {
 
             });
 
+        this.surrender.setOnAction(event -> {
+            System.out.println("Clicked on \"surrender\"");
+                rip();
+        });
+
     }
 
     public void rip(){

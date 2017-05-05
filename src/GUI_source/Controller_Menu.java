@@ -35,6 +35,7 @@ public class Controller_Menu implements Initializable {
         this.singleplayer.setOnAction(event -> {
             try {
                 UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseMode.fxml"))));
+                System.out.println("Clicked on \"singleplayer\"");
             } catch (IOException e) {
                 e.printStackTrace();
             }

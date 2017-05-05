@@ -20,7 +20,7 @@
         <Button id="answer" fx:id="answer3" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Button id="answer" fx:id="answer4" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="4" />
         <Button id="question" fx:id="question" mnemonicParsing="false" prefHeight="100.0" prefWidth="420.0" text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" />
-        <Button id="slim" fx:id="slim" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" prefWidth="100.0" text="Aufgeben" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Button id="slim" fx:id="surrender" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" prefWidth="100.0" text="Aufgeben" GridPane.columnIndex="0" GridPane.rowIndex="6" />
         <Button id="slim" fx:id="submit" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" prefWidth="100.0" text="Weiter" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       </children>
       <columnConstraints>
