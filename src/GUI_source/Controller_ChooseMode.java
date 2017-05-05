@@ -56,9 +56,24 @@ public class Controller_ChooseMode implements Initializable {
 
         });
 
-        this.ez.setOnAction(event -> selected=1);
-        this.mid.setOnAction(event -> selected=2);
-        this.hard.setOnAction(event -> selected=3);
+        this.ez.setOnAction(event -> {
+            selected=1;
+            mid.setId("mittel");
+            hard.setId("schwer");
+            ez.setId("leichtCh");
+        });
+        this.mid.setOnAction(event -> {
+            selected=2;
+            ez.setId("leicht");
+            hard.setId("schwer");
+            mid.setId("mittelCh");
+        });
+        this.hard.setOnAction(event -> {
+            selected=3;
+            ez.setId("leicht");
+            mid.setId("mittel");
+            hard.setId("schwerCh");
+        });
 
 
         title.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {

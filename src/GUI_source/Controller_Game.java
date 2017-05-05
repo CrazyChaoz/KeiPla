@@ -45,21 +45,37 @@ public class Controller_Game implements Initializable {
         setText();
 
         this.answer1.setOnAction(event -> {
+            answer1.setId("answerCh");
+            answer2.setId("answer");
+            answer3.setId("answer");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[1];
             System.out.println(selected);
         });
 
         this.answer2.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answerCh");
+            answer3.setId("answer");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[2];
             System.out.println(selected);
         });
 
         this.answer3.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answer");
+            answer3.setId("answerCh");
+            answer4.setId("answer");
             selected=UI_FXML.currQuestion[3];
             System.out.println(selected);
         });
 
         this.answer4.setOnAction(event -> {
+            answer1.setId("answer");
+            answer2.setId("answer");
+            answer3.setId("answer");
+            answer4.setId("answerCh");
             selected=UI_FXML.currQuestion[4];
             System.out.println(selected);
         });
