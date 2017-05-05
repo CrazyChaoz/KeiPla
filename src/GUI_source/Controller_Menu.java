@@ -25,6 +25,8 @@ public class Controller_Menu implements Initializable {
     @FXML
     private Button singleplayer;
     @FXML
+    private Button multiplayer;
+    @FXML
     private Button title;
 
 
@@ -36,6 +38,15 @@ public class Controller_Menu implements Initializable {
             try {
                 UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseMode.fxml"))));
                 System.out.println("Clicked on \"singleplayer\"");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        this.multiplayer.setOnAction(event -> {
+            try {
+                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseNetMode.fxml"))));
+                System.out.println("Clicked on \"multiplayer\"");
             } catch (IOException e) {
                 e.printStackTrace();
             }

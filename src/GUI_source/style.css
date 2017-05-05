@@ -163,6 +163,11 @@
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
+#myip{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,

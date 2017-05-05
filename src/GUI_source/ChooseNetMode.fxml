@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.control.TextField?>
-<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_ChooseMode">
+<?import javafx.scene.control.Label?>
+<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_ChooseNetMode">
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
@@ -30,7 +31,7 @@
       <children>
         <Button id="radio" fx:id="host" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
         <Button id="radio" fx:id="connect" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-          <TextField id="myip" fx:id="myip" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+          <Label id="myip" fx:id="myip" text="Oh! No IP! :D" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
           <TextField id="othersip" fx:id="othersip" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
       </children>
          <padding>
@@ -49,7 +50,7 @@
                         <Insets left="8.0" right="87.0" />
                     </padding>
                 </Button>
-                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Modusauswahl">
+                <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Netzwerkmodus">
                     <HBox.margin>
                         <Insets right="15.0" />
                     </HBox.margin>
