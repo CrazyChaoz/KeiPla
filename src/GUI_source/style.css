@@ -147,6 +147,12 @@
     -fx-text-fill: white;
     -fx-font-style: oblique;
 }
+#plane{
+    -fx-background-color: #FBB03B;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: white;
+}
 .text-field {
     -fx-background-color:
             #FFFFFF,

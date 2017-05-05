@@ -37,6 +37,8 @@ public class Controller_Game implements Initializable {
     @FXML
     private Button answer4;
     @FXML
+    private Button surrender;
+    @FXML
     private Button submit;
 
     @Override
@@ -50,7 +52,7 @@ public class Controller_Game implements Initializable {
             answer3.setId("answer");
             answer4.setId("answer");
             selected=UI_FXML.currQuestion[1];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer1\" -> "+selected);
         });
 
         this.answer2.setOnAction(event -> {
@@ -59,7 +61,7 @@ public class Controller_Game implements Initializable {
             answer3.setId("answer");
             answer4.setId("answer");
             selected=UI_FXML.currQuestion[2];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer2\" -> "+selected);
         });
 
         this.answer3.setOnAction(event -> {
@@ -68,7 +70,7 @@ public class Controller_Game implements Initializable {
             answer3.setId("answerCh");
             answer4.setId("answer");
             selected=UI_FXML.currQuestion[3];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer3\" -> "+selected);
         });
 
         this.answer4.setOnAction(event -> {
@@ -77,13 +79,14 @@ public class Controller_Game implements Initializable {
             answer3.setId("answer");
             answer4.setId("answerCh");
             selected=UI_FXML.currQuestion[4];
-            System.out.println(selected);
+            System.out.println("Clicked on \"answer4\" -> "+selected);
         });
 
         this.submit.setOnAction(event -> {
             if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                 UI_FXML.score++;
                 try {
+                    System.out.println("Clicked on \"submit\"");
                     new Question(UI_FXML.hardness);
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);

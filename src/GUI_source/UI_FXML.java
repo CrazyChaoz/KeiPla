@@ -64,7 +64,7 @@ public class UI_FXML {
         grid.add(hbBtn, 1, 3);
 
         btn.setOnAction(e -> {
-
+            System.out.println("Clicked on \"anmelden\"");
             NAME=userTextField.getText();
             if(NAME!=null&&!NAME.equals("")){
                 stage.close();
