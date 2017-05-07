@@ -1,5 +1,12 @@
 package GUI_source;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import java.io.*;
 import java.net.*;
 
@@ -32,19 +39,22 @@ public class Multiplayer{
                 if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("Both Right");
                     outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
-                            UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+"1337"+"\n";
+                            UI_FXML.currQuestion[4]+";"+"1337"+"\n";
                 }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("You Won");
                     UI_FXML.multi_result="You Won";
                     outputLine="You Lost\n";
+                    Multi_End();
                 }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&!selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("You Lost");
                     UI_FXML.multi_result="You Lost";
                     outputLine="You Won\n";
+                    Multi_End();
                 }else{
                     System.out.println("Both Wrong");
                     UI_FXML.multi_result="Both Lost";
                     outputLine="Both Wrong\n";
+                    Multi_End();
                 }
 
                 out.println(outputLine);
@@ -73,28 +83,26 @@ public class Multiplayer{
                 if(fromServer.equals("You Won")){
                     System.out.println("You Won");
                     UI_FXML.multi_result="You Won";
+                    Multi_End();
                 }else if (fromServer.equals("You Lost")){
                     System.out.println("You Lost");
                     UI_FXML.multi_result="You Lost";
+                    Multi_End();
                 }else if (fromServer.equals("Both Lost")){
                     System.out.println("Both Lost");
                     UI_FXML.multi_result="Both Lost";
+                    Multi_End();
                 }else{
-                    System.out.println("Question recieved"+fromServer);
+                    System.out.println("Question recieved "+fromServer);
                     String[] s;
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
                 }
 
-                while(!UI_FXML.lock) {
-                    try {
-                        wait();
-                    } catch (InterruptedException e) {}
-                }
-
-                if (selected != null) {
-                    System.out.println("Client: " + selected);
-                    out.println(selected+"\n");
+                while(UI_FXML.multi_result != null) {
+                    System.out.println("Client: " + UI_FXML.multi_result);
+                    out.println(UI_FXML.multi_result+"\n");
+                    UI_FXML.multi_result=null;
                 }
             }
         } catch (UnknownHostException e) {
@@ -104,6 +112,21 @@ public class Multiplayer{
         }
     }
 
+    private void Multi_End(){
+
+        try {
+            UI_FXML.currStage.close();
+            UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+            UI_FXML.currStage.setTitle("Score");
+            Scene s=new Scene(FXMLLoader.load(getClass().getResource("Multi_end.fxml")));
+            s.setFill(Color.TRANSPARENT);
+            UI_FXML.currStage.setScene(s);
+            UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+            UI_FXML.currStage.show();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args)throws Exception{
         Multiplayer multiplayer=new Multiplayer();
         int i=0;
