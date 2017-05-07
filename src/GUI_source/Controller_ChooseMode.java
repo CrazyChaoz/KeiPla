@@ -19,10 +19,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class Controller_ChooseMode implements Initializable {
+public class Controller_ChooseMode extends Titlebar_Functionality implements Initializable {
     private int selected;
-    private static double xOffset;
-    private static double yOffset;
 
     @FXML
     private Button startgame;
@@ -32,14 +30,6 @@ public class Controller_ChooseMode implements Initializable {
     private Button mid;
     @FXML
     private Button hard;
-    @FXML
-    private Button minimize;
-    @FXML
-    private Button close;
-    @FXML
-    private Button title;
-    @FXML
-    private Button back;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -81,46 +71,6 @@ public class Controller_ChooseMode implements Initializable {
             hard.setId("schwerCh");
             System.out.println("Clicked on \"hard\"");
         });
-
-
-        title.setOnMousePressed(new EventHandler<javafx.scene.input.MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = UI_FXML.currStage.getX() - event.getScreenX();
-                yOffset = UI_FXML.currStage.getY() - event.getScreenY();
-            }
-        });
-
-        title.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                UI_FXML.currStage.setX(event.getScreenX() + xOffset);
-                UI_FXML.currStage.setY(event.getScreenY() + yOffset);
-            }
-        });
-
-
-        this.minimize.setOnAction(event -> {
-            UI_FXML.currStage.setIconified(true);
-        });
-        this.close.setOnAction(event -> {
-            UI_FXML.currStage.close();
-        });
-        this.back.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    UI_FXML.currStage.close();
-                    UI_FXML.currStage = new Stage(StageStyle.TRANSPARENT);
-                    UI_FXML.currStage.setTitle("Hauptmenü");
-                    Scene s = (new Scene(FXMLLoader.load(Controller_ChooseMode.this.getClass().getResource("MainMenu.fxml"))));
-                    s.setFill(Color.TRANSPARENT);
-                    UI_FXML.currStage.setScene(s);
-                    UI_FXML.currStage.getIcons().add(new Image(Controller_ChooseMode.this.getClass().getResourceAsStream("res" + File.separator + "KeiPla-Icon-128.png")));
-                    UI_FXML.currStage.show();
-                } catch (IOException e) {
-                }
-            }
-        });
+        Titlebar_Functionality(this);
     }
 }

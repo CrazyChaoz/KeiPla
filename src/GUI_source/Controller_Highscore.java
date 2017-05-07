@@ -23,9 +23,8 @@ import java.net.URL;
 import java.util.*;
 
 
-public class Controller_Highscore implements Initializable {
-    private static double xOffset;
-    private static double yOffset;
+public class Controller_Highscore extends Titlebar_Functionality implements Initializable {
+
 
     @FXML
     private Label score1;
@@ -37,51 +36,12 @@ public class Controller_Highscore implements Initializable {
     private Label score4;
     @FXML
     private Label score5;
-    @FXML
-    private Button close;
-    @FXML
-    private Button minimize;
-    @FXML
-    private Button title;
-    @FXML
-    private Button back;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
         setText();
-
-        title.setOnMousePressed(event -> {
-            xOffset = UI_FXML.currStage.getX() - event.getScreenX();
-            yOffset = UI_FXML.currStage.getY() - event.getScreenY();
-        });
-
-        title.setOnMouseDragged(event -> {
-            UI_FXML.currStage.setX(event.getScreenX() + xOffset);
-            UI_FXML.currStage.setY(event.getScreenY() + yOffset);
-        });
-
-        this.minimize.setOnAction(event -> {
-            UI_FXML.currStage.setIconified(true);
-        });
-
-        this.close.setOnAction(event -> {
-            UI_FXML.currStage.close();
-        });
-
-        this.back.setOnAction(event -> {
-            try {
-                UI_FXML.currStage.close();
-                UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                UI_FXML.currStage.setTitle("Hauptmenü");
-                Scene s=(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
-                s.setFill(Color.TRANSPARENT);
-                UI_FXML.currStage.setScene(s);
-                UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                UI_FXML.currStage.show();
-            } catch(IOException e){}
-        });
-
+        Titlebar_Functionality(this);
     }
 
 
