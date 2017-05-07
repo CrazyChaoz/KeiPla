@@ -38,7 +38,7 @@ public class Controller_Multi_End extends Titlebar_Functionality implements Init
 
     public void setText(){
 
-        this.result.setText("--");
+        this.result.setText(UI_FXML.multi_result);
         this.score.setText("Score: "+UI_FXML.score);
 
     }

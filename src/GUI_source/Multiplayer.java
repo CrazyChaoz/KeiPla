@@ -27,12 +27,15 @@ public class Multiplayer{
                             UI_FXML.currQuestion[4]+";"+UI_FXML.currQuestion[5]+";"+"1337"+"\n";
                 }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("You Won");
+                    UI_FXML.multi_result="You Won";
                     outputLine="You Lost\n";
                 }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&!selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("You Lost");
+                    UI_FXML.multi_result="You Lost";
                     outputLine="You Won\n";
                 }else{
                     System.out.println("Both Wrong");
+                    UI_FXML.multi_result="Both Lost";
                     outputLine="Both Wrong\n";
                 }
 
@@ -59,12 +62,15 @@ public class Multiplayer{
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
-                if(fromServer.equals("You Lost")){
-
+                if(fromServer.equals("You Won")){
+                    System.out.println("You Won");
+                    UI_FXML.multi_result="You Won";
                 }else if (fromServer.equals("You Lost")){
-
-                }else if (fromServer.equals("You Lost")){
-
+                    System.out.println("You Lost");
+                    UI_FXML.multi_result="You Lost";
+                }else if (fromServer.equals("Both Lost")){
+                    System.out.println("Both Lost");
+                    UI_FXML.multi_result="Both Lost";
                 }else{
                     String[] s;
                     s=fromServer.split("\\n");
@@ -89,5 +95,9 @@ public class Multiplayer{
         }
     }
 
+    public static void main(String[] args) {
+        Multiplayer multiplayer=new Multiplayer();
+        multiplayer.startServerAction(63956);
+    }
 }
 
