@@ -59,11 +59,17 @@ public class Multiplayer{
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
-                if (fromServer.equals("stop_communication"))
-                    break;
-                String[] s;
-                s=fromServer.split("\\n");
-                UI_FXML.currQuestion=s[0].split(";");
+                if(fromServer.equals("You Lost")){
+
+                }else if (fromServer.equals("You Lost")){
+
+                }else if (fromServer.equals("You Lost")){
+
+                }else{
+                    String[] s;
+                    s=fromServer.split("\\n");
+                    UI_FXML.currQuestion=s[0].split(";");
+                }
 
                 while(!UI_FXML.lock) {
                     try {
