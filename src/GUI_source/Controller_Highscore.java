@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -73,7 +74,9 @@ public class Controller_Highscore implements Initializable {
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                 UI_FXML.currStage.setTitle("Hauptmenü");
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                Scene s=(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+                s.setFill(Color.TRANSPARENT);
+                UI_FXML.currStage.setScene(s);
                 UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                 UI_FXML.currStage.show();
             } catch(IOException e){}

@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -49,8 +51,9 @@ public class Controller_ChooseMode implements Initializable {
                 UI_FXML.hardness=selected;
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                UI_FXML.currStage.setTitle("DAS SPIEL");
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                UI_FXML.currStage.setTitle("DAS SPIEL");Scene s=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                s.setFill(Color.TRANSPARENT);
+                UI_FXML.currStage.setScene(s);
                 UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                 UI_FXML.currStage.show();
             } catch(IOException e){}
@@ -103,15 +106,21 @@ public class Controller_ChooseMode implements Initializable {
         this.close.setOnAction(event -> {
             UI_FXML.currStage.close();
         });
-        this.back.setOnAction(event -> {
-            try {
-                UI_FXML.currStage.close();
-                UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                UI_FXML.currStage.setTitle("Hauptmenü");
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
-                UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                UI_FXML.currStage.show();
-            } catch(IOException e){}
+        this.back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    UI_FXML.currStage.close();
+                    UI_FXML.currStage = new Stage(StageStyle.TRANSPARENT);
+                    UI_FXML.currStage.setTitle("Hauptmenü");
+                    Scene s = (new Scene(FXMLLoader.load(Controller_ChooseMode.this.getClass().getResource("MainMenu.fxml"))));
+                    s.setFill(Color.TRANSPARENT);
+                    UI_FXML.currStage.setScene(s);
+                    UI_FXML.currStage.getIcons().add(new Image(Controller_ChooseMode.this.getClass().getResourceAsStream("res" + File.separator + "KeiPla-Icon-128.png")));
+                    UI_FXML.currStage.show();
+                } catch (IOException e) {
+                }
+            }
         });
     }
 }
