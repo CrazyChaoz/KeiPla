@@ -1,6 +1,8 @@
 package GUI_source;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -54,6 +56,14 @@ public class UI_FXML {
 
         TextField userTextField = new TextField();
         userTextField.setPromptText("Username");
+        //Für die Länge des Eingabefeldes, Maxlength=15
+        userTextField.lengthProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() > oldValue.intValue()) {
+                if (userTextField.getText().length() >= 15) {
+                    userTextField.setText(userTextField.getText().substring(0, 15));
+                }
+            }
+        });
         grid.add(userTextField, 1, 1);
 
         Button btn = new Button("Anmelden");
