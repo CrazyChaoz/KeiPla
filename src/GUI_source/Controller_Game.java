@@ -105,6 +105,7 @@ public class Controller_Game implements Initializable {
                 }
             else{
                     msgLocked();
+                    UI_FXML.multi_result=selected;
             }
 
             });

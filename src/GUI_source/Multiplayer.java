@@ -8,6 +8,9 @@ public class Multiplayer{
     public String selected;
 
     public void startServerAction(int port){
+        try {
+            System.out.println(InetAddress.getLocalHost());
+        } catch (UnknownHostException e){}
         try(
                 ServerSocket serverSocket = new ServerSocket(port);
                 Socket clientSocket = serverSocket.accept();
@@ -16,11 +19,16 @@ public class Multiplayer{
         ){
 
             String inputLine, outputLine=null;
-            System.out.println(InetAddress.getLocalHost());
 
+            System.out.println("Host connected");
+
+            new Question(1);
+            outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
+                    UI_FXML.currQuestion[4]+";"+"1337"+"\n";
+            out.println(outputLine);
 
             while ((inputLine = in.readLine()) != null){
-
+                System.out.println("ClientMSG: "+inputLine);
                 if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
                     System.out.println("Both Right");
                     outputLine = UI_FXML.currQuestion[0]+";"+UI_FXML.currQuestion[1]+";"+UI_FXML.currQuestion[2]+";"+UI_FXML.currQuestion[3]+";"+
@@ -51,14 +59,14 @@ public class Multiplayer{
     }
     public void startClientAction(InetAddress ip,int port){
 
-        try (
-                Socket socket = new Socket(ip, port);
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(
-                        new InputStreamReader(socket.getInputStream()));
-        ) {
+        try(
+                Socket socket=new Socket(ip, port);
+                PrintWriter out=new PrintWriter(socket.getOutputStream(), true);
+                BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        ){
             UI_FXML.multiplayer=1;
             String fromServer;
+            System.out.println("connected to "+ip+" on port "+port);
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
@@ -72,6 +80,7 @@ public class Multiplayer{
                     System.out.println("Both Lost");
                     UI_FXML.multi_result="Both Lost";
                 }else{
+                    System.out.println("Question recieved"+fromServer);
                     String[] s;
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
@@ -95,9 +104,14 @@ public class Multiplayer{
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception{
         Multiplayer multiplayer=new Multiplayer();
-        multiplayer.startServerAction(63956);
+        int i=0;
+        if(i==0) {
+            multiplayer.startClientAction(InetAddress.getByName("127.0.0.1"), 63956);
+        }else{
+            multiplayer.startServerAction(63956);
+        }
     }
 }
 
