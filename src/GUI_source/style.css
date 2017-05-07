@@ -14,7 +14,10 @@
     -fx-background-image: url("res/GUI_login.png");
 }
 #background{
-    -fx-background-color: #FBB03B;
+    -fx-background-image: url("res/GUI_bg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-color: rgba(0, 100, 100, 0);;
     -fx-content-display: center;
 }
 #close{

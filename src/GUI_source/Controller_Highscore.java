@@ -125,10 +125,10 @@ public class Controller_Highscore implements Initializable {
 
         try{
         this.score1.setText((list.get(0))[0]+": "+(list.get(0))[1]);
-        this.score2.setText((list.get(1))[0]+": "+(list.get(0))[1]);
-        this.score3.setText((list.get(2))[0]+": "+(list.get(0))[1]);
-        this.score4.setText((list.get(3))[0]+": "+(list.get(0))[1]);
-        this.score5.setText((list.get(4))[0]+": "+(list.get(0))[1]);
+        this.score2.setText((list.get(1))[0]+": "+(list.get(1))[1]);
+        this.score3.setText((list.get(2))[0]+": "+(list.get(2))[1]);
+        this.score4.setText((list.get(3))[0]+": "+(list.get(3))[1]);
+        this.score5.setText((list.get(4))[0]+": "+(list.get(4))[1]);
         }catch(Exception e){}
     }
 
