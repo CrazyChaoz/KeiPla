@@ -69,15 +69,11 @@ public class Controller_Highscore extends Titlebar_Functionality implements Init
         }catch(Exception e){
             System.err.println("Exception: "+e.getMessage());
         }
-        Collections.sort(list, new Comparator<String[]>() {
-
-            @Override
-            public int compare(String[] o1, String[] o2){
-                if(!o1[1].equals(o2[1])){
-                    return Integer.parseInt(o2[1])-Integer.parseInt(o1[1]);
-                }
-                return o1[0].compareTo(o2[0]);
+        Collections.sort(list, (o1, o2) -> {
+            if(!o1[1].equals(o2[1])){
+                return Integer.parseInt(o2[1])-Integer.parseInt(o1[1]);
             }
+            return o1[0].compareTo(o2[0]);
         });
 
         this.score1.setText("--");

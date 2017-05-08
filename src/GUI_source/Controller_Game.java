@@ -85,6 +85,7 @@ public class Controller_Game implements Initializable {
         });
 
         this.submit.setOnAction(event -> {
+
             if(UI_FXML.multiplayer==0)
                 if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                     UI_FXML.score++;
@@ -146,6 +147,7 @@ public class Controller_Game implements Initializable {
 
             name.appendChild(document.createTextNode(UI_FXML.NAME));
             score.appendChild(document.createTextNode(UI_FXML.score+""));
+            UI_FXML.score=0;
             root.appendChild(name);
             root.appendChild(score);
 
@@ -162,8 +164,7 @@ public class Controller_Game implements Initializable {
     }
 
     public void msgLocked() {
-        UI_FXML.lock = true;
-        notifyAll();
+        UI_FXML.lock = false;
     }
 
     public void setText(){
