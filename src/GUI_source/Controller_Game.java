@@ -106,8 +106,8 @@ public class Controller_Game implements Initializable {
                     rip();
                 }
             else{
-                    msgLocked();
-                    UI_FXML.multi_result=selected;
+                UI_FXML.lock = false;
+                UI_FXML.multi_result=selected;
             }
 
             });
@@ -161,10 +161,6 @@ public class Controller_Game implements Initializable {
         }catch (Exception e){}
 
 
-    }
-
-    public void msgLocked() {
-        UI_FXML.lock = false;
     }
 
     public void setText(){
