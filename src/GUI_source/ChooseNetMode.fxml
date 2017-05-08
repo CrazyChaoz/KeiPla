@@ -29,10 +29,12 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-        <Button id="radio" fx:id="host" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-        <Button id="radio" fx:id="connect" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-          <Label id="myip" fx:id="myip" text="Oh! No IP! :D" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-          <TextField id="othersip" fx:id="othersip" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+          <Label id="plane" fx:id="plane" text="Deine IP-Adresse" minHeight="50" minWidth="100.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <Button id="radio" fx:id="host" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+          <Label id="plane" fx:id="plane" text="Die IP-Adresse deines Gegners:" minHeight="50" minWidth="100.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+        <Button id="radio" fx:id="connect" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+          <Label id="myip" fx:id="myip" text="Oh! No IP! :D" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+          <TextField id="othersip" fx:id="othersip" minHeight="50" minWidth="100.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
       </children>
          <padding>
             <Insets left="-10.0" right="-10.0" />
