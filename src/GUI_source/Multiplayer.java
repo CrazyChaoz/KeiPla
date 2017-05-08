@@ -48,7 +48,7 @@ public class Multiplayer{
                             UI_FXML.currQuestion[4]+";"+
                             "1337"+"\n";
                     try {
-                        System.out.println("Starting the Game");
+                        System.out.println("Starting the ServerGame");
                         UI_FXML.hardness=1;
                         UI_FXML.currStage.close();
                         UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
@@ -119,7 +119,7 @@ public class Multiplayer{
                 }
 
                 try {
-                    System.out.println("Starting the Game");
+                    System.out.println("Starting the ClientGame");
                     UI_FXML.hardness=1;
                     UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
