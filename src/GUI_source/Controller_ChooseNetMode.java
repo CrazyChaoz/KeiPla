@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -29,6 +30,10 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
     private Button connect;
     @FXML
     private Label myip;
+    @FXML
+    private Button startgame;
+    @FXML
+    private TextField othersip;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,14 +44,32 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
         }
 
         this.host.setOnAction(event -> {
+            selected=4;
             host.setId("radioCh");
             connect.setId("radio");
             System.out.println("Clicked on \"host\"");
         });
         this.connect.setOnAction(event -> {
+            selected=3;
             host.setId("radio");
             connect.setId("radioCh");
             System.out.println("Clicked on \"connect\"");
+        });
+
+
+        this.startgame.setOnAction(event -> {
+
+            Multiplayer m=new Multiplayer();
+
+            if(selected==3) {
+                try {
+                    m.startClientAction(InetAddress.getByName(this.othersip.getText()), 63956);
+                } catch (UnknownHostException e) {
+                    this.othersip.setText("Not an IP");
+                }
+            }else{
+                m.startServerAction(63956);
+            }
         });
         Titlebar_Functionality(this);
     }
