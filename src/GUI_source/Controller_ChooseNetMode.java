@@ -59,18 +59,21 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
 
         this.startgame.setOnAction(event -> {
 
-            Multiplayer m=new Multiplayer();
-
             if(selected==3) {
+                System.out.println("wörks");
                 try {
-                    m.startClientAction(InetAddress.getByName(this.othersip.getText()), 63956);
+                    new Multiplayer().startClientAction(InetAddress.getByName(this.othersip.getText()), 63956);
                 } catch (UnknownHostException e) {
                     this.othersip.setText("Not an IP");
+                } catch (Exception e){
+                    e.printStackTrace();
                 }
             }else if(selected==4){
-                m.startServerAction(63956);
+                System.out.println("wörks serveerere");
+                new Multiplayer().startServerAction(63956);
             }
         });
+
         Titlebar_Functionality(this);
     }
 }
