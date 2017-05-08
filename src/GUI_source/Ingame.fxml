@@ -3,13 +3,13 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import javafx.scene.control.Label?>
-<AnchorPane fx:controller="GUI_source.Controller_Game" id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Game">
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
@@ -20,7 +20,13 @@
         <Button id="answer" fx:id="answer2" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
         <Button id="answer" fx:id="answer3" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Button id="answer" fx:id="answer4" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <Label id="question" fx:id="question" mnemonicParsing="false" prefHeight="100.0" prefWidth="420.0" text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" />
+        <Label id="question" fx:id="question" mnemonicParsing="false" prefHeight="100.0" prefWidth="449.0" text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="24.0" right="28.0" />
+               </padding></Label>
         <Button id="slim" fx:id="surrender" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" prefWidth="100.0" text="Aufgeben" GridPane.columnIndex="0" GridPane.rowIndex="6" />
         <Button id="slim" fx:id="submit" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" prefWidth="100.0" text="Weiter" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       </children>

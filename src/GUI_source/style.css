@@ -121,9 +121,10 @@
     -fx-background-image: url("res/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 420 100;
-    -fx-font-size: 18pt;
+    -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
+    -fx-wrap-text: true;
 }
 #drop{
     -fx-background-image: url("res/GUI_drop.png");
@@ -156,6 +157,7 @@
     -fx-font-size: 18pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
+    word-wrap: break-word;
 }
 #radio{
     -fx-background-image: url("res/GUI_radioButton.png");
