@@ -71,7 +71,7 @@
             </padding></HBox>
     </top>
    <bottom>
-      <Button fx:id="startgame" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" text="START" BorderPane.alignment="TOP_RIGHT">
+      <Button fx:id="startgame" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" text="START!" BorderPane.alignment="TOP_RIGHT">
          <BorderPane.margin>
             <Insets bottom="10.0" right="10.0" />
          </BorderPane.margin>
