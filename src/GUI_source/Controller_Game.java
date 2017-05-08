@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -28,7 +29,7 @@ public class Controller_Game implements Initializable {
     private static String selected=null;
 
     @FXML
-    private Button question;
+    private Label question;
     @FXML
     private Button answer1;
     @FXML
@@ -160,7 +161,7 @@ public class Controller_Game implements Initializable {
 
     }
 
-    public synchronized void msgLocked() {
+    public void msgLocked() {
         UI_FXML.lock = true;
         notifyAll();
     }
