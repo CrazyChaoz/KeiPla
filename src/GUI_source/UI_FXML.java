@@ -1,21 +1,14 @@
 package GUI_source;
 
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -32,6 +25,7 @@ public class UI_FXML {
     public static int running=0;
     public static int multiplayer=0;
     public static Multiplayer session;
+    public static boolean lock=false;
     public static String multi_result;
     public static String[] currQuestion=new String[6];
 
