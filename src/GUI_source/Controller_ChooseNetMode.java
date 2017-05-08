@@ -67,7 +67,7 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
                 } catch (UnknownHostException e) {
                     this.othersip.setText("Not an IP");
                 }
-            }else{
+            }else if(selected==4){
                 m.startServerAction(63956);
             }
         });
