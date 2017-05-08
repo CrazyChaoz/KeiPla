@@ -118,6 +118,18 @@ public class Multiplayer{
                     UI_FXML.currQuestion=s[0].split(";");
                 }
 
+                try {
+                    System.out.println("Starting the Game");
+                    UI_FXML.hardness=1;
+                    UI_FXML.currStage.close();
+                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
+                    UI_FXML.currStage.setTitle("DAS SPIEL");Scene s=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                    s.setFill(Color.TRANSPARENT);
+                    UI_FXML.currStage.setScene(s);
+                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+                    UI_FXML.currStage.show();
+                } catch(IOException e){}
+
                 while(UI_FXML.lock ==true) {
                     System.out.println("Client: " + UI_FXML.multi_result);
                     out.println(UI_FXML.multi_result+"\n");
