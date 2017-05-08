@@ -146,6 +146,7 @@ public class Controller_Game implements Initializable {
 
             name.appendChild(document.createTextNode(UI_FXML.NAME));
             score.appendChild(document.createTextNode(UI_FXML.score+""));
+            UI_FXML.score=0;
             root.appendChild(name);
             root.appendChild(score);
 
@@ -162,8 +163,7 @@ public class Controller_Game implements Initializable {
     }
 
     public void msgLocked() {
-        UI_FXML.lock = true;
-        notifyAll();
+        UI_FXML.lock = false;
     }
 
     public void setText(){
