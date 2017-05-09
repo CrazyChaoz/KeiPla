@@ -71,35 +71,20 @@ public class UI_FXML {
         hbBtn.setAlignment(Pos.TOP_RIGHT);
         grid.add(hbBtn, 1, 3);
 
+
+        /*
+          ######### When Button "Anmelden" is clicked #########
+          ######### or ENTER is pressed -> doLogIn(); #########
+         */
         btn.setOnAction(e -> {
-            System.out.println("Clicked on \"anmelden\"");
-            NAME=userTextField.getText();
-            if(NAME!=null&&!NAME.equals("")){
-                stage.close();
-                currStage=null;
-                try {
-                    start_MainMenu();
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                }
-            }
+            doLogIn(userTextField, stage);
         });
         userTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case ENTER:
-                        System.out.println("Clicked on \"anmelden\"");
-                        NAME=userTextField.getText();
-                        if(NAME!=null&&!NAME.equals("")){
-                            stage.close();
-                            currStage=null;
-                            try {
-                                start_MainMenu();
-                            } catch (Exception e1) {
-                                e1.printStackTrace();
-                            }
-                        } break;
+                        doLogIn(userTextField, stage); break;
                 }
             }
         });
@@ -128,6 +113,19 @@ public class UI_FXML {
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
+    }
+    public void doLogIn(TextField userTextField, Stage stage){
+        System.out.println("Clicked on \"anmelden\"");
+        NAME=userTextField.getText();
+        if(NAME!=null&&!NAME.equals("")){
+            stage.close();
+            currStage=null;
+            try {
+                start_MainMenu();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 
     public static void main(String[] args) throws Exception {
