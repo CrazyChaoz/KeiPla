@@ -78,7 +78,6 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
             try {
                 Multiplayer_Client m=new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956);
                 m.start(new Stage());
-                UI_FXML.currStage.close();
             } catch (UnknownHostException e) {
                 this.othersip.setText("Not an IP");
             } catch (Exception e){
@@ -92,7 +91,6 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            UI_FXML.currStage.close();
         }
     }
 }
