@@ -127,7 +127,7 @@ public class Multiplayer{
 
 
 
-            while ((fromServer = in.readLine()) != null) {
+            while ((fromServer = in.readLine())!=null) {
                 System.out.println("Server: " + fromServer);
                 if(fromServer.equals("You Won")){
                     System.out.println("You Won");
