@@ -109,7 +109,7 @@ public class Controller_Game implements Initializable {
             else{
                 UI_FXML.lock = 0;
                 UI_FXML.multi_result=selected;
-                Platform.exit();
+
             }
 
             });
