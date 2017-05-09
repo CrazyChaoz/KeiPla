@@ -37,8 +37,14 @@ public class Multiplayer{
                     "1337"+"\n";
             out.println(outputLine);
 
-
-            (new Multi_GUI()).start();
+            System.out.println("Starting the MultiGame");
+            Stage stage=new Stage(StageStyle.TRANSPARENT);
+            stage.setTitle("DAS SPIEL");
+            Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+            scene.setFill(Color.TRANSPARENT);
+            stage.setScene(scene);
+            stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+            stage.show();
 
             while ((inputLine = in.readLine()) != null){
                 System.out.println("ClientMSG: "+inputLine);
@@ -51,7 +57,9 @@ public class Multiplayer{
                             UI_FXML.currQuestion[3]+";"+
                             UI_FXML.currQuestion[4]+";"+
                             "1337"+"\n";
-                    (new Multi_GUI()).start();
+                    scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                    stage.setScene(scene);
+                    stage.show();
                 }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
                         selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
                     System.out.println("You Won");
@@ -100,7 +108,14 @@ public class Multiplayer{
             s=fromServer.split("\\n");
             UI_FXML.currQuestion=s[0].split(";");
 
-            (new Multi_GUI()).start();
+            System.out.println("Starting the MultiGame");
+            Stage stage=new Stage(StageStyle.TRANSPARENT);
+            stage.setTitle("DAS SPIEL");
+            Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+            scene.setFill(Color.TRANSPARENT);
+            stage.setScene(scene);
+            stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+            stage.show();
 
 
             while ((fromServer = in.readLine())!=null) {
@@ -121,7 +136,9 @@ public class Multiplayer{
                     System.out.println("Question recieved "+fromServer);
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
-                    (new Multi_GUI()).start();
+                    scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                    stage.setScene(scene);
+                    stage.show();
                 }
 
 
@@ -171,17 +188,5 @@ public class Multiplayer{
 
 class Multi_GUI extends Thread{
     public void run(){
-        try {
-            System.out.println("Starting the MultiGame");
-            UI_FXML.hardness=1;
-            UI_FXML.currStage.close();
-            UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-            UI_FXML.currStage.setTitle("DAS SPIEL");
-            Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-            scene.setFill(Color.TRANSPARENT);
-            UI_FXML.currStage.setScene(scene);
-            UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-            UI_FXML.currStage.show();
-        } catch(IOException e){}
     }
 }
