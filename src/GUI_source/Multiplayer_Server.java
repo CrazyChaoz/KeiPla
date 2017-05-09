@@ -46,6 +46,7 @@ public class Multiplayer_Server extends Application{
             out.println(outputLine);
 
             System.out.println("Starting the MultiGame");
+            UI_FXML.currStage.close();
             UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
             UI_FXML.currStage.setTitle("DAS SPIEL");
             Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
@@ -65,6 +66,7 @@ public class Multiplayer_Server extends Application{
                             UI_FXML.currQuestion[3]+";"+
                             UI_FXML.currQuestion[4]+";"+
                             "1337"+"\n";
+                    UI_FXML.currStage.close();
                     scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
                     UI_FXML.currStage.setScene(scene);
                     UI_FXML.currStage.show();

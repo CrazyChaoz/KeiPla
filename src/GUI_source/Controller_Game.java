@@ -116,8 +116,9 @@ public class Controller_Game implements Initializable {
             });
 
         this.surrender.setOnAction(event -> {
+            if(UI_FXML.multiplayer==0)
             System.out.println("Clicked on \"surrender\"");
-                rip();
+            rip();
         });
 
     }

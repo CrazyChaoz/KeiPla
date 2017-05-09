@@ -39,14 +39,15 @@ public class Multiplayer_Client extends Application {
             System.out.println("connected to "+ip+" on port "+port);
 
 
-
             fromServer = in.readLine();
             System.out.println("Question recieved "+fromServer);
             String[] s;
             s=fromServer.split("\\n");
             UI_FXML.currQuestion=s[0].split(";");
 
+
             System.out.println("Starting the MultiGame");
+            UI_FXML.currStage.close();
             UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
             UI_FXML.currStage.setTitle("DAS SPIEL");
             Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
@@ -75,7 +76,7 @@ public class Multiplayer_Client extends Application {
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
 
-
+                    UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("DAS SPIEL");
                     scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
