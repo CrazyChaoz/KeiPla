@@ -41,7 +41,8 @@ public class Controller_ChooseMode extends Titlebar_Functionality implements Ini
                 UI_FXML.hardness=selected;
                 UI_FXML.currStage.close();
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                UI_FXML.currStage.setTitle("DAS SPIEL");Scene s=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                UI_FXML.currStage.setTitle("DAS SPIEL");
+                Scene s=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
                 s.setFill(Color.TRANSPARENT);
                 UI_FXML.currStage.setScene(s);
                 UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));

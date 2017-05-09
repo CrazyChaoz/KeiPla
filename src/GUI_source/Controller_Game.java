@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -108,6 +109,7 @@ public class Controller_Game implements Initializable {
             else{
                 UI_FXML.lock = 0;
                 UI_FXML.multi_result=selected;
+                Platform.exit();
             }
 
             });
