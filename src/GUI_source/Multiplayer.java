@@ -125,7 +125,7 @@ public class Multiplayer{
                 UI_FXML.currStage.show();
             } catch(IOException e){}
 
-
+            in.readLine();
 
             while ((fromServer = in.readLine()) != null) {
                 System.out.println("Server: " + fromServer);
