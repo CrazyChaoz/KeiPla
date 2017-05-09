@@ -96,7 +96,7 @@ public class Multiplayer{
                 PrintWriter out=new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
         ){
-            UI_FXML.multiplayer=1;
+
             String fromServer;
             System.out.println("connected to "+ip+" on port "+port);
 

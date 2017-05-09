@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -7,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -39,7 +42,6 @@ public class UI_FXML {
         currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Login");
-
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -80,6 +82,25 @@ public class UI_FXML {
                     start_MainMenu();
                 } catch (Exception e1) {
                     e1.printStackTrace();
+                }
+            }
+        });
+        userTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                switch (event.getCode()) {
+                    case ENTER:
+                        System.out.println("Clicked on \"anmelden\"");
+                        NAME=userTextField.getText();
+                        if(NAME!=null&&!NAME.equals("")){
+                            stage.close();
+                            currStage=null;
+                            try {
+                                start_MainMenu();
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                        } break;
                 }
             }
         });
