@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -15,12 +16,19 @@ import java.net.UnknownHostException;
 /**
  * Created by testuser on 09.05.2017.
  */
-public class Multiplayer_Client extends Thread {
+public class Multiplayer_Client extends Application {
 
     InetAddress ip;
     int port;
 
-    public void run(){
+
+    public Multiplayer_Client(InetAddress ip, int port) {
+        this.ip = ip;
+        this.port = port;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         try(
                 Socket socket=new Socket(ip, port);
                 PrintWriter out=new PrintWriter(socket.getOutputStream(), true);
@@ -88,10 +96,5 @@ public class Multiplayer_Client extends Thread {
         } catch (IOException e) {
             System.err.println("Couldn't get I/O for the connection to " +port);
         }
-    }
-
-    public Multiplayer_Client(InetAddress ip, int port) {
-        this.ip = ip;
-        this.port = port;
     }
 }

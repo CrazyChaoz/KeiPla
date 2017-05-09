@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -10,12 +11,18 @@ import javafx.stage.StageStyle;
 import java.io.*;
 import java.net.*;
 
-public class Multiplayer_Server extends Thread{
+public class Multiplayer_Server extends Application{
 
     public String selected=null;
     int port;
 
-    public void run(){
+
+    public Multiplayer_Server(int port) {
+        this.port = port;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         try {
             System.out.println(InetAddress.getLocalHost());
         } catch (UnknownHostException e){}
@@ -31,11 +38,11 @@ public class Multiplayer_Server extends Thread{
             new Question(1);
             outputLine=
                     UI_FXML.currQuestion[0]+";"+
-                    UI_FXML.currQuestion[1]+";"+
-                    UI_FXML.currQuestion[2]+";"+
-                    UI_FXML.currQuestion[3]+";"+
-                    UI_FXML.currQuestion[4]+";"+
-                    "1337"+"\n";
+                            UI_FXML.currQuestion[1]+";"+
+                            UI_FXML.currQuestion[2]+";"+
+                            UI_FXML.currQuestion[3]+";"+
+                            UI_FXML.currQuestion[4]+";"+
+                            "1337"+"\n";
             out.println(outputLine);
 
             System.out.println("Starting the MultiGame");
@@ -89,9 +96,5 @@ public class Multiplayer_Server extends Thread{
             System.out.println("Exception caught when trying to listen on port "+port+" or listening for a connection");
             System.out.println(e.getMessage());
         }
-    }
-
-    public Multiplayer_Server(int port) {
-        this.port = port;
     }
 }
