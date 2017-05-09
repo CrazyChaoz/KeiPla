@@ -87,6 +87,7 @@ public class Controller_Game implements Initializable {
 
         this.submit.setOnAction(event -> {
 
+            System.out.println("Clicked on \"submit\"");
             if(UI_FXML.multiplayer==0)
                 if(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])].equals(selected)){
                     UI_FXML.score++;
