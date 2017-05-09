@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -58,30 +59,40 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
 
 
         this.startgame.setOnAction(event -> {
-
-            if(selected==3) {
-                System.out.println("wörks");
-                try {
-                    Multiplayer_Client m=new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956);
-                    m.start(new Stage());
-                    UI_FXML.currStage.close();
-                } catch (UnknownHostException e) {
-                    this.othersip.setText("Not an IP");
-                } catch (Exception e){
-                    e.printStackTrace();
+            doStartGame();
+        });
+        connect.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                switch (event.getCode()) {
+                    case ENTER:
+                        doStartGame(); break;
                 }
-            }else if(selected==4){
-                System.out.println("wörks serveerere");
-                Multiplayer_Server m=new Multiplayer_Server(63956);
-                try {
-                    m.start(new Stage());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                UI_FXML.currStage.close();
             }
         });
-
         Titlebar_Functionality(this);
+    }
+    public void doStartGame(){
+        if(selected==3) {
+            System.out.println("wörks");
+            try {
+                Multiplayer_Client m=new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956);
+                m.start(new Stage());
+                UI_FXML.currStage.close();
+            } catch (UnknownHostException e) {
+                this.othersip.setText("Not an IP");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }else if(selected==4){
+            System.out.println("wörks serveerere");
+            Multiplayer_Server m=new Multiplayer_Server(63956);
+            try {
+                m.start(new Stage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            UI_FXML.currStage.close();
+        }
     }
 }
