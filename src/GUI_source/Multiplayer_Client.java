@@ -57,6 +57,8 @@ public class Multiplayer_Client extends Application {
             UI_FXML.currStage.show();
 
 
+            System.out.println("reachable?");
+
             while ((fromServer = in.readLine())!=null) {
                 System.out.println("Server: " + fromServer);
                 if(fromServer.equals("You Won")){
@@ -85,8 +87,6 @@ public class Multiplayer_Client extends Application {
                     UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                     UI_FXML.currStage.show();
                 }
-
-
 
                 while(true) {
                     if(UI_FXML.lock==0){

@@ -55,6 +55,8 @@ public class Multiplayer_Server extends Application{
             UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
             UI_FXML.currStage.show();
 
+            System.out.println("reachable?");
+
             while ((inputLine = in.readLine()) != null){
                 System.out.println("ClientMSG: "+inputLine);
                 if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
