@@ -154,7 +154,7 @@
 }
 #plane{
     -fx-background-color: #FBB03B;
-    -fx-font-size: 18pt;
+    -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
     -fx-wrap-text: true;
@@ -173,6 +173,9 @@
     -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
     -fx-text-fill: white;
+}
+.progress-indicator{
+    -fx-progress-color: #FFFFFF;
 }
 .text-field {
     -fx-background-color:
