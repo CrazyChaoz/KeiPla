@@ -24,7 +24,7 @@ public class Multiplayer{
                 PrintWriter out=new PrintWriter(clientSocket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         ){
-
+            UI_FXML.multiplayer=1;
             String inputLine, outputLine=null;
             System.out.println("Host connected");
             new Question(1);
