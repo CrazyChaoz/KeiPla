@@ -37,6 +37,7 @@ public class Multiplayer{
                     "1337"+"\n";
             out.println(outputLine);
 
+
             (new Multi_GUI()).start();
 
             while ((inputLine = in.readLine()) != null){
