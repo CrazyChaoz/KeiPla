@@ -39,7 +39,7 @@ public class Multiplayer{
 
             while ((inputLine = in.readLine()) != null){
                 System.out.println("ClientMSG: "+inputLine);
-                if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
                     System.out.println("Both Right");
                     outputLine = UI_FXML.currQuestion[0]+";"+
                             UI_FXML.currQuestion[1]+";"+
@@ -59,12 +59,12 @@ public class Multiplayer{
                         UI_FXML.currStage.show();
                     } catch(IOException e){}
 
-                }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
                     System.out.println("You Won");
                     UI_FXML.multi_result="You Won";
                     outputLine="You Lost\n";
                     Multi_End();
-                }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])&&!selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[6])])){
+                }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&!selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
                     System.out.println("You Lost");
                     UI_FXML.multi_result="You Lost";
                     outputLine="You Won\n";
@@ -130,10 +130,13 @@ public class Multiplayer{
                     UI_FXML.currStage.show();
                 } catch(IOException e){}
 
-                while(UI_FXML.lock ==true) {
-                    System.out.println("Client: " + UI_FXML.multi_result);
-                    out.println(UI_FXML.multi_result+"\n");
-                    UI_FXML.multi_result=null;
+                while(true) {
+                    if(UI_FXML.lock ==false) {
+                        System.out.println("Client: " + UI_FXML.multi_result);
+                        out.println(UI_FXML.multi_result + "\n");
+                        UI_FXML.multi_result = null;
+                        break;
+                    }
                 }
             }
         } catch (UnknownHostException e) {
