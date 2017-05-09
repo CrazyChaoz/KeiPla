@@ -62,7 +62,8 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
             if(selected==3) {
                 System.out.println("wörks");
                 try {
-                    (new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956)).start();
+                    Multiplayer_Client m=new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956);
+                    m.start();
                     UI_FXML.currStage.close();
                 } catch (UnknownHostException e) {
                     this.othersip.setText("Not an IP");
@@ -71,7 +72,8 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
                 }
             }else if(selected==4){
                 System.out.println("wörks serveerere");
-                (new Multiplayer_Server(63956)).start();
+                Multiplayer_Server m=new Multiplayer_Server(63956);
+                m.start();
                 UI_FXML.currStage.close();
             }
         });
