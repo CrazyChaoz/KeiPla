@@ -24,7 +24,7 @@ public class Multiplayer_Server extends Thread{
     }
 
 
-    public void start(){
+    public void run(){
         try {
             System.out.println(InetAddress.getLocalHost());
         }catch (UnknownHostException ignored){}
@@ -64,6 +64,7 @@ public class Multiplayer_Server extends Thread{
                 if (UI_FXML.lock == 0) {
                     if (inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
                             selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+                        //^^^^^^ Error lies here ^^^^^^^
                         System.out.println("Both Right");
                         outputLine =
                                 UI_FXML.currQuestion[0] + ";" +
@@ -75,6 +76,11 @@ public class Multiplayer_Server extends Thread{
                         new Multiplayer_Game();
                     } else if (!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
                             selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+
+                        //###############################
+                        //NULLPOINTER EXCEPTION
+                        //###############################
+
                         System.out.println("You Won");
                         UI_FXML.multi_result = "You Won";
                         outputLine = "You Lost\n";

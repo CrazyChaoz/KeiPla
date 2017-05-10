@@ -28,7 +28,7 @@ public class Multiplayer_Client extends Thread{
         this.port = port;
     }
 
-    public void start(){
+    public void run(){
         try(
                 Socket socket=new Socket(ip, port);
                 PrintWriter out=new PrintWriter(socket.getOutputStream(), true);
