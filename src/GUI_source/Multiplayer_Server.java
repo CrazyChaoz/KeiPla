@@ -16,7 +16,6 @@ public class Multiplayer_Server extends Application{
     public String selected=null;
     int port;
 
-
     public Multiplayer_Server(int port) {
         this.port = port;
     }
@@ -45,19 +44,12 @@ public class Multiplayer_Server extends Application{
                             "1337"+"\n";
             out.println(outputLine);
 
-            System.out.println("Starting the MultiGame");
-            UI_FXML.currStage.close();
-            UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-            UI_FXML.currStage.setTitle("DAS SPIEL");
-            Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-            scene.setFill(Color.TRANSPARENT);
-            UI_FXML.currStage.setScene(scene);
-            UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-            UI_FXML.currStage.show();
+            new Multiplayer_Game();
 
             System.out.println("reachable?");
-
-            while ((inputLine = in.readLine()) != null){
+            out.println();
+            while(true){
+                inputLine = in.readLine();
                 System.out.println("ClientMSG: "+inputLine);
                 if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
                         selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
@@ -69,7 +61,7 @@ public class Multiplayer_Server extends Application{
                             UI_FXML.currQuestion[4]+";"+
                             "1337"+"\n";
                     UI_FXML.currStage.close();
-                    scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                    Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
                     UI_FXML.currStage.setScene(scene);
                     UI_FXML.currStage.show();
                 }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
@@ -90,9 +82,7 @@ public class Multiplayer_Server extends Application{
                     outputLine="Both Wrong\n";
                     new Multi_End();
                 }
-
                 out.println(outputLine);
-
                 if (inputLine.equals("stop_communication"))
                     break;
             }
@@ -102,3 +92,7 @@ public class Multiplayer_Server extends Application{
         }
     }
 }
+
+/*
+
+*/
