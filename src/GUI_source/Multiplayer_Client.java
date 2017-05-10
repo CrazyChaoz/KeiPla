@@ -45,21 +45,14 @@ public class Multiplayer_Client extends Application {
             s=fromServer.split("\\n");
             UI_FXML.currQuestion=s[0].split(";");
 
-
-            System.out.println("Starting the MultiGame");
-            UI_FXML.currStage.close();
-            UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-            UI_FXML.currStage.setTitle("DAS SPIEL");
-            Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-            scene.setFill(Color.TRANSPARENT);
-            UI_FXML.currStage.setScene(scene);
-            UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-            UI_FXML.currStage.show();
-
+            new Multiplayer_Game();
 
             System.out.println("reachable?");
 
-            while ((fromServer = in.readLine())!=null) {
+            while (true){
+                fromServer=in.readLine();
+                if(fromServer==null||fromServer=="")
+                    continue;
                 System.out.println("Server: " + fromServer);
                 if(fromServer.equals("You Won")){
                     System.out.println("You Won");
@@ -78,14 +71,7 @@ public class Multiplayer_Client extends Application {
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
 
-                    UI_FXML.currStage.close();
-                    UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                    UI_FXML.currStage.setTitle("DAS SPIEL");
-                    scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-                    scene.setFill(Color.TRANSPARENT);
-                    UI_FXML.currStage.setScene(scene);
-                    UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-                    UI_FXML.currStage.show();
+                    new Multiplayer_Game();
                 }
 
                 while(true) {

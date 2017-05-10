@@ -24,7 +24,7 @@ public class Multiplayer_Server extends Application{
     public void start(Stage primaryStage) throws Exception {
         try {
             System.out.println(InetAddress.getLocalHost());
-        } catch (UnknownHostException e){}
+        }catch (UnknownHostException ignored){}
         try(
                 ServerSocket serverSocket = new ServerSocket(port);
                 Socket clientSocket = serverSocket.accept();
@@ -37,19 +37,20 @@ public class Multiplayer_Server extends Application{
             new Question(1);
             outputLine=
                     UI_FXML.currQuestion[0]+";"+
-                            UI_FXML.currQuestion[1]+";"+
-                            UI_FXML.currQuestion[2]+";"+
-                            UI_FXML.currQuestion[3]+";"+
-                            UI_FXML.currQuestion[4]+";"+
-                            "1337"+"\n";
+                    UI_FXML.currQuestion[1]+";"+
+                    UI_FXML.currQuestion[2]+";"+
+                    UI_FXML.currQuestion[3]+";"+
+                    UI_FXML.currQuestion[4]+";"+
+                    "1337"+"\n";
             out.println(outputLine);
 
             new Multiplayer_Game();
 
             System.out.println("reachable?");
-            out.println();
             while(true){
-                inputLine = in.readLine();
+                inputLine=in.readLine();
+                if(inputLine==null||inputLine=="")
+                    continue;
                 System.out.println("ClientMSG: "+inputLine);
                 if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
                         selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
@@ -60,10 +61,7 @@ public class Multiplayer_Server extends Application{
                             UI_FXML.currQuestion[3]+";"+
                             UI_FXML.currQuestion[4]+";"+
                             "1337"+"\n";
-                    UI_FXML.currStage.close();
-                    Scene scene=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
-                    UI_FXML.currStage.setScene(scene);
-                    UI_FXML.currStage.show();
+                    new Multiplayer_Game();
                 }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
                         selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
                     System.out.println("You Won");
@@ -76,7 +74,9 @@ public class Multiplayer_Server extends Application{
                     UI_FXML.multi_result="You Lost";
                     outputLine="You Won\n";
                     new Multi_End();
-                }else{
+                }else if (inputLine.equals("stop_communication"))
+                    break;
+                else{
                     System.out.println("Both Wrong");
                     UI_FXML.multi_result="Both Lost";
                     outputLine="Both Wrong\n";
