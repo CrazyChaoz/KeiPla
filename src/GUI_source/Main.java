@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception{
         UI_FXML ui=new UI_FXML();
         ui.start_LoginForm();
-        running=1;
+        running=0;
     }
 
 

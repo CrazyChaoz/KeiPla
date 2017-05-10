@@ -1,6 +1,9 @@
 package GUI_source;
 
 import javafx.application.Application;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -11,7 +14,7 @@ import javafx.stage.StageStyle;
 import java.io.*;
 import java.net.*;
 
-public class Multiplayer_Server extends Application{
+public class Multiplayer_Server extends Thread{
 
     public String selected=null;
     int port;
@@ -20,8 +23,8 @@ public class Multiplayer_Server extends Application{
         this.port = port;
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void start(){
         try {
             System.out.println(InetAddress.getLocalHost());
         }catch (UnknownHostException ignored){}
@@ -47,48 +50,62 @@ public class Multiplayer_Server extends Application{
             new Multiplayer_Game();
 
             System.out.println("reachable?");
-            while(true){
-                inputLine=in.readLine();
-                if(inputLine==null||inputLine=="")
-                    continue;
-                System.out.println("ClientMSG: "+inputLine);
-                if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
-                        selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
-                    System.out.println("Both Right");
-                    outputLine = UI_FXML.currQuestion[0]+";"+
-                            UI_FXML.currQuestion[1]+";"+
-                            UI_FXML.currQuestion[2]+";"+
-                            UI_FXML.currQuestion[3]+";"+
-                            UI_FXML.currQuestion[4]+";"+
-                            "1337"+"\n";
-                    new Multiplayer_Game();
-                }else if(!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
-                        selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
-                    System.out.println("You Won");
-                    UI_FXML.multi_result="You Won";
-                    outputLine="You Lost\n";
-                    new Multi_End();
-                }else if(inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])&&
-                        !selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])){
-                    System.out.println("You Lost");
-                    UI_FXML.multi_result="You Lost";
-                    outputLine="You Won\n";
-                    new Multi_End();
-                }else if (inputLine.equals("stop_communication"))
-                    break;
-                else{
-                    System.out.println("Both Wrong");
-                    UI_FXML.multi_result="Both Lost";
-                    outputLine="Both Wrong\n";
-                    new Multi_End();
+
+            //initiate the waiting communication
+            /*
+            for (Thread thread:Thread.getAllStackTraces().keySet()) {
+                System.out.println(thread.getName());
+            }
+            System.out.println(Thread.currentThread());*/
+
+            out.println();
+            while ((inputLine = in.readLine())!=null) {
+                System.out.println("ClientMSG: " + inputLine);
+                if (UI_FXML.lock == 0) {
+                    if (inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
+                            selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+                        System.out.println("Both Right");
+                        outputLine =
+                                UI_FXML.currQuestion[0] + ";" +
+                                UI_FXML.currQuestion[1] + ";" +
+                                UI_FXML.currQuestion[2] + ";" +
+                                UI_FXML.currQuestion[3] + ";" +
+                                UI_FXML.currQuestion[4] + ";" +
+                                "1337" + "\n";
+                        new Multiplayer_Game();
+                    } else if (!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
+                            selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+                        System.out.println("You Won");
+                        UI_FXML.multi_result = "You Won";
+                        outputLine = "You Lost\n";
+                        new Multi_End();
+                    } else if (inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
+                            !selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+                        System.out.println("You Lost");
+                        UI_FXML.multi_result = "You Lost";
+                        outputLine = "You Won\n";
+                        new Multi_End();
+                    } else if (inputLine.equals("stop_communication"))
+                        break;
+                    else {
+                        System.out.println("Both Wrong");
+                        UI_FXML.multi_result = "Both Lost";
+                        outputLine = "Both Wrong\n";
+                        new Multi_End();
+                    }
+                    out.println(outputLine);
+                    if (inputLine.equals("stop_communication"))
+                        break;
+                } else {
+                    Thread.sleep(700);
+                    out.println("waiting");
                 }
-                out.println(outputLine);
-                if (inputLine.equals("stop_communication"))
-                    break;
             }
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "+port+" or listening for a connection");
             System.out.println(e.getMessage());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

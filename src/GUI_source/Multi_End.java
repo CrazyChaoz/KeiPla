@@ -16,6 +16,7 @@ import java.io.IOException;
 public class Multi_End {
     public Multi_End(){
         try {
+            UI_FXML.multiplayer=0;
             UI_FXML.currStage.close();
             UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
             UI_FXML.currStage.setTitle("Score");
