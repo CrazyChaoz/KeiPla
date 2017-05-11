@@ -12,9 +12,8 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by testuser on 07.05.2017.
- */
+
+
 public class Titlebar_Functionality{
     private static double xOffset;
     private static double yOffset;

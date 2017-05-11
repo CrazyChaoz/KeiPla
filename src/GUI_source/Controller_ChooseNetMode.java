@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
 
 import java.net.InetAddress;
 import java.net.URL;
@@ -67,7 +66,7 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
     }
     public void doStartGame(){
         if(selected==3) {
-            System.out.println("wörks");
+            System.out.println("Client works");
             try {
                 Multiplayer_Client m=new Multiplayer_Client(InetAddress.getByName(this.othersip.getText()), 63956);
                 m.start();
@@ -77,7 +76,7 @@ public class Controller_ChooseNetMode extends Titlebar_Functionality implements 
                 e.printStackTrace();
             }
         }else if(selected==4){
-            System.out.println("wörks serveerere");
+            System.out.println("Server works");
             Multiplayer_Server m=new Multiplayer_Server(63956);
             try {
                 m.start();

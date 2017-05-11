@@ -11,9 +11,7 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by testuser on 09.05.2017.
- */
+
 public class Multi_End {
     public Multi_End(){
         try {
