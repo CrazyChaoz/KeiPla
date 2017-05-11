@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+
 
 
 import java.io.IOException;
@@ -36,7 +38,11 @@ public class Controller_Menu implements Initializable {
 
         this.singleplayer.setOnAction(event -> {
             try {
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseMode.fxml"))));
+                UI_FXML.currStage.setTitle("Singleplayer");
+                Scene s=new Scene(FXMLLoader.load(getClass().getResource("ChooseMode.fxml")));
+                s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
+                s.setFill(Color.TRANSPARENT);
+                UI_FXML.currStage.setScene(s);
                 System.out.println("Clicked on \"singleplayer\"");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -45,7 +51,11 @@ public class Controller_Menu implements Initializable {
 
         this.multiplayer.setOnAction(event -> {
             try {
-                UI_FXML.currStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChooseNetMode.fxml"))));
+                UI_FXML.currStage.setTitle("Netzwerkmodus");
+                Scene s=new Scene(FXMLLoader.load(getClass().getResource("ChooseNetMode.fxml")));
+                s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
+                s.setFill(Color.TRANSPARENT);
+                UI_FXML.currStage.setScene(s);
                 System.out.println("Clicked on \"multiplayer\"");
             } catch (IOException e) {
                 e.printStackTrace();
