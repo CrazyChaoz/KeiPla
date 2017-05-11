@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 public class UI_FXML {
-    public static String theme="style.css";
+    public static String theme="dark-style.css";
     public static String NAME=null;
     public static Stage currStage=null;
     public static int score=0;

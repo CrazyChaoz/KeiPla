@@ -11,9 +11,7 @@
 
 <?import javafx.scene.control.Label?>
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_ChooseMode">
-  <stylesheets>
-    <URL value="@style.css" />
-  </stylesheets>
+
   <center>
     <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="205.0" prefWidth="251.0" BorderPane.alignment="CENTER">
       <columnConstraints>

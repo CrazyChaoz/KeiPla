@@ -61,13 +61,10 @@ public class LoginScreen {
         btn.setOnAction(e -> {
             doLogIn(userTextField, stage);
         });
-        userTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                switch (event.getCode()) {
-                    case ENTER:
-                        doLogIn(userTextField, stage); break;
-                }
+        userTextField.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case ENTER:
+                    doLogIn(userTextField, stage); break;
             }
         });
 
