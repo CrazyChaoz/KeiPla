@@ -93,6 +93,3 @@ public class Multiplayer_Client extends Thread{
         }
     }
 }
-/*
-
- */
