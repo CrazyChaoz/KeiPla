@@ -50,38 +50,36 @@ public class Multiplayer_Client extends Thread{
             System.out.println("reachable?");
 
             //initiate the waiting communication
+
             out.println();
+
             while ((fromServer = in.readLine())!=null){
                 System.out.println("Server: " + fromServer);
-                if(UI_FXML.lock==0){
 
-                    System.out.println("Client: " + UI_FXML.multi_result);
-                    out.println(UI_FXML.multi_result+"\n");
-                    UI_FXML.multi_result=null;
-                    UI_FXML.lock=1;
+                if(fromServer.equals("You Won")){
+                    System.out.println("You Won");
+                    UI_FXML.multi_result="You Won";
+                    new Multi_End();
+                }else if (fromServer.equals("You Lost")){
+                    System.out.println("You Lost");
+                    UI_FXML.multi_result="You Lost";
+                    new Multi_End();
+                }else if (fromServer.equals("Both Lost")){
+                    System.out.println("Both Lost");
+                    UI_FXML.multi_result="Both Lost";
+                    new Multi_End();
+                }else if (fromServer.matches(".*;.*;.*;.*;.*;.*")){
+                    System.out.println("Question recieved "+fromServer);
+                    s=fromServer.split("\\n");
+                    UI_FXML.currQuestion=s[0].split(";");
 
-                    if(fromServer.equals("You Won")){
-                        System.out.println("You Won");
-                        UI_FXML.multi_result="You Won";
-                        new Multi_End();
-                    }else if (fromServer.equals("You Lost")){
-                        System.out.println("You Lost");
-                        UI_FXML.multi_result="You Lost";
-                        new Multi_End();
-                    }else if (fromServer.equals("Both Lost")){
-                        System.out.println("Both Lost");
-                        UI_FXML.multi_result="Both Lost";
-                        new Multi_End();
-                    }else{
-                        System.out.println("Question recieved "+fromServer);
-                        s=fromServer.split("\\n");
-                        UI_FXML.currQuestion=s[0].split(";");
-
-                        new Multiplayer_Game();
-                    }
+                    new Multiplayer_Game();
                 }else{
                     Thread.sleep(1000);
-                    out.println("waiting");
+                    if(UI_FXML.multi_result==null)
+                        out.println("waiting");
+                    else
+                        out.println(UI_FXML.multi_result);
                 }
             }
         } catch (UnknownHostException e) {
