@@ -11,10 +11,10 @@
     -fx-background-repeat: stretch;
     -fx-background-size: 800 450;
     -fx-background-position: center center;
-    -fx-background-image: url("res/normal/normal/GUI_login.png");
+    -fx-background-image: url("res/dark/GUI_login.png");
 }
 #background{/*
-    -fx-background-image: url("res/normal/GUI_bg.png");
+    -fx-background-image: url("res/dark/GUI_bg.png");
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
     -fx-background-color: rgba(0, 100, 100, 0);*/
@@ -22,28 +22,28 @@
     -fx-content-display: center;
 }
 #close{
-    -fx-background-image: url("res/normal/normal/GUI_closeButton.png");
+    -fx-background-image: url("res/dark/GUI_closeButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #back{
-    -fx-background-image: url("res/normal/normal/GUI_backButton.png");
+    -fx-background-image: url("res/dark/GUI_backButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #minimize{
-    -fx-background-image: url("res/normal/normal/GUI_miniButton.png");
+    -fx-background-image: url("res/dark/GUI_miniButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 32 32;
     -fx-min-width: 32;
     -fx-min-height: 32;
 }
 #small-button{
-    -fx-background-image: url("res/normal/normal/GUI_button.png");
+    -fx-background-image: url("res/dark/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 159 38;
     -fx-font-size: 14pt;
@@ -51,7 +51,7 @@
     -fx-text-fill: white;
 }
 #slim{
-    -fx-background-image: url("res/normal/normal/GUI_slim.png");
+    -fx-background-image: url("res/dark/GUI_slim.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 30;
     -fx-font-size: 12pt;
@@ -64,37 +64,37 @@
     -fx-text-fill: white;
 }
 #leicht{
-    -fx-background-image: url("res/normal/normal/GUI_easyButton.png");
+    -fx-background-image: url("res/dark/GUI_easyButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #leichtCh{
-    -fx-background-image: url("res/normal/normal/GUI_easyButtonChosen.png");
+    -fx-background-image: url("res/dark/GUI_easyButtonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #mittel{
-    -fx-background-image: url("res/normal/normal/GUI_mediumButton.png");
+    -fx-background-image: url("res/dark/GUI_mediumButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #mittelCh{
-    -fx-background-image: url("res/normal/normal/GUI_mediumButtonChosen.png");
+    -fx-background-image: url("res/dark/GUI_mediumButtonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #schwer{
-    -fx-background-image: url("res/normal/normal/GUI_hardButton.png");
+    -fx-background-image: url("res/dark/GUI_hardButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #schwerCh{
-    -fx-background-image: url("res/normal/normal/GUI_hardButtonChosen.png");
+    -fx-background-image: url("res/dark/GUI_hardButtonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #std-button{
-    -fx-background-image: url("res/normal/normal/GUI_button.png");
+    -fx-background-image: url("res/dark/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
@@ -102,7 +102,7 @@
     -fx-text-fill: white;
 }
 #answer{
-    -fx-background-image: url("res/normal/normal/GUI_button.png");
+    -fx-background-image: url("res/dark/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
@@ -110,7 +110,7 @@
     -fx-text-fill: white;
 }
 #answerCh{
-    -fx-background-image: url("res/normal/normal/GUI_buttonChosen.png");
+    -fx-background-image: url("res/dark/GUI_buttonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
@@ -118,7 +118,7 @@
     -fx-text-fill: #FBB03B;
 }
 #question{
-    -fx-background-image: url("res/normal/normal/GUI_button.png");
+    -fx-background-image: url("res/dark/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 420 100;
     -fx-font-size: 14pt;
@@ -127,7 +127,7 @@
     -fx-wrap-text: true;
 }
 #drop{
-    -fx-background-image: url("res/normal/normal/GUI_drop.png");
+    -fx-background-image: url("res/dark/GUI_drop.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 300 38;
     -fx-font-size: 18pt;
@@ -135,7 +135,7 @@
     -fx-text-fill: black;
 }
 #title{
-    -fx-background-image: url("res/normal/normal/GUI_dragbg.png");
+    -fx-background-image: url("res/dark/GUI_dragbg.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 187 45;
     -fx-font-size: 14pt;
@@ -144,7 +144,7 @@
     -fx-font-style: oblique;
 }
 #startgame{
-    -fx-background-image: url("res/normal/normal/GUI_button.png");
+    -fx-background-image: url("res/dark/GUI_button.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 85 36;
     -fx-font-size: 12pt;
@@ -160,12 +160,12 @@
     -fx-wrap-text: true;
 }
 #radio{
-    -fx-background-image: url("res/normal/normal/GUI_radioButton.png");
+    -fx-background-image: url("res/dark/GUI_radioButton.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }
 #radioCh{
-    -fx-background-image: url("res/normal/normal/GUI_radioButtonChosen.png");
+    -fx-background-image: url("res/dark/GUI_radioButtonChosen.png");
     -fx-background-color: #FBB03B;
     -fx-background-size: 48 48;
 }

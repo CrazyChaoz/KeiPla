@@ -32,7 +32,9 @@ public class Multiplayer_Game{
                         e.printStackTrace();
                     }
 
-                    scene.setFill(Color.TRANSPARENT);
+                    if (scene != null) {
+                        scene.setFill(Color.TRANSPARENT);
+                    }
                     UI_FXML.currStage.setScene(scene);
                     UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                     UI_FXML.currStage.show();
