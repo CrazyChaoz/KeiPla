@@ -48,7 +48,7 @@
     -fx-background-size: 159 38;
     -fx-font-size: 14pt;
     -fx-font-family: "Hyde (BRK)";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #slim{
     -fx-background-image: url("res/dark/GUI_slim.png");
@@ -61,7 +61,7 @@
 #difficulty{
     -fx-font-size: 16pt;
     -fx-font-family: "Hyde (BRK)";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #leicht{
     -fx-background-image: url("res/dark/GUI_easyButton.png");
@@ -99,7 +99,7 @@
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
     -fx-font-family: "Hyde (BRK)";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #answer{
     -fx-background-image: url("res/dark/GUI_button.png");
@@ -107,7 +107,7 @@
     -fx-background-size: 200 50;
     -fx-font-size: 18pt;
     -fx-font-family: "Comix";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #answerCh{
     -fx-background-image: url("res/dark/GUI_buttonChosen.png");
@@ -123,7 +123,7 @@
     -fx-background-size: 420 100;
     -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-wrap-text: true;
 }
 #drop{
@@ -149,14 +149,14 @@
     -fx-background-size: 85 36;
     -fx-font-size: 12pt;
     -fx-font-family: "Hyde (BRK)";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-font-style: oblique;
 }
 #plane{
     -fx-background-color: #FBB03B;
     -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-wrap-text: true;
 }
 #radio{
@@ -172,13 +172,13 @@
 #myip{
     -fx-font-size: 14pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 #score{
     -fx-background-color: #FBB03B;
     -fx-font-size: 12pt;
     -fx-font-family: "Consolas";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 .progress-indicator{
     -fx-progress-color: #FFFFFF;
