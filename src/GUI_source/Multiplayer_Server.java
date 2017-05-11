@@ -61,9 +61,10 @@ public class Multiplayer_Server extends Thread{
                 if(!inputLine.equals("waiting")&&UI_FXML.multi_result!=null){
                     otherSolution = inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
                     ownSolution = UI_FXML.multi_result.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
-
+                    UI_FXML.multi_result=null;
                     if (otherSolution && ownSolution){
                         System.out.println("Both Right");
+                        new Question(1);
                         outputLine =
                                 UI_FXML.currQuestion[0] + ";" +
                                         UI_FXML.currQuestion[1] + ";" +

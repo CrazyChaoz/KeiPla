@@ -48,13 +48,10 @@ public class Titlebar_Functionality{
 
         i.back.setOnAction(event -> {
             try {
-                UI_FXML.currStage.close();
-                UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
-                UI_FXML.currStage.setTitle("Hauptmenü");
+               UI_FXML.currStage.setTitle("Hauptmenü");
                 Scene s=(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
                 s.setFill(Color.TRANSPARENT);
                 UI_FXML.currStage.setScene(s);
-                UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                 UI_FXML.currStage.show();
             } catch(IOException e){}
         });
