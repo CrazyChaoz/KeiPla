@@ -1,5 +1,6 @@
 package GUI_source;
 
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -62,8 +63,11 @@ public class Multiplayer_Server extends Thread{
             while ((inputLine = in.readLine())!=null) {
                 System.out.println("ClientMSG: " + inputLine);
                 if (UI_FXML.lock == 0) {
-                    if (inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
-                            selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+
+                    Boolean otherSolution=inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
+                    Boolean ownSolution=UI_FXML.multi_result.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
+
+                    if (otherSolution && ownSolution){
                         //^^^^^^ Error lies here ^^^^^^^
                         System.out.println("Both Right");
                         outputLine =
@@ -74,26 +78,19 @@ public class Multiplayer_Server extends Thread{
                                 UI_FXML.currQuestion[4] + ";" +
                                 "1337" + "\n";
                         new Multiplayer_Game();
-                    } else if (!inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
-                            selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
-
-                        //###############################
-                        //NULLPOINTER EXCEPTION
-                        //###############################
-
+                    }else if (!otherSolution && ownSolution){
                         System.out.println("You Won");
                         UI_FXML.multi_result = "You Won";
                         outputLine = "You Lost\n";
                         new Multi_End();
-                    } else if (inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]) &&
-                            !selected.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])])) {
+                    }else if (otherSolution&&!ownSolution){
                         System.out.println("You Lost");
                         UI_FXML.multi_result = "You Lost";
                         outputLine = "You Won\n";
                         new Multi_End();
-                    } else if (inputLine.equals("stop_communication"))
+                    }else if (inputLine.equals("stop_communication"))
                         break;
-                    else {
+                    else{
                         System.out.println("Both Wrong");
                         UI_FXML.multi_result = "Both Lost";
                         outputLine = "Both Wrong\n";
