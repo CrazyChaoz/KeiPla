@@ -73,7 +73,7 @@ public class LoginScreen {
 
         Scene scene = new Scene(grid, 800, 450);
         scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().addAll(UI_FXML.class.getResource("style.css").toExternalForm());
+        scene.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
 
 
         stage.getIcons().add(new Image(UI_FXML.class.getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));

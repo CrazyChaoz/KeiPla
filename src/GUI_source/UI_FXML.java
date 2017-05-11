@@ -1,15 +1,9 @@
 package GUI_source;
 
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,6 +13,7 @@ import java.io.IOException;
 
 
 public class UI_FXML {
+    public static String theme="style.css";
     public static String NAME=null;
     public static Stage currStage=null;
     public static int score=0;
@@ -42,7 +37,7 @@ public class UI_FXML {
             scene = new Scene(FXMLLoader.load(UI_FXML.class.getResource("MainMenu.fxml")));
         } catch (IOException e){}
         scene.setFill(Color.TRANSPARENT);
-
+        scene.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
         stage.getIcons().add(new Image(UI_FXML.class.getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();

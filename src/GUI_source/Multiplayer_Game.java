@@ -31,16 +31,13 @@ public class Multiplayer_Game{
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                    if (scene != null) {
-                        scene.setFill(Color.TRANSPARENT);
-                    }
+                    scene.setFill(Color.TRANSPARENT);
+                    scene.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
                     UI_FXML.currStage.setScene(scene);
                     UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
                     UI_FXML.currStage.show();
                 }
             });
-            System.out.println("This should do it ......");
         } catch (Exception e) {
             e.printStackTrace();
         }

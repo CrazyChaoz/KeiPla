@@ -1,14 +1,12 @@
 package GUI_source;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -43,6 +41,7 @@ public class Controller_ChooseMode extends Titlebar_Functionality implements Ini
                 UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                 UI_FXML.currStage.setTitle("DAS SPIEL");
                 Scene s=(new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml"))));
+                s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
                 s.setFill(Color.TRANSPARENT);
                 UI_FXML.currStage.setScene(s);
                 UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
