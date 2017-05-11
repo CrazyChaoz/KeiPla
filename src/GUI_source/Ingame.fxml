@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Game">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Game">
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
@@ -20,7 +20,7 @@
         <Button id="answer" fx:id="answer2" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
         <Button id="answer" fx:id="answer3" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Button id="answer" fx:id="answer4" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-        <Label id="question" fx:id="question" mnemonicParsing="false" prefHeight="100.0" prefWidth="449.0" text="" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
+        <Label id="question" fx:id="question" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="449.0" text="Test" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>

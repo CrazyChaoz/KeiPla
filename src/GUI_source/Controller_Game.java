@@ -122,7 +122,7 @@ public class Controller_Game implements Initializable {
                 rip();
             }else{
                 UI_FXML.lock = 0;
-                UI_FXML.multi_result=null;
+                UI_FXML.multi_result="GiveUp";
             }
         });
 

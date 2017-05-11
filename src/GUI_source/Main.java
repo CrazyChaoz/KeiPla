@@ -9,8 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        UI_FXML ui=new UI_FXML();
-        ui.start_LoginForm();
+        LoginScreen.start_LoginForm();
         running=0;
     }
 

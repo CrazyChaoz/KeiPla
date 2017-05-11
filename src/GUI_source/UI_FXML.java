@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class UI_FXML {
@@ -27,106 +28,23 @@ public class UI_FXML {
     public static int lock=1;
     public static String multi_result=null;
     public static String[] currQuestion=new String[6];
-
     //##########################################
     //##########################################
     //##########################################
-
-
-    public void start_LoginForm() throws Exception {
-        Stage stage=new Stage();
-        currStage=stage;
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Login");
-
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(60);
-        grid.setVgap(5);
-        grid.setId("bg_Login");
-
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        TextField userTextField = new TextField();
-        userTextField.setPromptText("Username");
-        //Für die Länge des Eingabefeldes, Maxlength=15
-        userTextField.lengthProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.intValue() > oldValue.intValue()) {
-                if (userTextField.getText().length() >= 15) {
-                    userTextField.setText(userTextField.getText().substring(0, 15));
-                }
-            }
-        });
-        grid.add(userTextField, 1, 1);
-
-        Button btn = new Button("Anmelden");
-        btn.setId("small-button");
-        btn.setMinSize(160,40);
-        HBox hbBtn = new HBox();
-
-        hbBtn.getChildren().add(btn);
-        hbBtn.setAlignment(Pos.TOP_RIGHT);
-        grid.add(hbBtn, 1, 3);
-
-
-        /*
-          ######### When Button "Anmelden" is clicked #########
-          ######### or ENTER is pressed -> doLogIn(); #########
-         */
-        btn.setOnAction(e -> {
-            doLogIn(userTextField, stage);
-        });
-        userTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                switch (event.getCode()) {
-                    case ENTER:
-                        doLogIn(userTextField, stage); break;
-                }
-            }
-        });
-
-        Scene scene = new Scene(grid, 800, 450);
-        scene.setFill(Color.TRANSPARENT);
-        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-
-
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
-        stage.setScene(scene);
-        stage.show();
-    }
-    //##########################################
-    //##########################################
-    //##########################################
-    public void start_MainMenu() throws Exception {
+    public static void start_MainMenu(){
         Stage stage=new Stage();
         currStage=stage;
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setTitle("Menu");
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml")));
+        Scene scene = null;
+        try {
+            scene = new Scene(FXMLLoader.load(UI_FXML.class.getResource("MainMenu.fxml")));
+        } catch (IOException e){}
         scene.setFill(Color.TRANSPARENT);
 
-        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
+        stage.getIcons().add(new Image(UI_FXML.class.getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
         stage.setScene(scene);
         stage.show();
-    }
-    public void doLogIn(TextField userTextField, Stage stage){
-        System.out.println("Clicked on \"anmelden\"");
-        NAME=userTextField.getText();
-        if(NAME!=null&&!NAME.equals("")){
-            stage.close();
-            currStage=null;
-            try {
-                start_MainMenu();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-    }
-
-    public static void main(String[] args) throws Exception {
-        UI_FXML ui=new UI_FXML();
-        ui.start_LoginForm();
     }
 }

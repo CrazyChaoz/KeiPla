@@ -78,19 +78,19 @@ public class Multiplayer_Server extends Thread{
                         UI_FXML.multi_result = "You Won";
                         out.println("You Lost\n");
                         new Multi_End();
-                        return;
+                        break;
                     }else if (otherSolution&&!ownSolution){
                         System.out.println("You Lost");
                         UI_FXML.multi_result = "You Lost";
                         out.println("You Won\n");
                         new Multi_End();
-                        return;
+                        break;
                     }else if(!otherSolution&&!ownSolution){
                         System.out.println("Both Wrong");
                         UI_FXML.multi_result = "Both Lost";
                         out.println("Both Wrong\n");
                         new Multi_End();
-                        return;
+                        break;
                     }else if (inputLine.equals("stop_communication")) {
                         break;
                     }
