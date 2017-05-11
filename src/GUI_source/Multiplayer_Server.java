@@ -49,46 +49,51 @@ public class Multiplayer_Server extends Thread{
             System.out.println(Thread.currentThread());
             */
 
-            out.println();
+            out.println("waiting");
 
             while ((inputLine = in.readLine())!=null) {
                 System.out.println("Client: "+inputLine);
                 System.out.println("Server: "+UI_FXML.multi_result);
 
-                Boolean otherSolution=inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
-                Boolean ownSolution=UI_FXML.multi_result.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
+                Boolean otherSolution;
+                Boolean ownSolution;
 
-                if (otherSolution && ownSolution){
-                    System.out.println("Both Right");
-                    outputLine =
-                            UI_FXML.currQuestion[0] + ";" +
-                                    UI_FXML.currQuestion[1] + ";" +
-                                    UI_FXML.currQuestion[2] + ";" +
-                                    UI_FXML.currQuestion[3] + ";" +
-                                    UI_FXML.currQuestion[4] + ";" +
-                                    "1337" + "\n";
-                    new Multiplayer_Game();
-                }else if (!otherSolution && ownSolution){
-                    System.out.println("You Won");
-                    UI_FXML.multi_result = "You Won";
-                    outputLine = "You Lost\n";
-                    new Multi_End();
-                }else if (otherSolution&&!ownSolution){
-                    System.out.println("You Lost");
-                    UI_FXML.multi_result = "You Lost";
-                    outputLine = "You Won\n";
-                    new Multi_End();
-                }else if(!otherSolution&&!ownSolution){
-                    System.out.println("Both Wrong");
-                    UI_FXML.multi_result = "Both Lost";
-                    outputLine = "Both Wrong\n";
-                    new Multi_End();
-                }else if (inputLine.equals("stop_communication")) {
-                    break;
+                if(!inputLine.equals("waiting")){
+                    otherSolution = inputLine.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
+                    ownSolution = UI_FXML.multi_result.equals(UI_FXML.currQuestion[Integer.parseInt(UI_FXML.currQuestion[5])]);
+
+                    if (otherSolution && ownSolution){
+                        System.out.println("Both Right");
+                        outputLine =
+                                UI_FXML.currQuestion[0] + ";" +
+                                        UI_FXML.currQuestion[1] + ";" +
+                                        UI_FXML.currQuestion[2] + ";" +
+                                        UI_FXML.currQuestion[3] + ";" +
+                                        UI_FXML.currQuestion[4] + ";" +
+                                        "1337" + "\n";
+                        new Multiplayer_Game();
+                    }else if (!otherSolution && ownSolution){
+                        System.out.println("You Won");
+                        UI_FXML.multi_result = "You Won";
+                        outputLine = "You Lost\n";
+                        new Multi_End();
+                    }else if (otherSolution&&!ownSolution){
+                        System.out.println("You Lost");
+                        UI_FXML.multi_result = "You Lost";
+                        outputLine = "You Won\n";
+                        new Multi_End();
+                    }else if(!otherSolution&&!ownSolution){
+                        System.out.println("Both Wrong");
+                        UI_FXML.multi_result = "Both Lost";
+                        outputLine = "Both Wrong\n";
+                        new Multi_End();
+                    }else if (inputLine.equals("stop_communication")) {
+                        break;
+                    }
                 }else{
-                    Thread.sleep(700);
                     outputLine="waiting";
                 }
+                Thread.sleep(700);
                 out.println(outputLine);
             }
         } catch (IOException e) {

@@ -43,7 +43,7 @@ public class Multiplayer_Client extends Thread{
 
             //initiate the waiting communication
 
-            out.println();
+            out.println("waiting");
 
             while ((fromServer = in.readLine())!=null){
                 System.out.println("Server: " + fromServer);
@@ -66,13 +66,12 @@ public class Multiplayer_Client extends Thread{
                     UI_FXML.currQuestion=s[0].split(";");
 
                     new Multiplayer_Game();
-                }else{
-                    Thread.sleep(1000);
-                    if(UI_FXML.multi_result==null)
-                        out.println("waiting");
-                    else
-                        out.println(UI_FXML.multi_result);
                 }
+                Thread.sleep(1000);
+                if(UI_FXML.multi_result==null)
+                    out.println("waiting");
+                else
+                    out.println(UI_FXML.multi_result);
             }
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + ip);
