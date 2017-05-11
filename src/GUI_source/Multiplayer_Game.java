@@ -22,6 +22,7 @@ public class Multiplayer_Game{
                 @Override
                 public void run() {
                     System.out.println("Starting the MultiGame");
+                    UI_FXML.currStage.close();
                     UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                     UI_FXML.currStage.setTitle("DAS SPIEL");
                     Scene scene= null;
