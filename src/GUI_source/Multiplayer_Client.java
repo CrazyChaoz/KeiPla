@@ -67,7 +67,7 @@ public class Multiplayer_Client extends Thread{
                     UI_FXML.multi_result=null;
                     new Multiplayer_Game();
                 }
-                Thread.sleep(1000);
+                Thread.sleep(600);
                 if(UI_FXML.multi_result==null)
                     out.println("waiting");
                 else

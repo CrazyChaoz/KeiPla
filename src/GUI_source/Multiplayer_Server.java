@@ -76,22 +76,28 @@ public class Multiplayer_Server extends Thread{
                     }else if (!otherSolution && ownSolution){
                         System.out.println("You Won");
                         UI_FXML.multi_result = "You Won";
-                        out.println("You Lost\n");
-                        out.println("You Lost\n");
+                        out.println("You Lost");
+                        Thread.sleep(1200);
+                        out.println("You Lost");
+                        Thread.sleep(1200);
                         new Multi_End();
                         break;
                     }else if (otherSolution&&!ownSolution){
                         System.out.println("You Lost");
                         UI_FXML.multi_result = "You Lost";
-                        out.println("You Won\n");
-                        out.println("You Won\n");
+                        out.println("You Won");
+                        Thread.sleep(1200);
+                        out.println("You Won");
+                        Thread.sleep(1200);
                         new Multi_End();
                         break;
                     }else if(!otherSolution&&!ownSolution){
                         System.out.println("Both Wrong");
                         UI_FXML.multi_result = "Both Lost";
-                        out.println("Both Wrong\n");
-                        out.println("Both Wrong\n");
+                        out.println("Both Wrong");
+                        Thread.sleep(1200);
+                        out.println("Both Wrong");
+                        Thread.sleep(1200);
                         new Multi_End();
                         break;
                     }else if (inputLine.equals("stop_communication")) {
