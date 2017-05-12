@@ -70,6 +70,7 @@ public class Controller_Menu implements Initializable {
                 Scene s=new Scene(FXMLLoader.load(getClass().getResource("Options.fxml")));
                 s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
                 s.setFill(Color.TRANSPARENT);
+                UI_FXML.currStage.setScene(s);
                 System.out.println("Clicked on \"options\"");
             } catch (IOException e) {
                 e.printStackTrace();
