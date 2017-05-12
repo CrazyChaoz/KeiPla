@@ -1,0 +1,221 @@
+/*
+FAV <3
+ */
+@font-face {
+    src: url('res/Comix-Regular.ttf');
+}
+@font-face {
+    src: url('res/Hyde-Edit.ttf');
+}
+
+#bg_Login{
+    -fx-background-color: rgba(0, 100, 100, 0);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 450;
+    -fx-background-position: center center;
+    -fx-background-image: url("res/dark_inverted/GUI_login.png");
+}
+#background{/*
+    -fx-background-image: url("res/dark_inverted/GUI_bg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-color: rgba(0, 100, 100, 0);*/
+    -fx-background-color: black;
+    -fx-content-display: center;
+}
+#close{
+    -fx-background-image: url("res/dark_inverted/GUI_closeButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+}
+#back{
+    -fx-background-image: url("res/dark_inverted/GUI_backButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+}
+#minimize{
+    -fx-background-image: url("res/dark_inverted/GUI_miniButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 32 32;
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+}
+#small-button{
+    -fx-background-image: url("res/dark_inverted/GUI_button.png");
+    -fx-background-color: black;
+    -fx-background-size: 159 38;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+}
+#slim{
+    -fx-background-image: url("res/dark_inverted/GUI_slim.png");
+    -fx-background-color: black;
+    -fx-background-size: 200 30;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: black;
+}
+#difficulty{
+    -fx-font-size: 16pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+}
+#leicht{
+    -fx-background-image: url("res/dark_inverted/GUI_easyButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#leichtCh{
+    -fx-background-image: url("res/dark_inverted/GUI_easyButtonChosen.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#mittel{
+    -fx-background-image: url("res/dark_inverted/GUI_mediumButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#mittelCh{
+    -fx-background-image: url("res/dark_inverted/GUI_mediumButtonChosen.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#schwer{
+    -fx-background-image: url("res/dark_inverted/GUI_hardButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#schwerCh{
+    -fx-background-image: url("res/dark_inverted/GUI_hardButtonChosen.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#std-button{
+    -fx-background-image: url("res/dark_inverted/GUI_button.png");
+    -fx-background-color: black;
+    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+}
+#answer{
+    -fx-background-image: url("res/dark_inverted/GUI_button.png");
+    -fx-background-color: black;
+    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: #FBB03B;
+}
+#answerCh{
+    -fx-background-image: url("res/dark_inverted/GUI_buttonChosen.png");
+    -fx-background-color: black;
+    -fx-background-size: 200 50;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Comix";
+    -fx-text-fill: black;
+}
+#question{
+    -fx-background-image: url("res/dark_inverted/GUI_button.png");
+    -fx-background-color: black;
+    -fx-background-size: 420 100;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: #FBB03B;
+    -fx-wrap-text: true;
+}
+#drop{
+    -fx-background-image: url("res/dark_inverted/GUI_drop.png");
+    -fx-background-color: black;
+    -fx-background-size: 300 38;
+    -fx-font-size: 18pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: #FBB03B;
+}
+#title{
+    -fx-background-image: url("res/dark_inverted/GUI_dragbg.png");
+    -fx-background-color: black;
+    -fx-background-size: 187 45;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: black;
+    -fx-font-style: oblique;
+}
+#startgame{
+    -fx-background-image: url("res/dark_inverted/GUI_button.png");
+    -fx-background-color: black;
+    -fx-background-size: 85 36;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Hyde (BRK)";
+    -fx-text-fill: #FBB03B;
+    -fx-font-style: oblique;
+}
+#plane{
+    -fx-background-color: black;
+    -fx-font-size: 14pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: #FBB03B;
+    -fx-wrap-text: true;
+}
+#radio{
+    -fx-background-image: url("res/dark_inverted/GUI_radioButton.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#radioCh{
+    -fx-background-image: url("res/dark_inverted/GUI_radioButtonChosen.png");
+    -fx-background-color: black;
+    -fx-background-size: 48 48;
+}
+#myip{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: #FBB03B;
+}
+#score{
+    -fx-background-color: black;
+    -fx-font-size: 12pt;
+    -fx-font-family: "Consolas";
+    -fx-text-fill: #FBB03B;
+}
+.progress-indicator{
+    -fx-progress-color: #FBB03B;
+}
+.text-field {
+    -fx-background-color:
+            #FFFFFF,
+            #FFFFFF;
+    -fx-background-insets: 0, 2;
+    -fx-max-width: 150px;
+    -fx-background-radius: 20%;
+}
+
+.text-field:focused {
+    -fx-background-color:
+            #0093EF,
+            #FFFFFF;
+}
+
+.text-field:hover {
+    -fx-background-color:
+            #0093EF,
+            #FFFFFF;
+}
+
+.text-field:focused:hover {
+    -fx-background-color:
+            #0093EF,
+            #FFFFFF;
+}
+
+.button{
+    -fx-background-color:
+            #FFFFFF,
+            #FFFFFF;
+    -fx-text-fill: #a39d9f;
+    -fx-border-radius: 20%;
+}
