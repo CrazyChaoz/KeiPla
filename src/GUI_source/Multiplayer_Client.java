@@ -64,7 +64,7 @@ public class Multiplayer_Client extends Thread{
                     System.out.println("Question recieved "+fromServer);
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
-
+                    UI_FXML.multi_result=null;
                     new Multiplayer_Game();
                 }
                 Thread.sleep(1000);

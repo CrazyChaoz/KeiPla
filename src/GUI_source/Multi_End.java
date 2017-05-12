@@ -29,6 +29,7 @@ public class Multi_End {
                         e.printStackTrace();
                     }
                     s.setFill(Color.TRANSPARENT);
+                    s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
                     UI_FXML.currStage.setScene(s);
                     UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res" + File.separator + "KeiPla-Icon-128.png")));
                     UI_FXML.currStage.show();

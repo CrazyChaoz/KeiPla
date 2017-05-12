@@ -10,9 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Menu">
-    <stylesheets>
-        <URL value="@style.css" />
-    </stylesheets>
+
     <center>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="289.0" prefWidth="200" BorderPane.alignment="CENTER">
         <columnConstraints>

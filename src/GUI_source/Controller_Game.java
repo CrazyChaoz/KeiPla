@@ -99,6 +99,7 @@ public class Controller_Game implements Initializable {
                         UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
                         UI_FXML.currStage.setTitle("DAS SPIEL");
                         Scene s=new Scene(FXMLLoader.load(getClass().getResource("Ingame.fxml")));
+                        s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
                         s.setFill(Color.TRANSPARENT);
                         UI_FXML.currStage.setScene(s);
                         UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));
@@ -122,7 +123,7 @@ public class Controller_Game implements Initializable {
                 rip();
             }else{
                 UI_FXML.lock = 0;
-                UI_FXML.multi_result=null;
+                UI_FXML.multi_result="GiveUp";
             }
         });
 
@@ -135,6 +136,7 @@ public class Controller_Game implements Initializable {
             UI_FXML.currStage=new Stage(StageStyle.TRANSPARENT);
             UI_FXML.currStage.setTitle("Highscore");
             Scene s=new Scene(FXMLLoader.load(getClass().getResource("Highscore.fxml")));
+            s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
             s.setFill(Color.TRANSPARENT);
             UI_FXML.currStage.setScene(s);
             UI_FXML.currStage.getIcons().add(new Image(this.getClass().getResourceAsStream("res"+ File.separator+"KeiPla-Icon-128.png")));

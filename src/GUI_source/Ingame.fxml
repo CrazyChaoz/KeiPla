@@ -10,9 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Game">
-  <stylesheets>
-    <URL value="@style.css" />
-  </stylesheets>
+
   <children>
     <GridPane alignment="CENTER" layoutX="148.0" layoutY="84.0" prefHeight="160.0" prefWidth="420.0">
       <children>

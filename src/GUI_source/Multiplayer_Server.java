@@ -67,27 +67,30 @@ public class Multiplayer_Server extends Thread{
                         new Question(1);
                         outputLine =
                                 UI_FXML.currQuestion[0] + ";" +
-                                        UI_FXML.currQuestion[1] + ";" +
-                                        UI_FXML.currQuestion[2] + ";" +
-                                        UI_FXML.currQuestion[3] + ";" +
-                                        UI_FXML.currQuestion[4] + ";" +
-                                        "1337" + "\n";
+                                UI_FXML.currQuestion[1] + ";" +
+                                UI_FXML.currQuestion[2] + ";" +
+                                UI_FXML.currQuestion[3] + ";" +
+                                UI_FXML.currQuestion[4] + ";" +
+                                "1337" + "\n";
                         new Multiplayer_Game();
                     }else if (!otherSolution && ownSolution){
                         System.out.println("You Won");
                         UI_FXML.multi_result = "You Won";
-                        outputLine = "You Lost\n";
+                        out.println("You Lost\n");
                         new Multi_End();
+                        break;
                     }else if (otherSolution&&!ownSolution){
                         System.out.println("You Lost");
                         UI_FXML.multi_result = "You Lost";
-                        outputLine = "You Won\n";
+                        out.println("You Won\n");
                         new Multi_End();
+                        break;
                     }else if(!otherSolution&&!ownSolution){
                         System.out.println("Both Wrong");
                         UI_FXML.multi_result = "Both Lost";
-                        outputLine = "Both Wrong\n";
+                        out.println("Both Wrong\n");
                         new Multi_End();
+                        break;
                     }else if (inputLine.equals("stop_communication")) {
                         break;
                     }
