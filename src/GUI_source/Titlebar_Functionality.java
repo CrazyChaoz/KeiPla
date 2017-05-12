@@ -47,14 +47,17 @@ public class Titlebar_Functionality{
         });
 
         i.back.setOnAction(event -> {
-            try {
-               UI_FXML.currStage.setTitle("Hauptmenü");
-                Scene s=(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
-                s.setFill(Color.TRANSPARENT);UI_FXML.currStage.setTitle("Singleplayer");
-                s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
-                UI_FXML.currStage.setScene(s);
-                UI_FXML.currStage.show();
-            } catch(IOException e){}
+            goBack();
         });
+    }
+    public void goBack(){
+        try {
+            UI_FXML.currStage.setTitle("Hauptmenü");
+            Scene s=(new Scene(FXMLLoader.load(getClass().getResource("MainMenu.fxml"))));
+            s.setFill(Color.TRANSPARENT);UI_FXML.currStage.setTitle("Singleplayer");
+            s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
+            UI_FXML.currStage.setScene(s);
+            UI_FXML.currStage.show();
+        } catch(IOException e){}
     }
 }

@@ -11,25 +11,28 @@
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_source.Controller_Options">
 
   <center>
-      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="205.0" prefWidth="251.0" BorderPane.alignment="CENTER">
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="261.0" BorderPane.alignment="CENTER">
       <columnConstraints>
         <ColumnConstraints />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       </columnConstraints>
       <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
       </rowConstraints>
          <padding>
             <Insets left="-10.0" right="-10.0" />
          </padding>
          <children>
+             <Button id="plane" fx:id="plane" text="Normal  weiß" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Button id="plane" fx:id="plane" text="Normal  schwarz" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+             <Button id="plane" fx:id="plane" text="Dunkles Design" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
              <Button id="radio" fx:id="normal" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-             <Button id="radio" fx:id="dark" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-             <Button id="radio" fx:id="dark_inverted" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Button id="radio" fx:id="dark" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+             <Button id="radio" fx:id="dark_inverted" minHeight="50" minWidth="48.0" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
     </GridPane>
   </center>
@@ -44,7 +47,7 @@
                   <Insets left="8.0" right="87.0" />
                </padding>
             </Button>
-            <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Highscore">
+            <Button fx:id="title" prefHeight="66.0" prefWidth="187.0" text="Optionen">
                <HBox.margin>
                   <Insets right="15.0" />
                </HBox.margin>
