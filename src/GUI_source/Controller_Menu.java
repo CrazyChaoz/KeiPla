@@ -29,6 +29,8 @@ public class Controller_Menu implements Initializable {
     @FXML
     private Button multiplayer;
     @FXML
+    private Button options;
+    @FXML
     private Button title;
 
 
@@ -57,6 +59,18 @@ public class Controller_Menu implements Initializable {
                 s.setFill(Color.TRANSPARENT);
                 UI_FXML.currStage.setScene(s);
                 System.out.println("Clicked on \"multiplayer\"");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        this.options.setOnAction(event -> {
+            try {
+                UI_FXML.currStage.setTitle("Optionen");
+                Scene s=new Scene(FXMLLoader.load(getClass().getResource("Options.fxml")));
+                s.getStylesheets().addAll(UI_FXML.class.getResource(UI_FXML.theme).toExternalForm());
+                s.setFill(Color.TRANSPARENT);
+                System.out.println("Clicked on \"options\"");
             } catch (IOException e) {
                 e.printStackTrace();
             }

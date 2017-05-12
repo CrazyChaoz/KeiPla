@@ -13,7 +13,8 @@ import java.io.IOException;
 
 
 public class UI_FXML {
-    public static String theme="dark-style.css";
+    public static String theme=Main.conf.cur.getStyleName();
+    //function for getting the style from config
     public static String NAME=null;
     public static Stage currStage=null;
     public static int score=0;
