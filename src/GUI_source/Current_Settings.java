@@ -1,8 +1,6 @@
 package GUI_source;
 
-/**
- * Created by Cedric on 11.05.2017.
- */
+
 public class Current_Settings {
     private int style=0;
 

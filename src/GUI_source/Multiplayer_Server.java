@@ -72,6 +72,7 @@ public class Multiplayer_Server extends Thread{
                                 UI_FXML.currQuestion[3] + ";" +
                                 UI_FXML.currQuestion[4] + ";" +
                                 "1337" + "\n";
+                        UI_FXML.score++;
                         new Multiplayer_Game();
                     }else if (!otherSolution && ownSolution){
                         System.out.println("You Won");

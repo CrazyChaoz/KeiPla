@@ -40,7 +40,9 @@ public class Controller_Multi_End extends Titlebar_Functionality implements Init
 
         this.result.setText(UI_FXML.multi_result);
         this.score.setText("Score: "+UI_FXML.score);
-
+        UI_FXML.score=0;
+        UI_FXML.multiplayer=0;
+        UI_FXML.multi_result=null;
     }
 
 }

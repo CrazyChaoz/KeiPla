@@ -6,9 +6,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-/**
- * Created by testuser on 09.05.2017.
- */
+
+
 public class Multiplayer_Client extends Thread{
 
     InetAddress ip;
@@ -65,6 +64,7 @@ public class Multiplayer_Client extends Thread{
                     s=fromServer.split("\\n");
                     UI_FXML.currQuestion=s[0].split(";");
                     UI_FXML.multi_result=null;
+                    UI_FXML.score++;
                     new Multiplayer_Game();
                 }
                 Thread.sleep(600);

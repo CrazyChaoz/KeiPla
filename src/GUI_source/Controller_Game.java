@@ -110,7 +110,6 @@ public class Controller_Game implements Initializable {
                     rip();
                 }
             else{
-                UI_FXML.lock = 0;
                 UI_FXML.multi_result=selected;
 
             }
@@ -122,7 +121,6 @@ public class Controller_Game implements Initializable {
                 System.out.println("Clicked on \"surrender\"");
                 rip();
             }else{
-                UI_FXML.lock = 0;
                 UI_FXML.multi_result="GiveUp";
             }
         });
