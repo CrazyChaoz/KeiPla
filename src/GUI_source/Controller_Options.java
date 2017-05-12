@@ -1,5 +1,6 @@
 package GUI_source;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -10,8 +11,8 @@ import java.util.ResourceBundle;
 
 
 public class Controller_Options extends Titlebar_Functionality implements Initializable {
-    private int selected=0;
-    public Current_Settings cur;
+    public static int selected=0;
+    public static Current_Settings cur;
     @FXML
     private Button normal;
     @FXML
@@ -44,12 +45,14 @@ public class Controller_Options extends Titlebar_Functionality implements Initia
             normal.setId("radio");
             System.out.println("Clicked on \"dark_inverted\"");
         });
-        this.submit.setOnAction(event -> {
+        this.submit.setOnAction((ActionEvent event) -> {
             try {
-                writeConf(selected);
-            } catch (Exception e) {
+                writeConf();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
+            UI_FXML.setTheme();
+            goBack();
         });
         Titlebar_Functionality(this);
     }
@@ -83,21 +86,20 @@ public class Controller_Options extends Titlebar_Functionality implements Initia
                 break;
         }
     }
-    public void writeConf(int arg) throws IOException {
+    public static void writeConf() throws IOException {
         /*
          *  info:
          *      0-2 -> normal;dark;dark_inverted; (Style)
          */
-        int info=arg;
         File config = new File("res" + File.separator + "preferences.dat");
         //Later we will cut it by \r\n
         FileWriter input = new FileWriter(config);
-        input.write(info);
+        input.write(selected);
         try {
-            cur.setAll(info);
+            cur.setAll(selected);
         }catch (NullPointerException e) { e.printStackTrace(); }
 
-        System.out.println(info);
+        System.out.println(selected);
         input.close();
     }
 }

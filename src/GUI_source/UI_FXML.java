@@ -26,6 +26,9 @@ public class UI_FXML {
     //##########################################
     //##########################################
     //##########################################
+    public static void setTheme(){
+        theme=Main.conf.cur.getStyleName();
+    }
     public static void start_MainMenu(){
         Stage stage=new Stage();
         currStage=stage;
