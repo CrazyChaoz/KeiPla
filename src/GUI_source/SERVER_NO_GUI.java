@@ -9,7 +9,10 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by kemp on 16.09.17.
@@ -27,13 +30,17 @@ public class SERVER_NO_GUI{
 
     public SERVER_NO_GUI() {
         int port=63956;
-
+        List<BufferedReader> instreams=new ArrayList<>();
+        List<PrintWriter> outstreams=new ArrayList<>();
+        List<String> inputLines=new ArrayList<>();
 
 
         String version="1.0";
 
 
         System.out.println("Welcome to KeiPla_Server v"+version);
+        System.out.println("How many Clients should connect?");
+        int numClients=new Scanner(System.in).nextInt();
 
         try {
             System.out.println("This Machine: "+InetAddress.getLocalHost());
@@ -45,10 +52,14 @@ public class SERVER_NO_GUI{
                 ServerSocket serverSocket = new ServerSocket(port);
 
         ){
-            Socket clientSocket = serverSocket.accept();
-            PrintWriter out=new PrintWriter(clientSocket.getOutputStream(), true);
-            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            int i=0;
+            while(i<numClients) {
+                Socket clientSocket = serverSocket.accept();
 
+                outstreams.add(new PrintWriter(clientSocket.getOutputStream(), true));
+                instreams.add(new BufferedReader(new InputStreamReader(clientSocket.getInputStream())));
+                i++;
+            }
 
             String inputLine, outputLine=null;
 
@@ -62,14 +73,22 @@ public class SERVER_NO_GUI{
                             currQuestion[3]+";"+
                             currQuestion[4]+";"+
                             "1337"+"\n";
-            out.println(outputLine);
+            for (PrintWriter out:outstreams)
+                out.println(outputLine);
 
 
 
             System.out.println("waiting");
-            out.println("waiting");
 
-            while ((inputLine = in.readLine())!=null) {
+            for (PrintWriter out:outstreams)
+                out.println("waiting");
+
+
+            while (true) {
+                for(BufferedReader in:instreams)
+                    if((inputLine = in.readLine())==null)
+                        break;
+
                 System.out.println("Client: "+inputLine);
                 System.out.println("Server: "+multi_result);
 
