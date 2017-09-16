@@ -13,6 +13,7 @@ import java.util.Random;
 
 /**
  * Created by kemp on 16.09.17.
+ * KEIPLA SERVER
  */
 public class SERVER_NO_GUI{
     public static void main(String[] args) {
