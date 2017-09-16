@@ -148,7 +148,9 @@ public class SERVER_NO_GUI{
                     outputLine="waiting";
                 }
                 Thread.sleep(700);
-                out.println(outputLine);
+                for (Client c:clients) {
+                    c.out.println(outputLine);
+                }
             }
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "+port+" or listening for a connection");
