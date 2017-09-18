@@ -11,8 +11,8 @@ import java.util.ResourceBundle;
 
 
 public class Controller_Options extends Titlebar_Functionality implements Initializable {
-    public static int selected=0;
-    public static Current_Settings cur;
+    private static int selected=0;
+    private static Current_Settings cur;
     @FXML
     private Button normal;
     @FXML
@@ -57,7 +57,7 @@ public class Controller_Options extends Titlebar_Functionality implements Initia
         Titlebar_Functionality(this);
     }
 
-    public void loadConf() throws IOException {
+    void loadConf() throws IOException {
         /*
          *  info:
          *      0-2 -> normal;dark;dark_inverted; (Style)
@@ -86,20 +86,20 @@ public class Controller_Options extends Titlebar_Functionality implements Initia
                 break;
         }
     }
-    public static void writeConf() throws IOException {
+    private static void writeConf() throws IOException {
         /*
          *  info:
          *      0-2 -> normal;dark;dark_inverted; (Style)
          */
         File config = new File("res" + File.separator + "preferences.dat");
         //Later we will cut it by \r\n
-        FileWriter input = new FileWriter(config);
-        input.write(selected);
+        FileWriter out = new FileWriter(config);
+        out.write(selected);
         try {
             cur.setAll(selected);
         }catch (NullPointerException e) { e.printStackTrace(); }
 
         System.out.println(selected);
-        input.close();
+        out.close();
     }
 }

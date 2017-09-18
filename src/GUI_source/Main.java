@@ -10,21 +10,18 @@ import static GUI_source.UI_FXML.running;
 
 //Main Class
 public class Main extends Application {
-    public static Controller_Options conf;
+
+
     @Override
     public void start(Stage stage) throws Exception{
         LoginScreen.start_LoginForm();
         running=0;
     }
 
-    public Controller_Options getConf() {
-        return conf;
-    }
 
     public static void main(String[] args) {
-        conf = new Controller_Options();
         try {
-            conf.loadConf();
+            new Controller_Options().loadConf();
         } catch (IOException e) {
             e.printStackTrace();
         }
