@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class Controller_Options extends Titlebar_Functionality implements Initializable {
     private static int selected=0;
-    private static Current_Settings cur;
+    public static Current_Settings cur;
     @FXML
     private Button normal;
     @FXML
